@@ -1,0 +1,278 @@
+'use client';
+
+import React, { useEffect, useRef } from 'react';
+import {
+  Brain,
+  Bot,
+  Cpu,
+  Database,
+  BarChart3,
+  TrendingUp,
+  Handshake,
+  Puzzle,
+  Code2,
+  Layers,
+  MessageSquare,
+  CalendarClock,
+  BookOpen,
+  Zap,
+  Settings2,
+  ArrowRight,
+  type LucideIcon,
+} from 'lucide-react';
+import gsap from 'gsap';
+
+const iconMap: Record<string, LucideIcon> = {
+  Brain,
+  Bot,
+  Cpu,
+  Database,
+  BarChart3,
+  TrendingUp,
+  Handshake,
+  Puzzle,
+  Code2,
+  Layers,
+  MessageSquare,
+  CalendarClock,
+  BookOpen,
+  Zap,
+  Settings2,
+  ArrowRight,
+};
+
+function Icon({ name, className }: { name: string; className?: string }) {
+  const LucideComponent = iconMap[name];
+  if (!LucideComponent) return null;
+  return <LucideComponent className={className} />;
+}
+
+export type OfferingSubFeature = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+export type OfferingFeature = {
+  icon: string;
+  title: string;
+  description: string;
+};
+
+export type OfferingItem = {
+  id: string;
+  badge: string;
+  title: string;
+  tagline: string;
+  image: string;
+  accentGradient: string;
+  accentBorder: string;
+  subFeaturesLabel?: string;
+  features: OfferingFeature[];
+  subFeatures?: OfferingSubFeature[];
+};
+
+export type OfferingsData = {
+  sectionBadge: string;
+  sectionTitle: string;
+  sectionDescription: string;
+  items: OfferingItem[];
+};
+
+type OfferingsProps = {
+  data: OfferingsData;
+};
+
+function OfferingSection({ card, index }: { card: OfferingItem; index: number }) {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.fromTo(
+              imageRef.current,
+              { opacity: 0, x: index % 2 === 0 ? -60 : 60, scale: 0.92 },
+              { opacity: 1, x: 0, scale: 1, duration: 1, ease: 'power3.out' }
+            );
+            gsap.fromTo(
+              contentRef.current,
+              { opacity: 0, y: 40 },
+              { opacity: 1, y: 0, duration: 0.9, delay: 0.2, ease: 'power3.out' }
+            );
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [index]);
+
+  const isReversed = index % 2 !== 0;
+
+  return (
+    <div ref={sectionRef} className="relative group waterfall-section">
+      <div
+        className={`absolute -inset-4 rounded-3xl bg-gradient-to-br ${card.accentGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-2xl pointer-events-none`}
+      />
+
+      <div
+        className={`relative flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
+          } gap-10 lg:gap-16 items-center`}
+      >
+        <div ref={imageRef} className="w-full lg:w-[45%] opacity-0">
+          <div className="relative overflow-hidden rounded-2xl shadow-2xl group/img">
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent z-10" />
+            <img
+              src={card.image}
+              alt={card.title}
+              className="w-full h-[320px] lg:h-[420px] object-cover transition-transform duration-700 group-hover/img:scale-105"
+            />
+          </div>
+        </div>
+
+        <div ref={contentRef} className="w-full lg:w-[55%] opacity-0">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
+            {card.title}
+          </h2>
+          <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
+            {card.tagline}
+          </p>
+
+          <div className="space-y-4 mb-6">
+            {card.features.map((feature, fIdx) => (
+              <div
+                key={fIdx}
+                className={`relative overflow-hidden rounded-xl bg-white/[0.04] backdrop-blur-sm border ${card.accentBorder} p-5 transition-all duration-300 hover:bg-white/[0.08] hover:border-white/30 hover:shadow-lg`}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#73B8BF]/30 to-[#8FA8D9]/30 flex items-center justify-center text-[#73B8BF]">
+                    <Icon name={feature.icon} className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-white mb-1.5 tracking-wide">
+                      {feature.title}
+                    </h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {card.subFeatures && card.subFeatures.length > 0 && (
+            <div className="mt-6">
+              <h5 className="text-xs font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
+                {card.subFeaturesLabel || 'Capabilities'}
+              </h5>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {card.subFeatures.map((sub, sIdx) => (
+                  <div
+                    key={sIdx}
+                    className="group/sub relative rounded-lg bg-white/[0.03] border border-white/10 p-4 transition-all duration-300 hover:bg-white/[0.07] hover:border-[#73B8BF]/40 hover:-translate-y-0.5"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[#73B8BF] group-hover/sub:text-white transition-colors">
+                        <Icon name={sub.icon} className="w-4 h-4" />
+                      </span>
+                      <h6 className="text-xs font-bold text-white tracking-wide">
+                        {sub.title}
+                      </h6>
+                    </div>
+                    <p className="text-xs text-gray-500 leading-relaxed">
+                      {sub.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function Offerings({ data }: OfferingsProps) {
+  const headingRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = headingRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            gsap.fromTo(
+              el,
+              { opacity: 0, y: 30 },
+              { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }
+            );
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section
+      id="offerings"
+      className="relative py-24 md:py-32 bg-gray-950 overflow-hidden"
+    >
+      <div className="absolute inset-0 pointer-events-none">
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)',
+            backgroundSize: '60px 60px',
+          }}
+        />
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-900 to-transparent" />
+        <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-cyan-600/5 blur-[100px]" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 rounded-full bg-violet-600/5 blur-[100px]" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+        <div ref={headingRef} className="text-center mb-20 opacity-0">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-xs font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
+            <Settings2 className="w-3.5 h-3.5" />
+            {data.sectionBadge}
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
+            {data.sectionTitle.split(' ').slice(0, -1).join(' ')}{' '}
+            <span className="bg-gradient-to-r from-[#73B8BF] via-[#8FA8D9] to-[#73B8BF] bg-clip-text text-transparent">
+              {data.sectionTitle.split(' ').slice(-1)[0]}
+            </span>
+          </h2>
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-400 leading-relaxed">
+            {data.sectionDescription}
+          </p>
+        </div>
+
+        <div className="space-y-24 lg:space-y-32 waterfall-container">
+          {data.items.map((card, idx) => (
+            <OfferingSection key={card.id} card={card} index={idx} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

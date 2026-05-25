@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "title": "About Us",
+    "subtitle": "We are a team of seasoned enterprise professionals and technologists with deep domain expertise spanning Banking, Financial Services, Insurance (BFSI), Manufacturing, Retail, Supply Chain, and Infrastructure.",
+    "description": "Having held leadership roles at world-class financial institutions, telecom giants, manufacturing leaders, and premier IT product and services companies, our core team collectively brings over 100+ years of experience in architecting proprietary platforms and managing massive IT delivery frameworks for both domestic and international clients.\n\nOur singular focus is to create and amplify long-term value for our customers. We drive this commitment through three core pillars of excellence:"
+  },
+  "pillars": {
+    "title": "Three Core Pillars of Excellence",
+    "items": [
+      {
+        "title": "Enterprise Custom Application Development",
+        "description": "We build bespoke, secure, and scalable applications designed to solve complex business problems.",
+        "icon": "Code",
+        "color": "blue",
+        "features": [
+          "Core Verticals: Banking & Financial Services | Manufacturing | Retail | Infrastructure",
+          "Next-Gen Tech Stack: Data Analytics | Artificial Intelligence (AI) & Machine Learning (ML) | Blockchain | Internet of Things (IoT) | Modern Full-Stack Web & Mobile Architecture",
+          "Omnichannel Delivery: Seamless, native user experiences across Web and Mobile channels."
+        ]
+      },
+      {
+        "title": "Strategic Industry Product & Platform Partnerships",
+        "description": "We partner with market-leading platforms to deliver rapid deployment with lower total cost of ownership (TCO).",
+        "icon": "Handshake",
+        "color": "green",
+        "features": [
+          "Authorized Zoho Partner: End-to-end implementation across the entire Zoho ecosystem, including Sales & Marketing, Finance, HRMS, Legal Contracts, Projects, and Commerce.",
+          "Next-Gen eCommerce SaaS: High-scale B2B and B2C platforms featuring multi-store, multi-seller, and multi-currency frameworks, complete with native payment gateway and logistics integrations.",
+          "On-Demand Infrastructure Platforms: Tailored Dedicated, Shared, or Platform-as-a-Service (PaaS) models engineered to jump-start cloud-native software development.",
+          "Advanced Billing Ecosystems: Specialized architecture, deployment, and configuration for enterprise billing systems like HostBill and WHMCS."
+        ]
+      },
+      {
+        "title": "Proprietary Point Solutions & Accelerators",
+        "description": "We continuously invest in building pre-built integrations and technical accelerators to minimize time-to-market for our clients.",
+        "icon": "Zap",
+        "color": "amber",
+        "features": [
+          "Automated Billing & ERP Sync: Proprietary HostBill / WHMCS integration with Zoho Books for real-time financial tracking.",
+          "Zoho Projects Integrator: Advanced middle-tier connector to seamlessly bridge and sync disparate Zoho Projects instances for multi-tenant or cross-departmental collaboration."
+        ]
+      }
+    ]
+  },
+  "philosophy": {
+    "title": "Our Transformation Philosophy",
+    "subtitle": "We don't just provide technology; we redefine how your business operates.",
+    "items": [
+      {
+        "title": "Business Model Evolution",
+        "description": "We guide enterprises through new business model adoption and complete process transformation, utilizing data, AI, and connected tech to move businesses from legacy operations to digital maturity.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "Holistic Problem Solving",
+        "description": "Every business challenge is unique. We address them by orchestrating the perfect mix of our own proprietary assets, established partner platforms (like Zoho), and targeted custom software engineering.",
+        "icon": "Target"
+      }
+    ],
+    "partnerCallout": {
+      "title": "Authorized Zoho Partner",
+      "tags": ["Sales & Marketing", "Finance", "HRMS", "Contracts", "Projects", "Commerce"],
+      "description": "Leverage our certified expertise to transform your organization into a unified, silo-free digital enterprise."
+    }
+  }
+}

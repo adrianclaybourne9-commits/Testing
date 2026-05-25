@@ -1,0 +1,144 @@
+'use client';
+
+import React, { useState, useEffect, useRef } from 'react';
+import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react';
+import gsap from 'gsap';
+
+export type Slide = {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  bullets: string[];
+  image: string;
+};
+
+type HeroCarouselProps = {
+  slides: Slide[];
+};
+
+export default function HeroCarousel({ slides }: HeroCarouselProps) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const contentRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      handleNextSlide();
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [currentSlide]);
+
+  const handleNextSlide = () => {
+    if (isAnimating) return;
+    changeSlide((currentSlide + 1) % slides.length);
+  };
+
+  const handlePrevSlide = () => {
+    if (isAnimating) return;
+    changeSlide((currentSlide - 1 + slides.length) % slides.length);
+  };
+
+  const changeSlide = (newIndex: number) => {
+    setIsAnimating(true);
+
+    gsap.to(contentRef.current, {
+      opacity: 0,
+      y: 20,
+      duration: 0.4,
+      ease: "power2.in",
+      onComplete: () => {
+        setCurrentSlide(newIndex);
+
+        gsap.fromTo(contentRef.current,
+          { opacity: 0, y: -20 },
+          { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }
+        );
+        setIsAnimating(false);
+      }
+    });
+  };
+
+  if (!slides || slides.length === 0) return null;
+  const current = slides[currentSlide];
+
+  return (
+    <div className="relative w-screen h-[100vh] overflow-hidden bg-gray-900 text-white">
+      {slides.map((slide, index) => (
+        <div
+          key={slide.id}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-0' : 'opacity-0 z-[-1]'}`}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${slide.image})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </div>
+      ))}
+
+      <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-24 flex flex-col justify-center">
+
+        <div ref={contentRef} className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+
+          <div className="max-w-2xl">
+            <h3 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] mb-4 uppercase">
+              {current.subtitle}
+            </h3>
+
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 leading-tight">
+              {current.title}
+            </h1>
+
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              {current.description}
+            </p>
+          </div>
+
+          <div className="w-full lg:w-auto max-w-md flex flex-col space-y-8 pb-1">
+            <div className="flex flex-col space-y-4">
+              {current.bullets.map((bullet, idx) => (
+                <div key={idx} className="flex items-start space-x-3">
+                  <CheckCircle2 className="w-5 h-5 text-[#8FA8D9] flex-shrink-0 mt-0.5" />
+                  <span className="text-sm md:text-base text-gray-200">{bullet}</span>
+                </div>
+              ))}
+            </div>
+
+            <button className="group flex items-center space-x-4 text-white hover:text-[#73B8BF] transition-colors w-fit">
+              <span className="text-lg font-bold">Explore Solutions</span>
+              <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover:border-[#73B8BF] transition-colors">
+                <ChevronRight className="w-5 h-5" />
+              </div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="absolute bottom-8 left-6 md:left-12 flex items-center space-x-6 z-20">
+        <div className="flex space-x-6 text-sm font-bold tracking-widest text-white/50">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => changeSlide(index)}
+              className={`transition-colors duration-300 hover:text-white ${index === currentSlide ? 'text-white' : ''}`}
+            >
+              0{index + 1}
+            </button>
+          ))}
+        </div>
+        <div className="relative w-32 md:w-48 h-[2px] bg-white/20">
+          <div
+            className="absolute top-0 left-0 h-full bg-white transition-all duration-500 ease-out"
+            style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+          />
+        </div>
+      </div>
+
+    </div>
+  );
+}

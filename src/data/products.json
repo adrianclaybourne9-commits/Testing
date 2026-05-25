@@ -1,0 +1,98 @@
+{
+  "hero": {
+    "title": "Proprietary Products",
+    "subtitle": "We proactively invest in engineering robust, scalable software assets and platforms designed to deliver compounding, long-term value and operational excellence for our clients."
+  },
+  "products": [
+    {
+      "id": "ne23-wealth",
+      "name": "NE23 Wealth",
+      "subtitle": "Financial Planning Platform",
+      "description": "An institutional-grade, highly adaptive wealth management and financial planning platform engineered specifically to help advisors engage and scale their services.",
+      "image": "/products-wealth-bg.png",
+      "color": "emerald",
+      "features": [
+        {
+          "title": "Target Segment Optimization",
+          "description": "Strategically architected for the Mass Affluent market segment (clients with investible assets up to USD $5 Million).",
+          "icon": "Target"
+        },
+        {
+          "title": "Comprehensive Client Profiling Engine",
+          "description": "Personal Profiling (family structures, dependencies), Financial Profiling (real-time balance sheet mapping across Assets/Liabilities), and Risk Profiling (algorithmic scoring).",
+          "icon": "Users"
+        },
+        {
+          "title": "Goal-Based Financial Architecture",
+          "description": "Maps out precise, long-term financial strategies tied to critical life milestones (Target Retirement, Children's Higher Education, Wealth Transfer).",
+          "icon": "Compass"
+        },
+        {
+          "title": "Advanced Scenario Simulation",
+          "description": "Dynamic \"What-If\" simulation engine allowing advisors to run side-by-side comparative analyses of various market conditions and shifting timelines.",
+          "icon": "LineChart"
+        },
+        {
+          "title": "Enterprise-Grade Configurability",
+          "description": "Built for multi-tenant operations with Multi-Level Controls, Dynamic Questionnaire Frameworks, Extensible Data Taxonomy, and strict RBAC Security.",
+          "icon": "Settings"
+        },
+        {
+          "title": "Advisor Command Center & Reporting",
+          "description": "Intuitive Advisor Dashboard for pipeline management alongside automated generation of client-ready, institutional-grade Financial Planning Reports.",
+          "icon": "LayoutDashboard"
+        },
+        {
+          "title": "CRM Ecosystem Interoperability",
+          "description": "Out-of-the-box support for seamless API integrations with dominant third-party CRM systems.",
+          "icon": "Link"
+        }
+      ]
+    },
+    {
+      "id": "ne23-invoicing",
+      "name": "NE23 Invoicing",
+      "subtitle": "Billing System Integrator",
+      "description": "An enterprise-grade middleware and invoicing powerhouse engineered to bridge the gap between automated billing platforms and localized regulatory compliance.",
+      "image": "/products-invoicing-bg.png",
+      "color": "indigo",
+      "features": [
+        {
+          "title": "Universal Invoicing Engine",
+          "description": "Dynamically generates compliant, beautifully formatted corporate invoices from virtually any underlying transactional system.",
+          "icon": "FileText"
+        },
+        {
+          "title": "Native Billing Connectors",
+          "description": "Offers seamless, out-of-the-box synchronization with leading cloud and infrastructure billing engines like HostBill and WHMCS.",
+          "icon": "Plug"
+        },
+        {
+          "title": "Real-Time Data Ledger Sync",
+          "description": "True bi-directional, real-time data sync that ensures the core billing system and the invoicing layer are perfectly aligned, eliminating ledger drift.",
+          "icon": "RefreshCw"
+        },
+        {
+          "title": "End-to-End Transaction Traceability",
+          "description": "Implements full audit logs and immutable transaction tracing, ensuring every invoice line item can be instantly mapped back to its source event.",
+          "icon": "Search"
+        },
+        {
+          "title": "Regulatory & Tax Compliance Engine",
+          "description": "Localized tax compliance automation featuring native handling of complex tax structures, regional frameworks, and Tax Deducted at Source (TDS).",
+          "icon": "ShieldCheck"
+        },
+        {
+          "title": "E-Invoicing & Accounting Readiness",
+          "description": "Advanced capabilities to push clean billing data directly to government e-invoicing portals and downstream corporate accounting systems.",
+          "icon": "Send"
+        },
+        {
+          "title": "Operations Command Center",
+          "description": "A single-pane-of-glass Operations Dashboard giving accounting teams instant visibility into invoice health, revenue leaks, and processing exceptions.",
+          "icon": "Monitor"
+        }
+      ]
+    }
+  ]
+}
