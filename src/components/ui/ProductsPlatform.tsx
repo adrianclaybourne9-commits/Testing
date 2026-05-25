@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import {
   Target,
   Crosshair,
@@ -222,10 +223,10 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
                 </div>
 
                 <div className="mt-8 flex items-center gap-3">
-                  <button className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-200 transition-colors shadow-xl">
+                  <Link href="/ContactUs" className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-200 transition-colors shadow-xl">
                     Request Demo
                     <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </button>
+                  </Link>
                 </div>
               </div>
 

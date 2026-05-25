@@ -103,41 +103,23 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
               {current.bullets.map((bullet, idx) => (
                 <div key={idx} className="flex items-start space-x-3">
                   <CheckCircle2 className="w-5 h-5 text-[#8FA8D9] flex-shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-gray-200">{bullet}</span>
+                  <span className="text-sm md:text-base font-bold text-gray-200">{bullet}</span>
                 </div>
               ))}
             </div>
 
-            <button className="group flex items-center space-x-4 text-white hover:text-[#73B8BF] transition-colors w-fit">
+            {/* <button className="group flex items-center space-x-4 text-white hover:text-[#73B8BF] transition-colors w-fit">
               <span className="text-lg font-bold">Explore Solutions</span>
               <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover:border-[#73B8BF] transition-colors">
                 <ChevronRight className="w-5 h-5" />
               </div>
-            </button>
+            </button> */}
           </div>
         </div>
 
       </div>
 
-      <div className="absolute bottom-8 left-6 md:left-12 flex items-center space-x-6 z-20">
-        <div className="flex space-x-6 text-sm font-bold tracking-widest text-white/50">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => changeSlide(index)}
-              className={`transition-colors duration-300 hover:text-white ${index === currentSlide ? 'text-white' : ''}`}
-            >
-              0{index + 1}
-            </button>
-          ))}
-        </div>
-        <div className="relative w-32 md:w-48 h-[2px] bg-white/20">
-          <div
-            className="absolute top-0 left-0 h-full bg-white transition-all duration-500 ease-out"
-            style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-          />
-        </div>
-      </div>
+
 
     </div>
   );

@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import {
   Mail,
   Phone,
@@ -100,7 +101,7 @@ export default function Footer({ data }: { data: FooterData }) {
           ref={ctaRef}
           className="relative rounded-3xl overflow-hidden border border-white/10"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#73B8BF]/20 via-indigo-600/15 to-purple-600/20 blur-2xl" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#73B8BF]/20 via-indigo-600/15 to-purple-600/20 blur-2xl pointer-events-none" />
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-8 px-10 py-14 md:px-16 md:py-16 bg-white/[0.02] backdrop-blur-md">
             <div className="max-w-xl">
               <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
@@ -114,19 +115,13 @@ export default function Footer({ data }: { data: FooterData }) {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <a
-                href="#"
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold text-base hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl"
+              <Link
+                href="/ContactUs"
+                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold text-base hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl relative z-20"
               >
-                Get Started
+                Contact Us
                 <ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </a>
-              <a
-                href="#"
-                className="inline-flex items-center gap-3 px-8 py-4 rounded-full border border-white/20 text-white font-bold text-base hover:bg-white/5 transition-all"
-              >
-                Schedule a Call
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -135,7 +130,7 @@ export default function Footer({ data }: { data: FooterData }) {
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
 
-          <div className="footer-col lg:col-span-5 lg:pr-16">
+          <div className="footer-col lg:col-span-6 lg:pr-16">
             <img
               src={data.brand.logo}
               alt={data.brand.name}
@@ -152,17 +147,17 @@ export default function Footer({ data }: { data: FooterData }) {
                 </div>
                 <span className="text-sm">{data.contact.email}</span>
               </a>
-              <div className="flex items-center gap-3 text-gray-400">
-                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center">
+              <div className="flex items-start gap-3 text-gray-400">
+                <div className="w-9 h-9 shrink-0 rounded-lg bg-white/5 flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span className="text-sm">{data.contact.address}</span>
+                <span className="text-sm pt-1.5">{data.contact.address}</span>
               </div>
             </div>
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className="footer-col lg:col-span-2">
+            <div key={idx} className="footer-col lg:col-span-3">
               <h4 className="text-sm font-bold text-white uppercase tracking-[0.15em] mb-6">
                 {col.title}
               </h4>
@@ -182,27 +177,7 @@ export default function Footer({ data }: { data: FooterData }) {
             </div>
           ))}
 
-          <div className="footer-col lg:col-span-3">
-            <h4 className="text-sm font-bold text-white uppercase tracking-[0.15em] mb-6">
-              Stay Updated
-            </h4>
-            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
-              Get the latest insights on enterprise tech and AI delivered to your inbox.
-            </p>
-            <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white text-sm placeholder:text-gray-500 focus:outline-none focus:border-[#73B8BF]/50 focus:ring-1 focus:ring-[#73B8BF]/20 transition-all"
-              />
-              <button
-                type="submit"
-                className="w-full px-4 py-3 rounded-xl bg-[#73B8BF] hover:bg-[#5da0a7] text-white text-sm font-bold transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
-          </div>
+
         </div>
       </div>
 
