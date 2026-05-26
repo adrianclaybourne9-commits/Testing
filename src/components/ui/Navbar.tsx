@@ -40,7 +40,7 @@ export default function Navbar({ data }: NavbarProps) {
 
                     <div className="flex-shrink-0">
                         <MagneticButton strength={0.4}>
-                            <Link href={data.ctaHref || '/ContactUs'} className="inline-block bg-[#73B8BF] hover:bg-[#5da0a7] text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-md relative z-20">
+                            <Link href={data.ctaHref || '/contact-us'} className="inline-block bg-[#73B8BF] hover:bg-[#5da0a7] text-white px-6 py-2 rounded-full text-sm font-bold transition-all shadow-md relative z-20">
                                 {ctaText}
                             </Link>
                         </MagneticButton>

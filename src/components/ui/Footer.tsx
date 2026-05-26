@@ -116,7 +116,7 @@ export default function Footer({ data }: { data: FooterData }) {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
               <Link
-                href="/ContactUs"
+                href="/contact-us"
                 className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold text-base hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl relative z-20"
               >
                 Contact Us
@@ -137,7 +137,7 @@ export default function Footer({ data }: { data: FooterData }) {
               className="h-8 w-auto mb-6"
             />
             <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
-              {data.brand.tagline}
+              {/* {data.brand.tagline} */}
             </p>
 
             <div className="space-y-4">

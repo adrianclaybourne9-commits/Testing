@@ -90,19 +90,9 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
-      const container = containerRef.current;
-      const left = leftPinnedRef.current;
       const right = rightScrollRef.current;
 
-      if (!container || !left || !right) return;
-
-      ScrollTrigger.create({
-        trigger: container,
-        start: "top 120px",
-        end: "bottom bottom",
-        pin: left,
-        pinSpacing: false,
-      });
+      if (!right) return;
 
       const cards = right.querySelectorAll('.feature-card');
       cards.forEach((card) => {
@@ -128,11 +118,11 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
 
   return (
     <section ref={containerRef} className={`relative pt-24 pb-32 bg-gradient-to-b ${colors.gradient} border-b border-white/5`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-12 lg:gap-20 relative items-start">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-12 lg:gap-20 relative items-stretch">
 
         <div className={`w-full lg:w-5/12 pt-8 ${isReversed ? 'lg:order-2' : ''}`}>
-          <div ref={leftPinnedRef} className="w-full">
-            <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full ${colors.bg} ${colors.border} text-xs font-bold tracking-[0.2em] ${colors.text} uppercase mb-4`}>
+          <div ref={leftPinnedRef} className="w-full flex flex-col lg:sticky lg:top-32">
+            <div className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full ${colors.bg} ${colors.border} text-xs font-bold tracking-[0.2em] ${colors.text} uppercase mb-4 self-start`}>
               <Settings className="w-4 h-4" /> {product.subtitle}
             </div>
 
@@ -144,7 +134,7 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
               {product.description}
             </p>
 
-            <div className="relative w-full h-[180px] lg:h-[200px] xl:h-[260px] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group">
+            <div className="relative w-full aspect-video md:aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group">
               <div className={`absolute inset-0 opacity-40 transition-colors duration-1000 blur-3xl ${colors.bg}`} />
               <Image
                 src={product.image}
@@ -156,9 +146,8 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
             </div>
           </div>
         </div>
-        <div ref={rightScrollRef} className={`w-full lg:w-7/12 flex flex-col gap-6 ${isReversed ? 'lg:order-1' : ''}`}>
-          <div className="lg:h-10"></div>
-
+        
+        <div ref={rightScrollRef} className={`w-full lg:w-7/12 flex flex-col gap-6 pt-8 ${isReversed ? 'lg:order-1' : ''}`}>
           {product.features.map((feature, idx) => {
             const IconComponent = iconMap[feature.icon] || CheckCircle2;
             return (
@@ -184,8 +173,6 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
               </div>
             );
           })}
-
-          <div className="lg:h-32"></div>
         </div>
       </div>
     </section>

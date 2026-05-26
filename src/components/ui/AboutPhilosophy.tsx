@@ -132,7 +132,7 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
                 </p>
 
                 <MagneticButton strength={0.2}>
-                  <a href="/PartnerPlatforms" className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-gray-900 bg-white rounded-full hover:bg-gray-200 transition-colors pointer-events-none">
+                  <a href="/partner-platforms" className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-gray-900 bg-white rounded-full hover:bg-gray-200 transition-colors pointer-events-none">
                     Explore Partner Platforms
                   </a>
                 </MagneticButton>

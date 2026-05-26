@@ -76,7 +76,7 @@ export default function NotFound() {
           </Link>
 
           <Link
-            href="/CustomAI&AdvancedDataServices"
+            href="/services"
             className="group flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-transparent border border-white/10 hover:bg-white/[0.02] hover:border-white/20 transition-all duration-300 w-full sm:w-auto text-gray-300 hover:text-white"
           >
             <Search className="w-5 h-5" />

@@ -2,24 +2,24 @@
   "navbar": {
     "links": [
       {
-        "title": "Custom AI & Advanced Data Services",
-        "href": "/CustomAI&AdvancedDataServices"
-      },
-      {
         "title": "Proprietary Products",
-        "href": "/ProprietaryProducts"
+        "href": "/proprietary-products"
       },
       {
         "title": "Partner Platforms",
-        "href": "/PartnerPlatforms"
+        "href": "/partner-platforms"
+      },
+      {
+        "title": "Services",
+        "href": "/service"
       },
       {
         "title": "About Us",
-        "href": "/AboutUs"
+        "href": "/about-us"
       }
     ],
     "cta": "Contact Us",
-    "ctaHref": "/ContactUs"
+    "ctaHref": "/contact-us"
   },
   "offerings": {
     "sectionBadge": "What We Deliver",
@@ -345,11 +345,11 @@
         "links": [
           {
             "label": "AI & Custom Agents",
-            "href": "/CustomAI&AdvancedDataServices"
+            "href": "/services"
           },
           {
             "label": "Partner Platforms",
-            "href": "/PartnerPlatforms"
+            "href": "/partner-platforms"
           },
           {
             "label": "Solutions Portfolio",

@@ -170,67 +170,65 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
           {data.sectionDescription}
         </p>
       </div>
-
       <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 flex flex-col space-y-32 md:space-y-40">
         {data.products.map((product, idx) => {
           const colorTheme = colorMap[product.color] || colorMap.cyan;
           const isReversed = idx % 2 !== 0;
 
           return (
-            <div id={product.id} key={product.id} className="relative flex flex-col lg:flex-row gap-12 xl:gap-20 items-center scroll-mt-24">
+            <div id={product.id} key={product.id} className="relative flex flex-col lg:flex-row gap-12 xl:gap-20 items-stretch scroll-mt-24">
 
-              <div className={`w-full lg:w-5/12 flex flex-col ${isReversed ? 'lg:order-2' : ''}`}>
+              <div className={`w-full lg:w-5/12 ${isReversed ? 'lg:order-2' : ''}`}>
+                <div className="flex flex-col lg:sticky lg:top-32">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
+                    <span className={`bg-gradient-to-r ${colorTheme.gradient} bg-clip-text text-transparent`}>
+                      {product.name.split('|')[0]}
+                    </span>
+                    <br />
+                    <span className="text-2xl md:text-3xl lg:text-4xl opacity-90">
+                      {product.name.split('|')[1]}
+                    </span>
+                  </h3>
+                  <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-8">
+                    {product.tagline}
+                  </p>
 
-                <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-                  <span className={`bg-gradient-to-r ${colorTheme.gradient} bg-clip-text text-transparent`}>
-                    {product.name.split('|')[0]}
-                  </span>
-                  <br />
-                  <span className="text-2xl md:text-3xl lg:text-4xl opacity-90">
-                    | {product.name.split('|')[1]}
-                  </span>
-                </h3>
-
-                <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-8">
-                  {product.tagline}
-                </p>
-
-                <div className="relative w-full aspect-video md:aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden bg-gray-900 border border-white/10 shadow-2xl group cursor-pointer">
-
-                  <div className="absolute inset-4 rounded-2xl border border-white/5 bg-gray-950 overflow-hidden flex flex-col p-6">
-                    <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
-                      <div className="flex gap-2">
-                        <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                        <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                        <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                  <div className="relative w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-gray-900 border border-white/10 shadow-2xl group cursor-pointer">
+                    <div className="absolute inset-4 rounded-2xl border border-white/5 bg-gray-950 overflow-hidden flex flex-col p-6">
+                      <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+                        <div className="flex gap-2">
+                          <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                          <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                          <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                        </div>
+                        <div className={`w-24 h-2 rounded-full ${colorTheme.bgGlow}`} />
                       </div>
-                      <div className={`w-24 h-2 rounded-full ${colorTheme.bgGlow}`} />
-                    </div>
 
-                    <div className="flex-1 flex items-end gap-2 px-2">
-                      {[40, 70, 45, 90, 65, 80, 55, 100, 75, 85].map((height, i) => (
-                        <div
-                          key={i}
-                          className={`w-full rounded-t-sm bg-gradient-to-t ${colorTheme.gradient} opacity-50 group-hover:opacity-80 transition-all duration-700`}
-                          style={{
-                            height: `${height}%`,
-                            transitionDelay: `${i * 50}ms`
-                          }}
-                        />
-                      ))}
+                      <div className="flex-1 flex items-end gap-2 px-2">
+                        {[40, 70, 45, 90, 65, 80, 55, 100, 75, 85].map((height, i) => (
+                          <div
+                            key={i}
+                            className={`w-full rounded-t-sm bg-gradient-to-t ${colorTheme.gradient} opacity-50 group-hover:opacity-80 transition-all duration-700`}
+                            style={{
+                              height: `${height}%`,
+                              transitionDelay: `${i * 50}ms`
+                            }}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="mt-8 flex items-center gap-3">
-                  <Link href="/ContactUs" className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-200 transition-colors shadow-xl">
-                    Request Demo
-                    <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                  <div className="mt-8 flex items-center gap-3">
+                    <Link href="/contact-us" className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-200 transition-colors shadow-xl">
+                      Request Demo
+                      <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
                 </div>
               </div>
 
-              <div className={`w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6 mt-12 lg:mt-0 ${isReversed ? 'lg:order-1' : ''}`}>
+              <div className={`w-full lg:w-7/12 grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 lg:mt-0 ${isReversed ? 'lg:order-1' : ''} content-start md:content-center`}>
                 {product.features.map((feature, fIdx) => (
                   <FeatureCard
                     key={fIdx}

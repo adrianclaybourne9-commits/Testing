@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef, useLayoutEffect } from 'react';
+import Link from 'next/link';
 import {
   CreditCard,
   Landmark,
@@ -64,6 +65,7 @@ export type SolutionItem = {
   description: string;
   icon: string;
   color: string;
+  href?: string;
 };
 
 export type SolutionsData = {
@@ -146,8 +148,9 @@ export default function SolutionsPortfolio({ data }: { data: SolutionsData }) {
             const iconClass = iconColorMap[item.color] || iconColorMap.blue;
 
             return (
-              <div
+              <Link
                 key={idx}
+                href={item.href || '/proprietary-products'}
                 className={`group relative flex flex-col justify-between w-[320px] md:w-[380px] h-[360px] p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-md transition-all duration-500 cursor-pointer hover:-translate-y-2 shrink-0 ${hoverClass}`}
               >
                 <div>
@@ -176,7 +179,7 @@ export default function SolutionsPortfolio({ data }: { data: SolutionsData }) {
                 <div className="absolute bottom-6 right-6 text-6xl font-black text-white/[0.03] group-hover:text-white/[0.05] transition-colors pointer-events-none select-none">
                   {(idx + 1).toString().padStart(2, '0')}
                 </div>
-              </div>
+              </Link>
             );
           })}
           <div className="w-[10vw] md:w-[20vw] shrink-0" />
