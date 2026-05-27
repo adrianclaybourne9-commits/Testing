@@ -1,3 +1,14 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Proprietary Products',
+  description: 'Enterprise Grade Scale Products including AI integrations, FinTech solutions, and ERP.',
+  openGraph: {
+    title: 'Proprietary Products | Neudhi23',
+    description: 'Enterprise Grade Scale Products including AI integrations, FinTech solutions, and ERP.',
+  }
+};
+
 import React from 'react';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';

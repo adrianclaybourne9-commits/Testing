@@ -1,3 +1,14 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: 'Reach out to discuss how we can engineer your digital transformation.',
+  openGraph: {
+    title: 'Contact Us | Neudhi23',
+    description: 'Reach out to discuss how we can engineer your digital transformation.',
+  }
+};
+
 import React from 'react';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';

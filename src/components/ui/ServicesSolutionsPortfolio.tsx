@@ -57,6 +57,7 @@ type ServicesSolutionsPortfolioProps = {
       description: string;
       icon: string;
       color: string;
+      image?: string;
       features: string[];
     }>;
   };
@@ -94,7 +95,7 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
   const activeColors = colorMap[activeItem.color] || colorMap.blue;
 
   return (
-    <section className="pt-24 pb-12 relative bg-gray-950">
+    <section className="pt-24 pb-12 relative ">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight text-white">{data.title}</h2>
@@ -104,18 +105,28 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 relative">
 
           <div className="lg:w-2/5 hidden lg:block">
-            <div className="sticky top-32 h-[500px] w-full rounded-[2rem] overflow-hidden flex items-center justify-center transition-all duration-700 ease-in-out border border-white/10 shadow-2xl" style={{ backgroundColor: '#111' }}>
+            <div className="sticky top-32 h-[500px] w-full rounded-[2rem] overflow-hidden flex items-center justify-center transition-all duration-700 ease-in-out border border-white/10 shadow-2xl bg-gray-950 group">
+              
+              {activeItem.image && (
+                <img 
+                  key={activeItem.image}
+                  src={activeItem.image} 
+                  alt={activeItem.domain}
+                  className="absolute inset-0 w-full h-full object-cover opacity-70 transition-transform duration-[1.5s] scale-100 group-hover:scale-110"
+                />
+              )}
+
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent z-10" />
+              
               <div
-                className={`absolute inset-0 opacity-40 transition-colors duration-1000 blur-3xl ${activeColors.bg.replace('/20', '/40')}`}
+                className={`absolute inset-0 opacity-40 transition-colors duration-1000 blur-[60px] z-10 ${activeColors.bg.replace('/20', '/40')}`}
               />
 
-              <div className="relative z-10 flex flex-col items-center justify-center p-8 text-center transition-all duration-500 scale-100 hover:scale-105">
-                <div className={`w-32 h-32 rounded-3xl flex items-center justify-center mb-8 backdrop-blur-md shadow-2xl transition-colors duration-700 ${activeColors.bg} border border-white/10`}>
-                  <Icon name={activeItem.icon} className={`w-16 h-16 transition-colors duration-700 ${activeColors.text}`} />
-                </div>
-                <h3 className={`text-xl font-bold uppercase tracking-[0.2em] transition-colors duration-700 ${activeColors.text}`}>
+              <div className="relative z-20 flex flex-col items-center justify-end h-full p-10 text-center pb-12 w-full">
+                <h3 className={`text-2xl font-black uppercase tracking-[0.2em] transition-colors duration-700 text-white drop-shadow-2xl`}>
                   {activeItem.domain}
                 </h3>
+                <div className={`w-16 h-1.5 mt-6 rounded-full transition-colors duration-700 shadow-[0_0_15px_rgba(255,255,255,0.5)] ${activeColors.dot}`} />
               </div>
             </div>
           </div>

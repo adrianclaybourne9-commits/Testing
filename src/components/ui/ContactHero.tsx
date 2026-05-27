@@ -1,18 +1,48 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { Mail } from 'lucide-react';
+import { Mail, ArrowRight, Sparkles } from 'lucide-react';
+import MagneticButton from './MagneticButton';
 
 export default function ContactHero() {
-  const heroRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const pillRef = useRef<HTMLAnchorElement>(null);
+  const textRef = useRef<HTMLParagraphElement>(null);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({
+        x: (e.clientX / window.innerWidth - 0.5) * 30,
+        y: (e.clientY / window.innerHeight - 0.5) * 30,
+      });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        heroRef.current,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
+
+      tl.fromTo(
+        pillRef.current,
+        { opacity: 0, y: -20, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 1.2 }
+      )
+      .fromTo(
+        titleRef.current,
+        { opacity: 0, y: 40, rotateX: 10 },
+        { opacity: 1, y: 0, rotateX: 0, duration: 1.2 },
+        '-=0.8'
+      )
+      .fromTo(
+        textRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1 },
+        '-=0.9'
       );
     });
 
@@ -20,25 +50,73 @@ export default function ContactHero() {
   }, []);
 
   return (
-    <section className="relative pt-40 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-gray-950">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+    <section 
+      ref={containerRef}
+      className="relative pt-40 pb-20 md:pt-48 md:pb-32 min-h-[70vh] flex items-center justify-center overflow-hidden"
+    >
+      {/* Dynamic Animated Background */}
+      <div className="absolute inset-0 z-0 bg-[#050505]">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        
+        {/* Parallaxing glow orbs */}
+        <div 
+          className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none transition-transform duration-1000 ease-out"
+          style={{ transform: `translate(${mousePos.x}px, ${mousePos.y}px)` }}
+        />
+        <div 
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none transition-transform duration-1000 ease-out"
+          style={{ transform: `translate(${-mousePos.x}px, ${-mousePos.y}px)` }}
+        />
+        
+        {/* Dark gradient overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
       </div>
 
-      <div ref={heroRef} className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center opacity-0 mt-8 flex flex-col items-center">
-        
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-widest text-gray-300 uppercase mb-10 backdrop-blur-md">
-          <Mail className="w-4 h-4 text-cyan-400" /> Get In Touch
-        </div>
-        
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-10 tracking-tighter drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
-          Contact Us
-        </h1>
-        
-        <p className="text-2xl md:text-3xl font-medium text-gray-200 tracking-tight leading-snug max-w-3xl mx-auto">
-          We'd love to hear from you. Reach out to discuss how we can engineer your digital transformation.
-        </p>
+      <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
 
+        {/* Email Pill */}
+        <div className="mb-10">
+          <MagneticButton strength={0.3}>
+            <a 
+              ref={pillRef}
+              href="mailto:reachus@neudhi23.com"
+              className="group relative inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all duration-500 backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
+                <Mail className="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors" />
+              </span>
+              <span className="relative text-sm md:text-base font-semibold tracking-wide text-gray-300 group-hover:text-white transition-colors duration-300">
+                reachus@neudhi23.com
+              </span>
+              <ArrowRight className="relative w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-all duration-300 -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
+            </a>
+          </MagneticButton>
+        </div>
+
+        {/* Hero Title */}
+        <h1 
+          ref={titleRef}
+          className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black mb-8 tracking-tighter leading-none whitespace-nowrap"
+        >
+          <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-600 drop-shadow-2xl">
+            Contact
+          </span>
+          <span className="inline-block relative ml-3 md:ml-6">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500">
+              Us
+            </span>
+          </span>
+        </h1>
+
+        {/* Hero Description */}
+        <p 
+          ref={textRef}
+          className="text-lg md:text-2xl font-light text-gray-400 tracking-wide leading-relaxed max-w-2xl mx-auto"
+        >
+          We'd love to hear from you. Reach out to discuss how we can engineer your <span className="text-gray-200 font-medium border-b border-cyan-500/30 pb-0.5">digital transformation</span>.
+        </p>
       </div>
     </section>
   );

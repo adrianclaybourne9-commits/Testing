@@ -1,5 +1,4 @@
-'use client';
-
+import { Metadata } from 'next';
 import Navbar from "@/components/ui/Navbar";
 import HeroCarousel from "@/components/ui/HeroCarousel";
 import Offerings from "@/components/ui/Offerings";
@@ -7,6 +6,15 @@ import ProductsPlatform from "@/components/ui/ProductsPlatform";
 import SolutionsPortfolio from "@/components/ui/SolutionsPortfolio";
 import Footer from "@/components/ui/Footer";
 import siteData from "@/data/content.json";
+
+export const metadata: Metadata = {
+  title: 'Enterprise Solutions & Digital Ecosystems',
+  description: 'Neudhi23 delivers end-to-end digital transformation, unified eCommerce, intelligent ERP, and robust FinTech solutions for global enterprises.',
+  openGraph: {
+    title: 'Enterprise Solutions & Digital Ecosystems | Neudhi23',
+    description: 'Neudhi23 delivers end-to-end digital transformation, unified eCommerce, intelligent ERP, and robust FinTech solutions for global enterprises.',
+  }
+};
 
 export default function Home() {
   return (
@@ -23,4 +31,3 @@ export default function Home() {
     </main>
   );
 }
-

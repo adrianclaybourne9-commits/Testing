@@ -51,7 +51,8 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
           }
         }
       );
-
+      // Uncomment the following block to re-enable partner-callout animation in the future:
+      /*
       gsap.fromTo(
         '.partner-callout',
         { opacity: 0, scale: 0.95 },
@@ -67,6 +68,8 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
           }
         }
       );
+      */
+
     });
 
     return () => ctx.revert();
@@ -75,6 +78,41 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
   return (
     <section ref={sectionRef} className="py-24 relative bg-[#0a0a0a] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
+        <div className="max-w-5xl mx-auto flex flex-col items-center">
+          
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight">
+              {data.title}
+            </h2>
+            <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
+              {data.subtitle}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 w-full">
+            {data.items.map((item, idx) => {
+              const IconComponent = iconMap[item.icon] || TrendingUp;
+              return (
+                <div key={idx} className="philosophy-item flex flex-col lg:flex-row gap-6 items-start">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
+                      <IconComponent className="w-6 h-6" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
+                    <p className="text-gray-400 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+        </div>
+
+        {/* --- FUTURE LAYOUT PRESERVATION ---
+            Uncomment the block below and replace the 'max-w-5xl' div above 
+            to restore the right-side 'Authorized Zoho Partner' card.
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           
           <div className="lg:w-1/2">
@@ -141,6 +179,7 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
           </div>
 
         </div>
+        */}
       </div>
     </section>
   );

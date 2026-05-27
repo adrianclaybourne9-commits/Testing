@@ -61,6 +61,7 @@ export type Product = {
   name: string;
   tagline: string;
   color: string;
+  image?: string;
   features: ProductFeature[];
 };
 
@@ -156,15 +157,12 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
       </div>
 
       <div ref={headerRef} className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 mb-20 md:mb-28 text-center">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-xs font-bold tracking-[0.2em] text-cyan-400 uppercase mb-6">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[15px] font-bold tracking-[0.2em] text-cyan-400 uppercase mb-6">
           <Box className="w-3.5 h-3.5" />
           {data.sectionBadge}
         </span>
         <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
-          {data.sectionTitle.split('-')[0]} - <br className="hidden md:block" />
-          <span className="bg-gradient-to-r from-cyan-400 to-indigo-500 bg-clip-text text-transparent">
-            {data.sectionTitle.split('-')[1]}
-          </span>
+          {data.sectionTitle}
         </h2>
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
           {data.sectionDescription}
@@ -194,35 +192,49 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
                   </p>
 
                   <div className="relative w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-gray-900 border border-white/10 shadow-2xl group cursor-pointer">
-                    <div className="absolute inset-4 rounded-2xl border border-white/5 bg-gray-950 overflow-hidden flex flex-col p-6">
-                      <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
-                        <div className="flex gap-2">
-                          <div className="w-3 h-3 rounded-full bg-red-500/50" />
-                          <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
-                          <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                    {product.image ? (
+                      <img 
+                        src={product.image} 
+                        alt={product.name.split('|')[0]}
+                        className="w-full h-full object-cover transition-transform duration-[1.5s] scale-100 group-hover:scale-105"
+                      />
+                    ) : (
+                      <div className="absolute inset-4 rounded-2xl border border-white/5 bg-gray-950 overflow-hidden flex flex-col p-6">
+                        <div className="flex justify-between items-center mb-8 border-b border-white/10 pb-4">
+                          <div className="flex gap-2">
+                            <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                            <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                            <div className="w-3 h-3 rounded-full bg-green-500/50" />
+                          </div>
+                          <div className={`w-24 h-2 rounded-full ${colorTheme.bgGlow}`} />
                         </div>
-                        <div className={`w-24 h-2 rounded-full ${colorTheme.bgGlow}`} />
+                        <div className="flex-1 flex items-end gap-2 px-2">
+                          {[40, 70, 45, 90, 65, 80, 55, 100, 75, 85].map((height, i) => (
+                            <div
+                              key={i}
+                              className={`w-full rounded-t-sm bg-gradient-to-t ${colorTheme.gradient} opacity-50 group-hover:opacity-80 transition-all duration-700`}
+                              style={{
+                                height: `${height}%`,
+                                transitionDelay: `${i * 50}ms`
+                              }}
+                            />
+                          ))}
+                        </div>
                       </div>
-
-                      <div className="flex-1 flex items-end gap-2 px-2">
-                        {[40, 70, 45, 90, 65, 80, 55, 100, 75, 85].map((height, i) => (
-                          <div
-                            key={i}
-                            className={`w-full rounded-t-sm bg-gradient-to-t ${colorTheme.gradient} opacity-50 group-hover:opacity-80 transition-all duration-700`}
-                            style={{
-                              height: `${height}%`,
-                              transitionDelay: `${i * 50}ms`
-                            }}
-                          />
-                        ))}
-                      </div>
-                    </div>
+                    )}
                   </div>
 
                   <div className="mt-8 flex items-center gap-3">
-                    <Link href="/contact-us" className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-200 transition-colors shadow-xl">
-                      Request Demo
-                      <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                    <Link href="/contact-us" className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                      <span className="relative block overflow-hidden">
+                        <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[120%]">
+                          Request Demo
+                        </span>
+                        <span className="absolute inset-0 block translate-y-[120%] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 text-gray-950">
+                          Request Demo
+                        </span>
+                      </span>
+                      <ChevronRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" />
                     </Link>
                   </div>
                 </div>

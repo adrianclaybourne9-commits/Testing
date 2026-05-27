@@ -150,6 +150,7 @@ export default function SolutionsPortfolio({ data }: { data: SolutionsData }) {
             return (
               <Link
                 key={idx}
+                id={item.solution.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
                 href={item.href || '/proprietary-products'}
                 className={`group relative flex flex-col justify-between w-[320px] md:w-[380px] h-[360px] p-8 rounded-3xl bg-white/[0.03] border border-white/10 backdrop-blur-md transition-all duration-500 cursor-pointer hover:-translate-y-2 shrink-0 ${hoverClass}`}
               >

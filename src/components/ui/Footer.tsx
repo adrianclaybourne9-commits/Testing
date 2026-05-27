@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import MagneticButton from './MagneticButton';
 import {
   Mail,
   Phone,
@@ -115,22 +116,27 @@ export default function Footer({ data }: { data: FooterData }) {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-              <Link
-                href="/contact-us"
-                className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold text-base hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl relative z-20"
-              >
-                Contact Us
-                <ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-              </Link>
+              <MagneticButton strength={0.4}>
+                <Link
+                  href="/contact-us"
+                  className="group relative overflow-hidden inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-gray-950 font-bold text-base transition-all shadow-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] z-20"
+                >
+                  <span className="absolute inset-0 bg-gray-200 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-full" />
+                  <span className="relative z-10 flex items-center gap-3 transition-colors duration-300">
+                    Contact Us
+                    <ArrowUpRight className="w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1 duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                  </span>
+                </Link>
+              </MagneticButton>
             </div>
           </div>
         </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-6">
 
-          <div className="footer-col lg:col-span-6 lg:pr-16">
+          <div className="footer-col lg:col-span-3 lg:pr-8">
             <img
               src={data.brand.logo}
               alt={data.brand.name}
@@ -142,34 +148,34 @@ export default function Footer({ data }: { data: FooterData }) {
 
             <div className="space-y-4">
               <a href={`mailto:${data.contact.email}`} className="flex items-center gap-3 text-gray-400 hover:text-[#73B8BF] transition-colors group">
-                <div className="w-9 h-9 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-[#73B8BF]/10 transition-colors">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-[#73B8BF]/10 transition-colors shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-sm">{data.contact.email}</span>
+                <span className="text-[18px]">{data.contact.email}</span>
               </a>
               <div className="flex items-start gap-3 text-gray-400">
-                <div className="w-9 h-9 shrink-0 rounded-lg bg-white/5 flex items-center justify-center">
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-white/5 flex items-center justify-center mt-0.5">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span className="text-sm pt-1.5">{data.contact.address}</span>
+                <span className="text-[18px] leading-relaxed">{data.contact.address}</span>
               </div>
             </div>
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className="footer-col lg:col-span-3">
-              <h4 className="text-sm font-bold text-white uppercase tracking-[0.15em] mb-6">
+            <div key={idx} className={`footer-col ${idx === data.columns.length - 1 ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
+              <h4 className="text-[15px] font-bold text-white uppercase tracking-[0.15em] mb-7">
                 {col.title}
               </h4>
-              <ul className="space-y-4">
+              <ul className="space-y-1">
                 {col.links.map((link, lIdx) => (
                   <li key={lIdx}>
                     <a
                       href={link.href}
-                      className="text-sm text-gray-400 hover:text-white transition-colors duration-300 relative group inline-flex items-center gap-1"
+                      className="text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group inline-flex items-center lg:whitespace-nowrap xl:whitespace-normal"
                     >
                       {link.label}
-                      <ArrowUpRight className="w-3 h-3 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
+                      <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />
                     </a>
                   </li>
                 ))}

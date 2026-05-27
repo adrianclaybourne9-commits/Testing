@@ -80,9 +80,24 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         </div>
       ))}
 
+      {/* Right Edge Vertical Indicators */}
+      <div className="hidden md:flex absolute right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 -mt-16 z-30 flex-col items-center space-y-4">
+        {slides.map((_, idx) => (
+          <button
+            key={idx}
+            onClick={() => {
+              if (!isAnimating && idx !== currentSlide) changeSlide(idx);
+            }}
+            className={`h-[3px] rounded-full transition-all duration-300 ${idx === currentSlide ? 'w-10 bg-white' : 'w-5 bg-white/30 hover:bg-white/50'
+              }`}
+            aria-label={`Go to slide ${idx + 1}`}
+          />
+        ))}
+      </div>
+
       <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 md:px-12 pt-32 pb-24 flex flex-col justify-center">
 
-        <div ref={contentRef} className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center gap-12">
+        <div ref={contentRef} className="w-full flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 pr-12 md:pr-0">
 
           <div className="max-w-2xl">
             <h3 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] mb-4 uppercase">
@@ -98,7 +113,8 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
             </p>
           </div>
 
-          <div className="w-full lg:w-auto max-w-md flex flex-col space-y-8 pb-1">
+          <div className="w-full lg:w-auto max-w-md flex flex-col space-y-6 pb-1">
+
             <div className="flex flex-col space-y-4">
               {current.bullets.map((bullet, idx) => (
                 <div key={idx} className="flex items-start space-x-3">
@@ -107,20 +123,26 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
                 </div>
               ))}
             </div>
-
-            {/* <button className="group flex items-center space-x-4 text-white hover:text-[#73B8BF] transition-colors w-fit">
-              <span className="text-lg font-bold">Explore Solutions</span>
-              <div className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center group-hover:border-[#73B8BF] transition-colors">
-                <ChevronRight className="w-5 h-5" />
-              </div>
-            </button> */}
           </div>
         </div>
 
       </div>
 
-
-
+      {/* Scroll Down Indicator */}
+      <button 
+        onClick={() => {
+          window.scrollTo({
+            top: window.innerHeight,
+            behavior: 'smooth'
+          });
+        }}
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center opacity-60 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
+      >
+        <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center p-1 mb-2">
+          <div className="w-1 h-2 bg-white rounded-full animate-bounce" />
+        </div>
+        <span className="text-[10px] text-white/90 uppercase tracking-[0.3em] font-bold">Scroll</span>
+      </button>
     </div>
   );
 }

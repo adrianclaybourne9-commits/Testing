@@ -46,13 +46,14 @@ export default function PartnerPlatformsHero({ data }: PartnerPlatformsHeroProps
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 tracking-tight drop-shadow-2xl text-white">
-          Partner <span className="font-light italic text-gray-400">&</span> Platforms
+          Partner Platforms
+          {/* Partner <span className="font-light italic text-gray-400">&</span> Platforms */}
         </h1>
 
         <div className="inline-block mb-8">
-          <span className="text-xl md:text-3xl font-bold tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-yellow-400 drop-shadow-lg">
+          {/* <span className="text-xl md:text-3xl font-bold tracking-widest uppercase text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-green-400 to-yellow-400 drop-shadow-lg">
             Powered by Zoho
-          </span>
+          </span> */}
         </div>
 
         <p className="text-gray-300 text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed font-light drop-shadow-md">

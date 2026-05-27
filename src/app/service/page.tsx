@@ -1,3 +1,14 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Services',
+  description: 'Explore our technology, engineering, and consulting services for global enterprises.',
+  openGraph: {
+    title: 'Services | Neudhi23',
+    description: 'Explore our technology, engineering, and consulting services for global enterprises.',
+  }
+};
+
 import React from 'react';
 import Navbar from "@/components/ui/Navbar";
 import Footer from "@/components/ui/Footer";

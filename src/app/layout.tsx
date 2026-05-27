@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Darker_Grotesque } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 import CustomCursor from "@/components/ui/CustomCursor";
@@ -14,11 +14,47 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const darkerGrotesque = Darker_Grotesque({
+  variable: "--font-darker-grotesque",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
-  title: "Neudhi23 Official",
-  description: "Next-generation interactive scenario modeling, dynamic financial data visualizations, and high-fidelity BI states.",
+  metadataBase: new URL('https://neudhi23.com'),
+  title: {
+    default: "Neudhi23 | Business Solutions Provider",
+    template: "%s | Neudhi23"
+  },
+  description: "As a Business Solutions Provider, Neudhi23 leverages a Partner eco-system to orchestrate proprietary assets, partner platforms, and custom software engineering.",
+  keywords: ["Neudhi23", "Business Solutions", "Digital Transformation", "Custom Software", "ERP", "CRM", "Wealth Management", "Tech Consulting"],
+  authors: [{ name: "Neudhi23" }],
+  creator: "Neudhi23",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://neudhi23.com",
+    title: "Neudhi23 | Business Solutions Provider",
+    description: "Architecting Next-Generation Digital Ecosystems and Enterprise Solutions.",
+    siteName: "Neudhi23",
+    images: [
+      {
+        url: "/images/hero/logo_light.webp",
+        width: 1200,
+        height: 630,
+        alt: "Neudhi23 Official Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Neudhi23 | Business Solutions Provider",
+    description: "Architecting Next-Generation Digital Ecosystems and Enterprise Solutions.",
+    images: ["/images/hero/logo_light.webp"],
+  },
   icons: {
     icon: "/images/hero/logo_light.webp",
+    apple: "/images/hero/logo_light.webp",
   },
 };
 
@@ -30,7 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} dark`}
+      className={`${geistSans.variable} ${geistMono.variable} ${darkerGrotesque.variable} dark`}
     >
       <body className="bg-background text-foreground min-h-screen md:cursor-none">
         <CustomCursor />

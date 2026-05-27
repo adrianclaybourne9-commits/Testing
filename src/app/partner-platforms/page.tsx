@@ -1,3 +1,14 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Partner Platforms',
+  description: 'Strategic Partnership platforms powered by leading enterprise ecosystems.',
+  openGraph: {
+    title: 'Partner Platforms | Neudhi23',
+    description: 'Strategic Partnership platforms powered by leading enterprise ecosystems.',
+  }
+};
+
 import React from 'react';
 import Navbar from '@/components/ui/Navbar';
 import Footer from '@/components/ui/Footer';

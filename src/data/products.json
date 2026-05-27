@@ -14,12 +14,12 @@
       "features": [
         {
           "title": "Target Segment Optimization",
-          "description": "Strategically architected for the Mass Affluent market segment (clients with investible assets up to USD $5 Million).",
+          "description": "Strategically architected for the Mass Affluent market segment",
           "icon": "Target"
         },
         {
           "title": "Comprehensive Client Profiling Engine",
-          "description": "Personal Profiling (family structures, dependencies), Financial Profiling (real-time balance sheet mapping across Assets/Liabilities), and Risk Profiling (algorithmic scoring).",
+          "description": "Personal Profiling (family structures, dependencies), Financial Profiling (real-time balance sheet mapping across Assets/Liabilities) to (Assets/Liabilities/Income/Expense), and Risk Profiling (algorithmic scoring).",
           "icon": "Users"
         },
         {

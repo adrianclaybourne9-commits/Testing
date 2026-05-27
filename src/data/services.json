@@ -94,8 +94,8 @@
     ]
   },
   "partnerPlatforms": {
-    "title": "Partner Products & Platforms: Powered by Zoho",
-    "description": "As an Authorized Zoho Partner, Neudhi23 leverages Zoho’s comprehensive, cloud-based business management platform to break down organizational silos and drive operational efficiency. By combining Zoho’s rapid low-code development framework with our deep engineering expertise, we deliver agile, custom web and mobile applications that manage core enterprise pillars seamlessly:",
+    "title": "Partner Products & Platforms",
+    "description": "As a Business Solutions Provider, Neudhi23 leverages Partner eco-system by orchestrating the perfect mix of our own proprietary assets, established partner platforms, and targeted custom software engineering.\n\nAs an Authorized Zoho Partner, Neudhi23 leverages Zoho’s comprehensive, cloud-based business management platform to break down organizational silos and drive operational efficiency. By combining Zoho’s rapid low-code development framework with our deep engineering expertise, we deliver agile, custom web and mobile applications that manage core enterprise pillars seamlessly:",
     "pillars": [
       {
         "title": "Human Capital",
@@ -124,19 +124,36 @@
       "categories": [
         {
           "title": "Enterprise Suites",
-          "items": ["Zoho One (The Operating System for Business)", "CRM Plus", "People Plus"]
+          "items": [
+            "Zoho One (The Operating System for Business)",
+            "CRM Plus",
+            "People Plus"
+          ]
         },
         {
           "title": "Finance & Operations",
-          "items": ["Zoho Books", "Zoho Payments", "Zoho PoS", "Zoho Contracts"]
+          "items": [
+            "Zoho Books",
+            "Zoho Payments",
+            "Zoho PoS",
+            "Zoho Contracts"
+          ]
         },
         {
           "title": "Commerce & Digital",
-          "items": ["Zoho Commerce", "Zoho Sites", "Zoho Forms"]
+          "items": [
+            "Zoho Commerce",
+            "Zoho Sites",
+            "Zoho Forms"
+          ]
         },
         {
           "title": "Analytics & Collaboration",
-          "items": ["Zoho Analytics", "Zoho Projects", "Zoho Workplace & ZeptoMail"]
+          "items": [
+            "Zoho Analytics",
+            "Zoho Projects",
+            "Zoho Workplace & ZeptoMail"
+          ]
         }
       ]
     },
@@ -186,46 +203,8 @@
           "Omnichannel Checkout: Supports UPI, Net Banking, and global Credit/Debit Cards via embedded checkouts, static/dynamic payment links, or direct APIs.",
           "Cost Optimization: Enterprise-grade pricing featuring UPI processing at just 0.5%*.",
           "Financial Intelligence: Native dashboards track real-time transaction health, success/failure metrics, payouts, and settlement balances."
-        ]
-      },
-      {
-        "domain": "Niche ERP",
-        "solution": "Non-Profit, NGO, & Temple Operations",
-        "description": "A comprehensive operational ERP designed to meet the strict transparency, accounting, and compliance demands of Section 8 companies, foundations, and religious institutions.",
-        "icon": "Landmark",
-        "color": "indigo",
-        "features": [
-          "Donation Management: Digital tracking of multi-currency financial donations, physical valuables, and in-kind contributions.",
-          "Smart Inventory: Procurement workflows integrated with automated tracking for in-kind donation distributions.",
-          "Workforce & Payroll: Built-in attendance, leave tracking, and payroll processing for administrative and operational staff.",
-          "Temple-Specific Workflows: Seva/Puja Desk, Hospitality (Bhakt Niwas), and Hundi Audit."
-        ]
-      },
-      {
-        "domain": "Manufacturing",
-        "solution": "Intelligent Production Planning ERP",
-        "description": "An agile Material Requirements Planning (MRP) system engineered to optimize raw material usage and shop floor efficiency.",
-        "icon": "Factory",
-        "color": "amber",
-        "features": [
-          "Demand-Driven Assembly: Production cycles directly triggered by and linked to active Customer Sales Orders.",
-          "Advanced Inventory Match Engine: Supports over 15 industrial material types with Exact Match, Near Match, and Larger Match.",
-          "Automated Procurement: Instantly generates and routes Purchase Orders (POs) to approved vendors when the match engine flags a \"No Match\" inventory scenario."
-        ]
-      },
-      {
-        "domain": "Healthcare",
-        "solution": "Hospital Business Operations Management",
-        "description": "A scalable medical facility management platform bridging administrative excellence with institutional compliance.",
-        "icon": "HeartPulse",
-        "color": "rose",
-        "features": [
-          "Patient Lifecycle: Seamless digital registration, automated appointment scheduling, reminders, invoicing, and payments.",
-          "Compliant Institutional Payroll: Biometric attendance, shift scheduling, leave policies, and income-tax compliant payroll.",
-          "Contract Lifecycle Management: Segregated tracking for in-house doctors and consultant/visiting medical professionals.",
-          "Hospital Supply Chain: End-to-end procurement for fixed clinical assets and medical consumables.",
-          "Regulatory Readiness: Native support for Indian E-Invoicing mandates and automated GST compliance reporting."
-        ]
+        ],
+        "image": "/images/portfolio/portfolio_payment_gateway_1779878977584.png"
       },
       {
         "domain": "Commerce",
@@ -240,45 +219,8 @@
           "Hyperlocal Optimization: Geo-location tracking, automated order routing, and regional language switching.",
           "Operational Backbone: Mass bulk order import/export, granular partial-fulfillment, and automated return/refund workflows.",
           "Enterprise Security: Multi-layered data encryption, secure server boundaries, and strict RBAC."
-        ]
-      },
-      {
-        "domain": "Wealth Management",
-        "solution": "Investment Product Master",
-        "description": "A secure data repository and portfolio mapping core designed for asset managers and financial advisory firms.",
-        "icon": "TrendingUp",
-        "color": "emerald",
-        "features": [
-          "Multi-Asset Tracking: Centralized structure for managing Equities, Mutual Funds, Fixed Income, Insurance, AIFs, and PMS.",
-          "Regulatory Alignment: Structured architecture designed to remain strictly compliant with AMFI regulations and regional data disclosure norms.",
-          "Frictionless Ingestion: Supports automated file uploads for bulk institutional data and intuitive manual web input forms."
-        ]
-      },
-      {
-        "domain": "Communications",
-        "solution": "CRM & Unified Telephony Integration",
-        "description": "A cloud-telephony connector that transforms your CRM environment into an active omni-channel customer communication center.",
-        "icon": "PhoneCall",
-        "color": "cyan",
-        "features": [
-          "Native Dialing: Click-to-call functionality directly from any client or lead profile inside the CRM system.",
-          "Infrastructure Flexibility: Supports effortless configuration with legacy PBX or modern Cloud PBX networks.",
-          "Automated Call Registry: Flawlessly logs all incoming and outgoing communication history against relevant customer profiles.",
-          "AI-Assisted Summaries: Background call recording with integrated AI transcription engines that generate summaries and highlight action items."
-        ]
-      },
-      {
-        "domain": "Productivity",
-        "solution": "Core Workplace Migration & AI Search",
-        "description": "A cost-effective, high-security alternative to legacy suites like Google Workspace and Microsoft 365, powered by Zoho Workplace.",
-        "icon": "Users",
-        "color": "purple",
-        "features": [
-          "Frictionless Data Migration: Comprehensive onboarding support to securely transfer enterprise emails, histories, calendars, and active profiles.",
-          "Digital HQ Ecosystem: Centralized interactive messaging, dynamic internal forums, announcement spaces, polls, surveys, and HD video conferencing.",
-          "Secure File Vault (Drive): Corporate document organization utilizing granular folder-level permissions, encryption at rest, and audit trails.",
-          "AI Knowledge Assistant: Built-in conversational AI layer allowing employees to query internal drives using natural language."
-        ]
+        ],
+        "image": "/images/portfolio/portfolio_ecommerce_1779878995931.png"
       },
       {
         "domain": "Growth",
@@ -290,7 +232,35 @@
           "Financial Accountability: Dedicated modules for marketing budget planning, tracking actual spend, and calculating CAC metrics.",
           "Omnichannel Social Desk: Simultaneous connection to over 10 active social media channels for content publishing, review monitoring, and audience interaction.",
           "Campaign Orchestration: Multi-channel journey builders facilitating high-deliverability Email Campaigns, WhatsApp marketing, surveys, and webinar hosting."
-        ]
+        ],
+        "image": "/images/portfolio/portfolio_digital_marketing_1779879011462.png"
+      },
+      {
+        "domain": "Manufacturing",
+        "solution": "Intelligent Production Planning ERP",
+        "description": "An agile Material Requirements Planning (MRP) system engineered to optimize raw material usage and shop floor efficiency.",
+        "icon": "Factory",
+        "color": "amber",
+        "features": [
+          "Demand-Driven Assembly: Production cycles directly triggered by and linked to active Customer Sales Orders.",
+          "Advanced Inventory Match Engine: Supports multiple industrial material types, shapes, and sizes",
+          "Automated Procurement: Instantly generates and routes Purchase Orders (POs) to approved vendors"
+        ],
+        "image": "/images/portfolio/portfolio_manufacturing_erp_1779879027333.png"
+      },
+      {
+        "domain": "Productivity",
+        "solution": "Core Workplace Migration & AI Search",
+        "description": "A cost-effective, high-security alternative to legacy suites like Google Workspace and Microsoft 365, powered by Zoho Workplace.",
+        "icon": "Users",
+        "color": "purple",
+        "features": [
+          "Frictionless Data Migration: Comprehensive onboarding support to securely transfer enterprise emails, histories, calendars, and active profiles.",
+          "Digital Corporate Ecosystem: Centralized interactive messaging, dynamic internal forums, announcement spaces, polls, surveys, and HD video conferencing.",
+          "Secure File Vault (Drive): Corporate document organization utilizing granular folder-level permissions, encryption at rest, and audit trails.",
+          "AI Knowledge Assistant: Built-in conversational AI layer allowing employees to query internal drives using natural language."
+        ],
+        "image": "/images/portfolio/portfolio_workplace_ai_1779879044681.png"
       },
       {
         "domain": "Event Tech (MICE)",
@@ -304,7 +274,64 @@
           "Granular Ticket Engine: Flexible configuration supporting free, paid, or invite-only event tiers, multi-class seating/access models, and private access tokens.",
           "Instant Web & App Footprint: Generates an out-of-the-box responsive event website and a mobile application mapped directly to your custom domain.",
           "Automated Lifecycle Communications: Instantaneous delivery of branded booking confirmations, digital entry tickets, and compliant tax invoices."
-        ]
+        ],
+        "image": "/images/portfolio/portfolio_event_management_1779879072429.png"
+      },
+      {
+        "domain": "Healthcare",
+        "solution": "Hospital Business Operations Management",
+        "description": "A scalable medical facility management platform bridging administrative excellence with institutional compliance.",
+        "icon": "HeartPulse",
+        "color": "rose",
+        "features": [
+          "Patient Lifecycle: Seamless digital registration, automated appointment scheduling, reminders, invoicing, and payments.",
+          "Compliant Institutional Payroll: Biometric attendance, shift scheduling, leave policies, and income-tax compliant payroll.",
+          "Contract Lifecycle Management: Segregated tracking for in-house doctors and consultant/visiting medical professionals.",
+          "Hospital Supply Chain: End-to-end procurement for fixed clinical assets and medical consumables.",
+          "Regulatory Readiness: Native support for Indian E-Invoicing mandates and automated GST compliance reporting."
+        ],
+        "image": "/images/portfolio/portfolio_healthcare_ops_1779879088718.png"
+      },
+      {
+        "domain": "Niche ERP",
+        "solution": "Non-Profit, NGO, & Temple Operations",
+        "description": "A comprehensive operational ERP designed to meet the strict transparency, accounting, and compliance demands of Section 8 companies, foundations, and religious institutions.",
+        "icon": "Landmark",
+        "color": "indigo",
+        "features": [
+          "Donation Management: Digital tracking of multi-currency financial donations, physical valuables, and in-kind contributions.",
+          "Smart Inventory: Procurement workflows integrated with automated tracking for in-kind donation distributions.",
+          "Temple-Specific Workflows: Seva/Puja Desk, Hospitality (Bhakt Niwas), and Hundi Audit.",
+          "Workforce & Payroll: Built-in attendance, leave tracking, and payroll processing for administrative and operational staff."
+        ],
+        "image": "/images/portfolio/portfolio_ngo_temple_1779879105244.png"
+      },
+      {
+        "domain": "Investment Management",
+        "solution": "Investment Product Master",
+        "description": "A secure data repository and portfolio mapping core designed for asset managers and financial advisory firms.",
+        "icon": "TrendingUp",
+        "color": "emerald",
+        "features": [
+          "Multi-Asset Tracking: Centralized structure for managing Equities, Mutual Funds, Fixed Income, Insurance, AIFs, and PMS.",
+          "Regulatory Alignment: Structured architecture designed to remain strictly compliant with AMFI regulations and regional data disclosure norms.",
+          "Frictionless Ingestion: Supports automated file uploads for bulk institutional data and intuitive manual web input forms."
+        ],
+        "image": "/images/portfolio/portfolio_investment_master_1779879127938.png"
+      },
+      {
+        "domain": "Communications",
+        "solution": "Cloud CRM & Integrated Telephony",
+        "description": "A cloud-telephony connector that transforms your CRM environment into an active omni-channel customer communication center.",
+        "icon": "PhoneCall",
+        "color": "cyan",
+        "features": [
+          "Native Dialing: Click-to-call functionality directly from any client or lead profile inside the CRM system.",
+          "Infrastructure Flexibility: Supports effortless configuration with legacy PBX or modern Cloud PBX networks.",
+          "Automated Call Registry: Flawlessly logs all incoming and outgoing communication history against relevant customer profiles.",
+          "AI-Assisted Summaries: Background call recording with integrated AI transcription engines that generate summaries and highlight action items."
+        ],
+        "image": "/images/portfolio/portfolio_cloud_crm_1779879146889.png"
       }
     ]
   }

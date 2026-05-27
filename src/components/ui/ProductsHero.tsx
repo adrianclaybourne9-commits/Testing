@@ -41,8 +41,8 @@ export default function ProductsHero({ data }: ProductsHeroProps) {
       </div>
 
       <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center opacity-0 mt-8">
-        <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight drop-shadow-2xl">
-          {data.title.split(' ')[0]} <br className="hidden md:block" />
+        <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight drop-shadow-2xl flex flex-wrap justify-center gap-4">
+          <span>{data.title.split(' ')[0]}</span>
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-indigo-400">
             {data.title.split(' ')[1]}
           </span>

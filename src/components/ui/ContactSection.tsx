@@ -95,11 +95,14 @@ export default function ContactSection({ data }: ContactSectionProps) {
                 src={`https://maps.google.com/maps?q=${encodeURIComponent(data.address)}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="grayscale opacity-90 contrast-125 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
+                style={{ 
+                  border: 0,
+                  filter: 'invert(90%) hue-rotate(180deg) brightness(105%) contrast(105%)'
+                }}
+                className="w-full h-full transition-all duration-700 hover:scale-[1.02]"
               />
             </div>
           </div>

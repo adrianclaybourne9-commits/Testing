@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
+import MagneticButton from './MagneticButton';
 import {
   Brain,
   Bot,
@@ -70,6 +72,7 @@ export type OfferingItem = {
   subFeaturesLabel?: string;
   features: OfferingFeature[];
   subFeatures?: OfferingSubFeature[];
+  imageLabel?: string;
 };
 
 export type OfferingsData = {
@@ -112,7 +115,6 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
       },
       { threshold: 0.15 }
     );
-
     observer.observe(el);
     return () => observer.disconnect();
   }, [index]);
@@ -137,6 +139,22 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
               alt={card.title}
               className="w-full h-[320px] lg:h-[420px] object-cover transition-transform duration-700 group-hover/img:scale-105"
             />
+            {card.imageLabel && (
+              <div className="absolute top-4 left-4 z-20 bg-black/50 backdrop-blur-md text-white px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded-lg border border-white/10 shadow-lg">
+                {card.imageLabel}
+              </div>
+            )}
+          </div>
+          
+          <div className="mt-6 flex justify-start">
+            <MagneticButton strength={0.4}>
+              <Link href="/service" className="relative overflow-hidden inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white border border-white/20 bg-white/5 rounded-full transition-all group/btn hover:border-transparent hover:shadow-[0_0_20px_rgba(117,186,188,0.3)]">
+                <span className="absolute inset-0 bg-[#75BABC] translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-full" />
+                <span className="relative z-10 flex items-center text-white transition-colors duration-300">
+                  Explore more <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                </span>
+              </Link>
+            </MagneticButton>
           </div>
         </div>
 
@@ -252,7 +270,7 @@ export default function Offerings({ data }: OfferingsProps) {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12">
         <div ref={headingRef} className="text-center mb-20 opacity-0">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-xs font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
             <Settings2 className="w-3.5 h-3.5" />
             {data.sectionBadge}
           </span>

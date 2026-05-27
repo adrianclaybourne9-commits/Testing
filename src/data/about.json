@@ -42,6 +42,56 @@
       }
     ]
   },
+  "experience": {
+    "title": "Our Indicative Experience",
+    "items": [
+      {
+        "title": "Universal Banking Platforms",
+        "description": "Architected and Delivered Universal Banking Platforms that power end-to-end retail and corporate banking operations, enabling seamless customer experiences, operational agility, and scalable digital transformation.",
+        "icon": "Building"
+      },
+      {
+        "title": "Wholesale Payments Solutions",
+        "description": "Built Next-Generation Wholesale Payments Solutions supporting high-volume domestic and cross-border transactions, real-time processing, liquidity management, reconciliation, and compliance with evolving global standards.",
+        "icon": "Globe"
+      },
+      {
+        "title": "Blockchain Supply Chain",
+        "description": "Developed Enterprise Blockchain–Enabled Supply Chain & Provenance Platforms to deliver enhanced transparency, traceability, trust, and ecosystem-wide collaboration across complex supply chain networks.",
+        "icon": "Link"
+      },
+      {
+        "title": "Payment Switches & Card Platforms",
+        "description": "Managed Mission-Critical Payment Switches and Card Platforms for leading global banks, ensuring secure, resilient, and high-performance transaction processing at scale.",
+        "icon": "CreditCard"
+      },
+      {
+        "title": "Online Securities Trading",
+        "description": "Engineered Highly Scalable Online Securities Trading Platforms with real-time market data integration, low-latency trade execution, robust risk controls, and superior digital trading experiences.",
+        "icon": "TrendingUp"
+      },
+      {
+        "title": "ERP Transformation Programs",
+        "description": "Successfully Implemented ERP Transformation Programs for multiple enterprises, streamlining core business processes, improving operational efficiency, and enabling data-driven decision-making.",
+        "icon": "Database"
+      },
+      {
+        "title": "Wealth Management Platforms",
+        "description": "Incubated Innovative Financial Planning & Wealth Management Platforms focused on personalized advisory, portfolio analytics, investor engagement, and digital-first wealth experiences.",
+        "icon": "PieChart"
+      },
+      {
+        "title": "Large-Scale Technology Delivery",
+        "description": "Led Large-Scale Technology and Delivery Portfolios with 1000+ professionals across diverse service lines, driving strategic programs, operational excellence, governance, and enterprise-wide transformation initiatives.",
+        "icon": "Users"
+      },
+      {
+        "title": "Future-Ready Solutions",
+        "description": "Delivered Scalable, Secure, and Future-Ready Technology Solutions by combining deep domain expertise with modern engineering practices across banking, payments, capital markets, and enterprise platforms.",
+        "icon": "ShieldCheck"
+      }
+    ]
+  },
   "philosophy": {
     "title": "Our Transformation Philosophy",
     "subtitle": "We don't just provide technology; we redefine how your business operates.",
