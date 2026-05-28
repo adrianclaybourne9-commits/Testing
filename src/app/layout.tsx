@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "Neudhi23",
     images: [
       {
-        url: "/images/hero/logo_light.webp",
+        url: "/logo-exact.png",
         width: 1200,
         height: 630,
         alt: "Neudhi23 Official Logo",
@@ -50,11 +50,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Neudhi23 | Business Solutions Provider",
     description: "Architecting Next-Generation Digital Ecosystems and Enterprise Solutions.",
-    images: ["/images/hero/logo_light.webp"],
+    images: ["/logo-exact.png"],
   },
   icons: {
-    icon: "/images/hero/logo_light.webp",
-    apple: "/images/hero/logo_light.webp",
+    icon: "/logo-exact.png",
+    apple: "/logo-exact.png",
   },
 };
 

@@ -180,7 +180,7 @@
       },
       {
         "domain": "Niche ERP & Operations",
-        "solution": "End-to-End Institutional Operations",
+        "solution": "Non-Profit, NGO, & Temple Operations",
         "description": "Tailored management platforms designed specifically for Non-Profits, NGOs, and Religious Institutions/Temples.",
         "icon": "Landmark",
         "color": "indigo"
@@ -340,18 +340,26 @@
     "brand": {
       "name": "Neudhi23",
       "tagline": "Driving Digitization, Digitalization & Automation for enterprises worldwide.",
-      "logo": "/images/hero/logo_light.webp"
+      "logo": "/logo-exact.png"
     },
     "columns": [
       {
-        "title": "Services",
+        "title": "Our Product",
         "links": [
           {
-            "label": "AI & Custom Agents",
-            "href": "/service"
+            "label": "NE23 Wealth",
+            "href": "/#ne23-wealth"
           },
           {
-            "label": "Solutions Portfolio",
+            "label": "NE23 Invoicing",
+            "href": "/#ne23-invoicing"
+          },
+          {
+            "label": "Payment Gateway",
+            "href": "/#solutions-portfolio"
+          },
+          {
+            "label": "ERP Solutions",
             "href": "/#solutions-portfolio"
           }
         ]
@@ -378,23 +386,15 @@
         ]
       },
       {
-        "title": "Neudhi23 Platforms",
+        "title": "Service",
         "links": [
           {
-            "label": "NE23 Wealth",
-            "href": "/#ne23-wealth"
+            "label": "AI & Custom Agents",
+            "href": "/service"
           },
           {
-            "label": "NE23 Invoicing",
-            "href": "/#ne23-invoicing"
-          },
-          {
-            "label": "Payment Gateway",
-            "href": "/#solutions-portfolio"
-          },
-          {
-            "label": "ERP Solutions",
-            "href": "/#solutions-portfolio"
+            "label": "Advance Data Services",
+            "href": "/service"
           }
         ]
       },
@@ -422,7 +422,7 @@
     ],
     "contact": {
       "email": "reachus@neudhi23.com",
-      "address": "Spectra, 413 Paud Road, Near Pratik Nagar, Kothrud, Pune, Maharashtra, India - 411038"
+      "address": "Spectra, 413 Paud Road, Near Pratik Nagar, Kothrud, Pune, Maharashtra, India\u00A0\u2011\u00A0411038"
     },
     "socials": [
       {

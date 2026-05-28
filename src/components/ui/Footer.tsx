@@ -137,11 +137,19 @@ export default function Footer({ data }: { data: FooterData }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-6">
 
           <div className="footer-col lg:col-span-3 lg:pr-8">
-            <img
-              src={data.brand.logo}
-              alt={data.brand.name}
-              className="h-8 w-auto mb-6"
-            />
+            <div className="flex items-center gap-4 mb-6">
+              <img
+                src={data.brand.logo}
+                alt={data.brand.name}
+                className="h-8 w-auto"
+              />
+              <span className="text-gray-600 text-xl font-light">|</span>
+              <img
+                src="/zoho.svg"
+                alt="Zoho"
+                className="h-8 w-auto"
+              />
+            </div>
             <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
               {/* {data.brand.tagline} */}
             </p>

@@ -75,30 +75,12 @@ export default function ContactHero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
 
-        {/* Email Pill */}
-        <div className="mb-10">
-          <MagneticButton strength={0.3}>
-            <a 
-              ref={pillRef}
-              href="mailto:reachus@neudhi23.com"
-              className="group relative inline-flex items-center gap-3 px-6 py-2.5 rounded-full bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-cyan-500/40 transition-all duration-500 backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.5)]"
-            >
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-cyan-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <span className="relative flex items-center justify-center w-8 h-8 rounded-full bg-white/5 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
-                <Mail className="w-4 h-4 text-cyan-400 group-hover:text-white transition-colors" />
-              </span>
-              <span className="relative text-sm md:text-base font-semibold tracking-wide text-gray-300 group-hover:text-white transition-colors duration-300">
-                reachus@neudhi23.com
-              </span>
-              <ArrowRight className="relative w-4 h-4 text-gray-500 group-hover:text-cyan-400 transition-all duration-300 -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100" />
-            </a>
-          </MagneticButton>
-        </div>
+
 
         {/* Hero Title */}
         <h1 
           ref={titleRef}
-          className="text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black mb-8 tracking-tighter leading-none whitespace-nowrap"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-none whitespace-nowrap"
         >
           <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-600 drop-shadow-2xl">
             Contact

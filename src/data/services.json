@@ -95,7 +95,8 @@
   },
   "partnerPlatforms": {
     "title": "Partner Products & Platforms",
-    "description": "As a Business Solutions Provider, Neudhi23 leverages Partner eco-system by orchestrating the perfect mix of our own proprietary assets, established partner platforms, and targeted custom software engineering.\n\nAs an Authorized Zoho Partner, Neudhi23 leverages Zoho’s comprehensive, cloud-based business management platform to break down organizational silos and drive operational efficiency. By combining Zoho’s rapid low-code development framework with our deep engineering expertise, we deliver agile, custom web and mobile applications that manage core enterprise pillars seamlessly:",
+    "description": "As a Business Solutions Provider, Neudhi23 leverages Partner eco-system by orchestrating the perfect mix of our own proprietary assets, established partner platforms, and targeted custom software engineering.",
+    "zohoDescription": "As an Authorized Zoho Partner, Neudhi23 leverages Zoho’s comprehensive, cloud-based business management platform to break down organizational silos and drive operational efficiency. By combining Zoho’s rapid low-code development framework with our deep engineering expertise, we deliver agile, custom web and mobile applications that manage core enterprise pillars seamlessly",
     "pillars": [
       {
         "title": "Human Capital",
@@ -263,7 +264,7 @@
         "image": "/images/portfolio/portfolio_workplace_ai_1779879044681.png"
       },
       {
-        "domain": "Event Tech (MICE)",
+        "domain": "Event Tech",
         "solution": "End-to-End Event Management Platform",
         "description": "An all-in-one planning and monetization engine built on Zoho Backstage to power large-scale enterprise summits, conferences, and virtual events.",
         "icon": "Calendar",

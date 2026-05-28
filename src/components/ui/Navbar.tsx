@@ -38,7 +38,7 @@ export default function Navbar({ data }: NavbarProps) {
             {/* Desktop & Mobile Header Bar */}
             <div className="h-24 flex justify-between items-center px-6 md:px-12 mt-4 relative z-50">
                 <Link href="/" className="flex-shrink-0 group" onClick={() => setIsMobileMenuOpen(false)}>
-                    <img src="/images/hero/logo_light.webp" alt="logo" className="h-8 md:h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
+                    <img src="/logo-exact.png" alt="logo" className="h-8 md:h-9 w-auto object-contain transition-transform duration-500 group-hover:scale-105" />
                 </Link>
 
                 {/* Desktop Links */}

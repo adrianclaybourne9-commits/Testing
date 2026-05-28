@@ -139,11 +139,7 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
               alt={card.title}
               className="w-full h-[320px] lg:h-[420px] object-cover transition-transform duration-700 group-hover/img:scale-105"
             />
-            {card.imageLabel && (
-              <div className="absolute top-4 left-4 z-20 bg-black/50 backdrop-blur-md text-white px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded-lg border border-white/10 shadow-lg">
-                {card.imageLabel}
-              </div>
-            )}
+
           </div>
           
           <div className="mt-6 flex justify-start">
@@ -159,6 +155,11 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
         </div>
 
         <div ref={contentRef} className="w-full lg:w-[55%] opacity-0">
+          {card.imageLabel && (
+            <div className="inline-block bg-white text-gray-950 px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded-md mb-4 shadow-lg">
+              {card.imageLabel}
+            </div>
+          )}
           <h2 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
             {card.title}
           </h2>

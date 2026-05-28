@@ -9,6 +9,7 @@ type PartnerPlatformsHeroProps = {
   data: {
     title: string;
     description: string;
+    zohoDescription?: string;
   };
 };
 
@@ -28,8 +29,9 @@ export default function PartnerPlatformsHero({ data }: PartnerPlatformsHeroProps
   }, []);
 
   return (
-    <section className="relative pt-40 pb-12 md:pt-45 md:pb-38 overflow-hidden">
-      <div className="absolute inset-0 z-0">
+    <>
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-16 overflow-hidden">
+        <div className="absolute inset-0 z-0">
         <Image
           src="/partner-hero-bg.png"
           alt="Partner Platforms Hero Background"
@@ -61,5 +63,19 @@ export default function PartnerPlatformsHero({ data }: PartnerPlatformsHeroProps
         </p>
       </div>
     </section>
+
+    {data.zohoDescription && (
+      <section className="relative py-12 md:py-16 bg-gray-950 border-t border-white/5">
+        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
+          <div className="flex items-center justify-center mb-10">
+            <img src="/zoho.svg" alt="Zoho" className="h-10 md:h-12 w-auto" />
+          </div>
+          <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
+            {data.zohoDescription}
+          </p>
+        </div>
+      </section>
+    )}
+    </>
   );
 }
