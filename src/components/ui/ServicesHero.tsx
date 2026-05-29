@@ -41,14 +41,24 @@ export default function ServicesHero({ data }: ServicesHeroProps) {
 
       <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 text-center opacity-0 mt-8">
         <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight drop-shadow-2xl">
-          {data.title.split('&')[0]} <br className="hidden md:block" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#73B8BF] to-[#8FA8D9]">
-            & {data.title.split('&')[1]}
-          </span>
+          {data.title.includes('&') ? (
+            <>
+              {data.title.split('&')[0]} <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#73B8BF] to-[#8FA8D9]">
+                & {data.title.split('&').slice(1).join('&')}
+              </span>
+            </>
+          ) : (
+            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+              {data.title}
+            </span>
+          )}
         </h1>
-        <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed drop-shadow-lg font-medium">
-          {data.subtitle}
-        </p>
+        {data.subtitle && (
+          <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-300 leading-relaxed font-light">
+            {data.subtitle}
+          </p>
+        )}
       </div>
     </section>
   );

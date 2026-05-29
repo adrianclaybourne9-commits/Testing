@@ -156,7 +156,7 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
 
         <div ref={contentRef} className="w-full lg:w-[55%] opacity-0">
           {card.imageLabel && (
-            <div className="inline-block bg-white text-gray-950 px-3 py-1.5 text-xs font-bold tracking-widest uppercase rounded-md mb-4 shadow-lg">
+            <div className="text-3xl md:text-4xl font-black text-white mb-1 leading-tight">
               {card.imageLabel}
             </div>
           )}
@@ -203,13 +203,13 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
                   >
                     <div className="flex items-center gap-2 mb-2">
                       <span className="text-[#73B8BF] group-hover/sub:text-white transition-colors">
-                        <Icon name={sub.icon} className="w-4 h-4" />
+                        <Icon name={sub.icon} className="w-5 h-5" />
                       </span>
-                      <h6 className="text-xs font-bold text-white tracking-wide">
+                      <h6 className="text-base font-bold text-white tracking-wide">
                         {sub.title}
                       </h6>
                     </div>
-                    <p className="text-xs text-gray-500 leading-relaxed">
+                    <p className="text-base text-gray-300 leading-relaxed">
                       {sub.description}
                     </p>
                   </div>

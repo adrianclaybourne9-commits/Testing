@@ -95,7 +95,7 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
   const activeColors = colorMap[activeItem.color] || colorMap.blue;
 
   return (
-    <section className="pt-24 pb-12 relative ">
+    <section id="flagship-business-solutions-portfolio" className="pt-24 pb-12 relative ">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight text-white">{data.title}</h2>
@@ -139,11 +139,12 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
               return (
                 <div
                   key={idx}
+                  id={`solution-${idx}`}
                   data-index={idx}
                   ref={(el) => {
                     itemRefs.current[idx] = el;
                   }}
-                  className={`transition-all duration-700 ease-in-out ${isActive ? 'opacity-100' : 'opacity-30 lg:opacity-40 hover:opacity-100'}`}
+                  className={`scroll-mt-32 transition-all duration-700 ease-in-out ${isActive ? 'opacity-100' : 'opacity-30 lg:opacity-40 hover:opacity-100'}`}
                 >
                   <div className="lg:hidden flex items-center gap-4 mb-6">
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${colors.bg} ${colors.text}`}>

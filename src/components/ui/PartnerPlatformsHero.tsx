@@ -68,7 +68,7 @@ export default function PartnerPlatformsHero({ data }: PartnerPlatformsHeroProps
       <section className="relative py-12 md:py-16 bg-gray-950 border-t border-white/5">
         <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
           <div className="flex items-center justify-center mb-10">
-            <img src="/zoho.svg" alt="Zoho" className="h-10 md:h-12 w-auto" />
+            <img src="/zoho-logo-darkbg.svg" alt="Zoho" className="h-14 md:h-16 w-auto" />
           </div>
           <p className="text-gray-400 text-lg md:text-xl leading-relaxed font-light">
             {data.zohoDescription}

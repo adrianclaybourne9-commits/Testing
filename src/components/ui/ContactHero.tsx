@@ -54,12 +54,9 @@ export default function ContactHero() {
       ref={containerRef}
       className="relative pt-40 pb-20 md:pt-48 md:pb-32 min-h-[70vh] flex items-center justify-center overflow-hidden"
     >
-      {/* Dynamic Animated Background */}
       <div className="absolute inset-0 z-0 bg-[#050505]">
-        {/* Subtle grid pattern */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
-        {/* Parallaxing glow orbs */}
         <div
           className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none transition-transform duration-1000 ease-out"
           style={{ transform: `translate(${mousePos.x}px, ${mousePos.y}px)` }}
@@ -69,12 +66,10 @@ export default function ContactHero() {
           style={{ transform: `translate(${-mousePos.x}px, ${-mousePos.y}px)` }}
         />
 
-        {/* Dark gradient overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#050505] via-transparent to-[#050505]" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
-        {/* Email Tagline */}
         <div
           ref={pillRef}
           className="flex items-center gap-2 mb-6 text-cyan-400 text-sm md:text-base font-medium tracking-wide"
@@ -82,7 +77,6 @@ export default function ContactHero() {
           <Mail className="w-4 h-4" />
           <span>reachus@neudhi23.com</span>
         </div>
-        {/* Hero Title */}
         <h1
           ref={titleRef}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-none whitespace-nowrap"
@@ -97,7 +91,6 @@ export default function ContactHero() {
           </span>
         </h1>
 
-        {/* Hero Description */}
         <p
           ref={textRef}
           className="text-lg md:text-2xl font-light text-gray-400 tracking-wide leading-relaxed max-w-2xl mx-auto"

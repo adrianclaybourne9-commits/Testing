@@ -51,8 +51,8 @@
         "subFeatures": [
           {
             "icon": "MessageSquare",
-            "title": "Transactional & Query Agents",
-            "description": "Automate customer or internal queries and execute complex business transactions seamlessly."
+            "title": "AI & Custom Agents",
+            "description": "Transaction and Insights Agents (Automate insights and execute complex business transactions seamlessly)."
           },
           {
             "icon": "CalendarClock",
@@ -243,7 +243,7 @@
             "description": "Offers high configurability out-of-the-box and integrates seamlessly with third-party CRM systems via secure APIs."
           }
         ],
-        "image": "/images/products/product_ne23_wealth_1779879369107.png"
+        "image": "/images/products/product_ne23_wealth_clean.png"
       },
       {
         "id": "ne23-invoicing",
@@ -378,6 +378,27 @@
         ]
       },
       {
+        "title": "Business Solution",
+        "links": [
+          {
+            "label": "Non-Profit, NGO, & Temple Operations",
+            "href": "/partner-platforms#solution-7"
+          },
+          {
+            "label": "Investment Product Master",
+            "href": "/partner-platforms#solution-8"
+          },
+          {
+            "label": "Production Planning ERP",
+            "href": "/partner-platforms#solution-3"
+          },
+          {
+            "label": "Hospital Business Operations",
+            "href": "/partner-platforms#solution-6"
+          }
+        ]
+      },
+      {
         "title": "Service",
         "links": [
           {
@@ -387,27 +408,6 @@
           {
             "label": "Advance Data Services",
             "href": "/service"
-          }
-        ]
-      },
-      {
-        "title": "Business Solution",
-        "links": [
-          {
-            "label": "Non-Profit, NGO, & Temple Operations",
-            "href": "/#solutions-portfolio"
-          },
-          {
-            "label": "Investment Product Master",
-            "href": "/#solutions-portfolio"
-          },
-          {
-            "label": "Production Planning ERP",
-            "href": "/#solutions-portfolio"
-          },
-          {
-            "label": "Hospital Business Operations",
-            "href": "/#solutions-portfolio"
           }
         ]
       }

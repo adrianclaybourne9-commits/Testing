@@ -141,13 +141,13 @@ export default function Footer({ data }: { data: FooterData }) {
               <img
                 src={data.brand.logo}
                 alt={data.brand.name}
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
               <span className="text-gray-600 text-xl font-light">|</span>
               <img
-                src="/zoho.svg"
+                src="/zoho-logo-darkbg.svg"
                 alt="Zoho"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
             </div>
             <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
@@ -171,7 +171,7 @@ export default function Footer({ data }: { data: FooterData }) {
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className={`footer-col ${idx === data.columns.length - 1 ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
+            <div key={idx} className={`footer-col ${col.title === 'Business Solution' ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
               <h4 className="text-[15px] font-bold text-white uppercase tracking-[0.15em] mb-7">
                 {col.title}
               </h4>
@@ -180,7 +180,7 @@ export default function Footer({ data }: { data: FooterData }) {
                   <li key={lIdx}>
                     <a
                       href={link.href}
-                      className="text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group inline-flex items-center lg:whitespace-nowrap xl:whitespace-normal"
+                      className="text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group inline-flex items-center whitespace-nowrap"
                     >
                       {link.label}
                       <ArrowUpRight className="w-3.5 h-3.5 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300" />

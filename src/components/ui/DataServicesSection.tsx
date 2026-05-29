@@ -65,7 +65,7 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
     <section ref={sectionRef} className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl font-bold mb-4">{data.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight">{data.title}</h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">{data.description}</p>
         </div>
         
@@ -74,7 +74,7 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
           {data.items.map((item, idx) => (
             <div 
               key={idx} 
-              className="waterfall-card flex flex-col w-full h-full p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#73B8BF]/40 hover:bg-white/[0.04] hover:-translate-y-2 transition-all duration-300 group"
+              className="waterfall-card flex flex-col w-full h-full p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#73B8BF]/40 hover:bg-white/[0.04] transition-all duration-300 group"
             >
               <div className="w-14 h-14 rounded-2xl bg-[#73B8BF]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shrink-0">
                 <Icon name={item.icon} className="w-7 h-7 text-[#73B8BF]" />

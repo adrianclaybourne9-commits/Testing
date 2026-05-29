@@ -1,14 +1,14 @@
 {
   "hero": {
-    "title": "Custom AI & Advanced Data Services",
-    "subtitle": "Empowering enterprises to build a unified, intelligent ecosystem by combining custom AI automation with robust data engineering."
+    "title": "Services",
+    "subtitle": ""
   },
   "customAi": {
     "title": "Custom AI Agents & Integration",
     "description": "We design and deploy autonomous, context-aware AI agents tailored to your business rules. These agents integrate seamlessly with your legacy in-house systems and third-party platforms via secure APIs.",
     "categories": [
       {
-        "title": "Business Transactions & Intelligent Queries",
+        "title": "Business Transactions & Intelligent Insights",
         "icon": "Briefcase",
         "items": [
           {
@@ -73,7 +73,7 @@
     "items": [
       {
         "title": "Multi-Source Data Aggregation",
-        "description": "Seamlessly ingest data from fragmented ecosystems, including COTS Platforms (Commercial Off-The-Shelf software), Cloud Drives, Relational/Non-relational Databases, and disparate file formats (CSV, JSON, PDF).",
+        "description": "Seamlessly ingest data from fragmented ecosystems, including COTS Platforms (Commercial Off-The-Shelf software like Sales Force), Cloud Drives, Relational/Non-relational Databases, and disparate file formats (CSV, JSON, PDF).",
         "icon": "Database"
       },
       {
@@ -244,7 +244,7 @@
         "color": "amber",
         "features": [
           "Demand-Driven Assembly: Production cycles directly triggered by and linked to active Customer Sales Orders.",
-          "Advanced Inventory Match Engine: Supports multiple industrial material types, shapes, and sizes",
+          "Advanced Inventory Match Engine: Supports multiple industrial material types, shapes, ad sizes",
           "Automated Procurement: Instantly generates and routes Purchase Orders (POs) to approved vendors"
         ],
         "image": "/images/portfolio/portfolio_manufacturing_erp_1779879027333.png"
