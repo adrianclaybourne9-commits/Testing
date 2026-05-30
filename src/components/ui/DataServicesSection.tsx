@@ -42,7 +42,7 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
   useEffect(() => {
     if (containerRef.current) {
       const cards = containerRef.current.querySelectorAll('.waterfall-card');
-      
+
       gsap.fromTo(
         cards,
         { opacity: 0, y: 50 },
@@ -68,19 +68,19 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight">{data.title}</h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">{data.description}</p>
         </div>
-        
+
         {/* Uniform Grid Layout */}
         <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {data.items.map((item, idx) => (
-            <div 
-              key={idx} 
+            <div
+              key={idx}
               className="waterfall-card flex flex-col w-full h-full p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-[#73B8BF]/40 hover:bg-white/[0.04] transition-all duration-300 group"
             >
               <div className="w-14 h-14 rounded-2xl bg-[#73B8BF]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shrink-0">
                 <Icon name={item.icon} className="w-7 h-7 text-[#73B8BF]" />
               </div>
               <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-              <p className="text-base text-gray-400 leading-relaxed flex-1">{item.description}</p>
+              <p className="text-base text-gray-200 leading-relaxed flex-1 group-hover:text-white transition-colors">{item.description}</p>
             </div>
           ))}
         </div>

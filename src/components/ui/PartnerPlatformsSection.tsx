@@ -173,8 +173,8 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 bg-white/[0.05] text-${textColor} group-hover:scale-110 transition-transform duration-500`}>
                     <Icon name={pillar.icon} className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white">{pillar.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed flex-1">{pillar.description}</p>
+                  <h3 className="text-xl font-bold mb-3 text-white capitalize tracking-wider">{pillar.title}</h3>
+                  <p className="text-base text-gray-200 leading-relaxed flex-1 group-hover:text-white transition-colors">{pillar.description}</p>
                 </div>
               </div>
             );

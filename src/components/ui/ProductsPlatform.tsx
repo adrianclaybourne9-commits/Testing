@@ -109,7 +109,7 @@ function FeatureCard({ feature, index, colorTheme }: { feature: ProductFeature; 
       </div>
       <div>
         <h4 className="text-lg font-bold text-white mb-2 tracking-wide leading-tight">{feature.title}</h4>
-        <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+        <p className="text-base text-gray-200 leading-relaxed group-hover:text-white transition-colors">
           {feature.description}
         </p>
       </div>

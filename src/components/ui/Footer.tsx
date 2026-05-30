@@ -143,12 +143,6 @@ export default function Footer({ data }: { data: FooterData }) {
                 alt={data.brand.name}
                 className="h-10 w-auto"
               />
-              <span className="text-gray-600 text-xl font-light">|</span>
-              <img
-                src="/zoho-logo-darkbg.svg"
-                alt="Zoho"
-                className="h-10 w-auto"
-              />
             </div>
             <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
               {/* {data.brand.tagline} */}
@@ -188,6 +182,15 @@ export default function Footer({ data }: { data: FooterData }) {
                   </li>
                 ))}
               </ul>
+              {col.title === 'Partner Platforms' && (
+                <div className="mt-6">
+                  <img
+                    src="/zoho-logo-darkbg.svg"
+                    alt="Zoho"
+                    className="h-10 w-auto"
+                  />
+                </div>
+              )}
             </div>
           ))}
 

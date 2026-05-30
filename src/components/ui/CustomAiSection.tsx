@@ -121,7 +121,7 @@ export default function CustomAiSection({ data }: CustomAiSectionProps) {
                       <div className="w-2 h-2 rounded-full bg-[#73B8BF] shadow-[0_0_10px_#73B8BF]" />
                       {item.title}
                     </h4>
-                    <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                    <p className="text-gray-200 leading-relaxed text-base group-hover:text-white transition-colors">
                       {item.description}
                     </p>
                   </div>

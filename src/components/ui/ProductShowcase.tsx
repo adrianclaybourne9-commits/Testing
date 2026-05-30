@@ -165,7 +165,7 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
                     <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-white/90 transition-colors">
                       {feature.title}
                     </h3>
-                    <p className="text-gray-400 text-lg leading-relaxed">
+                    <p className="text-gray-200 text-lg leading-relaxed group-hover:text-white transition-colors">
                       {feature.description}
                     </p>
                   </div>

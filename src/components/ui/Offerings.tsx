@@ -178,10 +178,10 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
                     <Icon name={feature.icon} className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-white mb-1.5 tracking-wide">
+                    <h4 className="text-base font-bold text-white mb-1.5 tracking-wide capitalize">
                       {feature.title}
                     </h4>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-base text-gray-200 leading-relaxed">
                       {feature.description}
                     </p>
                   </div>
@@ -195,7 +195,7 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
               <h5 className="text-xs font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
                 {card.subFeaturesLabel || 'Capabilities'}
               </h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className={`grid grid-cols-1 sm:grid-cols-2 ${card.subFeatures.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-3`}>
                 {card.subFeatures.map((sub, sIdx) => (
                   <div
                     key={sIdx}
@@ -205,11 +205,11 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
                       <span className="text-[#73B8BF] group-hover/sub:text-white transition-colors">
                         <Icon name={sub.icon} className="w-5 h-5" />
                       </span>
-                      <h6 className="text-base font-bold text-white tracking-wide">
+                      <h6 className="text-base font-bold text-white tracking-wide capitalize">
                         {sub.title}
                       </h6>
                     </div>
-                    <p className="text-base text-gray-300 leading-relaxed">
+                    <p className="text-base text-gray-200 leading-relaxed">
                       {sub.description}
                     </p>
                   </div>

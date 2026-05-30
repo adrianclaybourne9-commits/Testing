@@ -106,18 +106,18 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
 
           <div className="lg:w-2/5 hidden lg:block">
             <div className="sticky top-32 h-[500px] w-full rounded-[2rem] overflow-hidden flex items-center justify-center transition-all duration-700 ease-in-out border border-white/10 shadow-2xl bg-gray-950 group">
-              
+
               {activeItem.image && (
-                <img 
+                <img
                   key={activeItem.image}
-                  src={activeItem.image} 
+                  src={activeItem.image}
                   alt={activeItem.domain}
                   className="absolute inset-0 w-full h-full object-cover opacity-70 transition-transform duration-[1.5s] scale-100 group-hover:scale-110"
                 />
               )}
 
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-gray-950/40 to-transparent z-10" />
-              
+
               <div
                 className={`absolute inset-0 opacity-40 transition-colors duration-1000 blur-[60px] z-10 ${activeColors.bg.replace('/20', '/40')}`}
               />
