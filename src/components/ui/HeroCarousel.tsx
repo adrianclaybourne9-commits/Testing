@@ -65,7 +65,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
   const current = slides[currentSlide];
 
   return (
-    <div className="relative w-screen h-[100vh] overflow-hidden bg-gray-900 text-white">
+    <div className="relative w-full h-[100vh] overflow-hidden bg-gray-900 text-white">
       {slides.map((slide, index) => (
         <div
           key={slide.id}

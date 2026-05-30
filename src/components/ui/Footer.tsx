@@ -187,7 +187,7 @@ export default function Footer({ data }: { data: FooterData }) {
                   <img
                     src="/zoho-logo-darkbg.svg"
                     alt="Zoho"
-                    className="h-10 w-auto"
+                    className="h-16 w-auto"
                   />
                 </div>
               )}

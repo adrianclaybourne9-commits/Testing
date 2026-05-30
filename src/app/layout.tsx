@@ -68,7 +68,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${darkerGrotesque.variable} dark`}
     >
-      <body className="bg-background text-foreground min-h-screen md:cursor-none">
+      <body className="bg-background text-foreground min-h-screen md:cursor-none overflow-x-hidden">
         <CustomCursor />
         <Providers>{children}</Providers>
       </body>
