@@ -8,7 +8,7 @@ import MagneticButton from './MagneticButton';
 export default function ContactHero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const pillRef = useRef<HTMLAnchorElement>(null);
+  const pillRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLParagraphElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
