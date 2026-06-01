@@ -20,16 +20,18 @@ type HeroCarouselProps = {
 export default function HeroCarousel({ slides }: HeroCarouselProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   const contentRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isPaused) return;
     const timer = setInterval(() => {
       handleNextSlide();
     }, 6000);
     return () => clearInterval(timer);
-  }, [currentSlide]);
+  }, [currentSlide, isPaused]);
 
   const handleNextSlide = () => {
     if (isAnimating) return;
@@ -81,7 +83,14 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
       ))}
 
       {/* Right Edge Vertical Indicators */}
-      <div className="hidden md:flex absolute right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 -mt-16 z-30 flex-col items-center space-y-4">
+      <div 
+        className="hidden md:flex absolute right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 -mt-16 z-30 flex-col items-center space-y-4"
+        onMouseDown={() => setIsPaused(true)}
+        onMouseUp={() => setIsPaused(false)}
+        onMouseLeave={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
         {slides.map((_, idx) => (
           <button
             key={idx}

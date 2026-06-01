@@ -66,7 +66,7 @@ export default function AboutIntro({ data }: AboutIntroProps) {
           </div>
 
           <div className="lg:w-1/2 w-full intro-text">
-            <h2 className="text-2xl md:text-3xl lg:text-[2rem] font-medium text-gray-200 tracking-tight leading-snug mb-8">
+            <h2 className="text-xl md:text-2xl lg:text-3xl font-normal text-gray-200 tracking-tight leading-snug mb-8">
               {data.subtitle}
             </h2>
             
@@ -74,7 +74,7 @@ export default function AboutIntro({ data }: AboutIntroProps) {
             
             <div className="space-y-6">
               {data.description.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="text-gray-400 text-lg leading-relaxed">
+                <p key={idx} className="text-white text-lg leading-relaxed">
                   {paragraph}
                 </p>
               ))}

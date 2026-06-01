@@ -43,11 +43,11 @@ export default function AboutHero({ data }: AboutHeroProps) {
 
       <div ref={heroRef} className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center opacity-0 mt-8 flex flex-col items-center">
 
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-widest text-gray-300 uppercase mb-10 backdrop-blur-md">
-          <Sparkles className="w-4 h-4 text-cyan-400" /> 100+ Years of Collective Expertise
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-10 backdrop-blur-md">
+          <Sparkles className="w-4 h-4" /> 100+ Years of Collective Expertise
         </div>
 
-        <h1 className="text-6xl md:text-8xl lg:text-9xl font-black mb-10 tracking-tighter drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
+        <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
           {data.title}
         </h1>
 

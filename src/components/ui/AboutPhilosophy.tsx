@@ -81,7 +81,11 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
         <div className="max-w-5xl mx-auto flex flex-col items-center">
           
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
+              <Target className="w-4 h-4" />
+              Philosophy
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight">
               {data.title}
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">
@@ -170,7 +174,7 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
                 </p>
 
                 <MagneticButton strength={0.2}>
-                  <a href="/partner-platforms" className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-gray-900 bg-white rounded-full hover:bg-gray-200 transition-colors pointer-events-none">
+                  <a href="/partner-platform" className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-gray-900 bg-white rounded-full hover:bg-gray-200 transition-colors pointer-events-none">
                     Explore Partner Platforms
                   </a>
                 </MagneticButton>

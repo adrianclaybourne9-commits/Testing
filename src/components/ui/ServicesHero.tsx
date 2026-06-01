@@ -23,7 +23,7 @@ export default function ServicesHero({ data }: ServicesHeroProps) {
   }, []);
 
   return (
-    <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden border-b border-white/5">
+    <section className="relative pt-40 pb-8 md:pt-52 md:pb-12 overflow-hidden border-b border-white/5">
       <div className="absolute inset-0 z-0">
         <Image
           src="/services-hero-bg.png"

@@ -43,13 +43,12 @@ export default function PartnerPlatformsHero({ data }: PartnerPlatformsHeroProps
       </div>
 
       <div ref={heroRef} className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col justify-center items-center opacity-0 mt-8">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-bold tracking-[0.2em] text-blue-400 uppercase mb-8">
-          <Settings className="w-4 h-4" /> Strategic Partnership
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-8">
+          <Settings className="w-3.5 h-3.5" /> Strategic Partnership
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-4 tracking-tight drop-shadow-2xl text-white">
+        <h1 className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">
           Partner Platforms
-          {/* Partner <span className="font-light italic text-gray-400">&</span> Platforms */}
         </h1>
 
         <div className="inline-block mb-8">

@@ -62,7 +62,7 @@ export default function CustomAiSection({ data }: CustomAiSectionProps) {
   }, [activeTab]);
 
   return (
-    <section ref={sectionRef} className="py-32 relative bg-gray-950 overflow-hidden">
+    <section ref={sectionRef} className="pb-32 pt-10 md:pt-16 relative bg-gray-950 overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#73B8BF]/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">

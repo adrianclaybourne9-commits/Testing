@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about-us',
     '/contact-us',
-    '/partner-platforms',
+    '/partner-platform',
     '/proprietary-products',
     '/service',
   ];

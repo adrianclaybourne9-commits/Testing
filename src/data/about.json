@@ -2,7 +2,7 @@
   "hero": {
     "title": "About Us",
     "subtitle": "We are a team of seasoned enterprise professionals and technologists with deep domain expertise spanning Banking, Financial Services, Insurance (BFSI), Manufacturing, Retail, Supply Chain, and Infrastructure.",
-    "description": "Having held leadership roles at world-class financial institutions, telecom giants, manufacturing leaders, and premier IT product and services companies, our core team collectively brings over 100+ years of experience in architecting proprietary platforms and managing massive IT delivery frameworks for both domestic and international clients.\n\nOur singular focus is to create and amplify long-term value for our customers. We drive this commitment through three core pillars of excellence:"
+    "description": "Having held leadership roles at world-class financial institutions, telecom giants, manufacturing leaders, and premier IT product and services companies, our core team collectively brings over 100+ years of experience in architecting proprietary platforms and managing large IT delivery teams for both domestic and international clients.\n\nOur singular focus is to create and amplify long-term value for our customers. We drive this commitment through three core pillars of excellence:"
   },
   "pillars": {
     "title": "Three Core Pillars of Excellence",
@@ -46,49 +46,59 @@
     "title": "Our Indicative Experience",
     "items": [
       {
-        "title": "Universal Banking Platforms",
-        "description": "Architected and Delivered Universal Banking Platforms that power end-to-end retail and corporate banking operations, enabling seamless customer experiences, operational agility, and scalable digital transformation.",
-        "icon": "Building"
+        "title": "Supply Chain | Manufacturing | eCommerce",
+        "points": [
+          "Blockchain & IoT enabled Freight Audit Payments, PoCs - Supply Chain Finance, Procure2Pay, Order2Cash",
+          "eCommerce Product Implementation",
+          "ERP Implementation for multiple clients"
+        ],
+        "icon": "Factory"
       },
       {
-        "title": "Wholesale Payments Solutions",
-        "description": "Built Next-Generation Wholesale Payments Solutions supporting high-volume domestic and cross-border transactions, real-time processing, liquidity management, reconciliation, and compliance with evolving global standards.",
-        "icon": "Globe"
-      },
-      {
-        "title": "Blockchain Supply Chain",
-        "description": "Developed Enterprise Blockchain–Enabled Supply Chain & Provenance Platforms to deliver enhanced transparency, traceability, trust, and ecosystem-wide collaboration across complex supply chain networks.",
-        "icon": "Link"
-      },
-      {
-        "title": "Payment Switches & Card Platforms",
-        "description": "Managed Mission-Critical Payment Switches and Card Platforms for leading global banks, ensuring secure, resilient, and high-performance transaction processing at scale.",
-        "icon": "CreditCard"
-      },
-      {
-        "title": "Online Securities Trading",
-        "description": "Engineered Highly Scalable Online Securities Trading Platforms with real-time market data integration, low-latency trade execution, robust risk controls, and superior digital trading experiences.",
+        "title": "Online Brokerage",
+        "points": [
+          "Platforms for US, UK and International Markets",
+          "Supporting Equities, MF, Options and Futures",
+          "High Performance and throughput"
+        ],
         "icon": "TrendingUp"
       },
       {
-        "title": "ERP Transformation Programs",
-        "description": "Successfully Implemented ERP Transformation Programs for multiple enterprises, streamlining core business processes, improving operational efficiency, and enabling data-driven decision-making.",
-        "icon": "Database"
+        "title": "Core Banking and Payments",
+        "points": [
+          "Delivery ownership - Core Banking & Payment Product",
+          "SWIFT and Local Banking and Payment Infrastructure - Used by major banks across the world",
+          "Managing Payment Switch and Card products for leading banks globally"
+        ],
+        "icon": "Building"
       },
       {
-        "title": "Wealth Management Platforms",
-        "description": "Incubated Innovative Financial Planning & Wealth Management Platforms focused on personalized advisory, portfolio analytics, investor engagement, and digital-first wealth experiences.",
+        "title": "Wealth Management",
+        "points": [
+          "Incubation of Product for Mass Affluent Segment",
+          "Support CRM, Advisor Workbench, Financial Planning",
+          "Complete Product Ownership from Conceptualization to realization - Used by Brokers, Insurers, Banks"
+        ],
         "icon": "PieChart"
       },
       {
-        "title": "Large-Scale Technology Delivery",
-        "description": "Led Large-Scale Technology and Delivery Portfolios with 1000+ professionals across diverse service lines, driving strategic programs, operational excellence, governance, and enterprise-wide transformation initiatives.",
-        "icon": "Users"
+        "title": "Industry Verticals and Horizontals | Global Delivery",
+        "points": [
+          "Key Verticals - BFSI, Manufacturing, Retail, HealthCare",
+          "Horizontals - Analytics, HRMS, Accounting, Payroll, CRM, Marketing (Social, Campaigns), Legal",
+          "Countries and Cultures - US, Canada, Europe, UK, Singapore, India"
+        ],
+        "icon": "Globe"
       },
       {
-        "title": "Future-Ready Solutions",
-        "description": "Delivered Scalable, Secure, and Future-Ready Technology Solutions by combining deep domain expertise with modern engineering practices across banking, payments, capital markets, and enterprise platforms.",
-        "icon": "ShieldCheck"
+        "title": "Other Engagements",
+        "points": [
+          "IoT Data Hub",
+          "Real time vehicle tracking - Google API Integration",
+          "Design and Implementation of Payment Hub",
+          "Fraud Prevention and Sanctions Management"
+        ],
+        "icon": "Link"
       }
     ]
   },
@@ -109,7 +119,14 @@
     ],
     "partnerCallout": {
       "title": "Authorized Zoho Partner",
-      "tags": ["Sales & Marketing", "Finance", "HRMS", "Contracts", "Projects", "Commerce"],
+      "tags": [
+        "Sales & Marketing",
+        "Finance",
+        "HRMS",
+        "Contracts",
+        "Projects",
+        "Commerce"
+      ],
       "description": "Leverage our certified expertise to transform your organization into a unified, silo-free digital enterprise."
     }
   }

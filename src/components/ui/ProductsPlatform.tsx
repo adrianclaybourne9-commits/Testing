@@ -157,7 +157,7 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
       </div>
 
       <div ref={headerRef} className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 mb-20 md:mb-28 text-center">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-[15px] font-bold tracking-[0.2em] text-cyan-400 uppercase mb-6">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
           <Box className="w-3.5 h-3.5" />
           {data.sectionBadge}
         </span>

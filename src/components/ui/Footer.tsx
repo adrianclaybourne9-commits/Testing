@@ -149,12 +149,12 @@ export default function Footer({ data }: { data: FooterData }) {
             </p>
 
             <div className="space-y-4">
-              <a href={`mailto:${data.contact.email}`} className="flex items-center gap-3 text-gray-400 hover:text-[#73B8BF] transition-colors group">
-                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-[#73B8BF]/10 transition-colors shrink-0">
+              <div className="flex items-center gap-3 text-gray-400">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
                 <span className="text-[18px]">{data.contact.email}</span>
-              </a>
+              </div>
               <div className="flex items-start gap-3 text-gray-400">
                 <div className="w-10 h-10 shrink-0 rounded-lg bg-white/5 flex items-center justify-center mt-0.5">
                   <MapPin className="w-4 h-4" />
@@ -183,11 +183,12 @@ export default function Footer({ data }: { data: FooterData }) {
                 ))}
               </ul>
               {col.title === 'Partner Platforms' && (
-                <div className="mt-6">
+                <div className="mt-8 flex items-center gap-4">
+                  <p className="text-gray-400 text-sm tracking-widest uppercase font-semibold m-0 whitespace-nowrap">Powered by</p>
                   <img
                     src="/zoho-logo-darkbg.svg"
-                    alt="Zoho"
-                    className="h-16 w-auto"
+                    alt="Powered by Zoho"
+                    className="h-14 w-auto"
                   />
                 </div>
               )}
@@ -209,7 +210,7 @@ export default function Footer({ data }: { data: FooterData }) {
           </p>
 
           <div className="flex items-center gap-6">
-            {data.legal.map((link, idx) => (
+            {data.legal?.map((link, idx) => (
               <a
                 key={idx}
                 href={link.href}

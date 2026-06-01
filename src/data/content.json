@@ -7,10 +7,10 @@
       },
       {
         "title": "Partner Platforms",
-        "href": "/partner-platforms"
+        "href": "/partner-platform"
       },
       {
-        "title": "Custome Services",
+        "title": "Custom Services",
         "href": "/service"
       },
       {
@@ -52,7 +52,7 @@
           {
             "icon": "MessageSquare",
             "title": "AI & Custom Agents",
-            "description": "Transaction and Insights Agents (Automate insights and execute complex business transactions seamlessly)."
+            "description": "Transaction and Insights Agents automate insights and execute complex business transactions seamlessly"
           },
           {
             "icon": "CalendarClock",
@@ -62,7 +62,7 @@
           {
             "icon": "BookOpen",
             "title": "Knowledge Synthesis Agents",
-            "description": "Instantly search, analyze, and synthesize insights from your organization's entire knowledge base."
+            "description": "Instantly search, analyze, and synthesize insights from your organization's knowledge base"
           }
         ]
       },
@@ -91,11 +91,11 @@
         "id": "partner-products",
         "badge": "03",
         "title": "Partner Products & Platforms",
-        "tagline": "We differentiate ourselves through our proven ability to conceptualize, design, and realize tailored solutions aligned perfectly with our customers' unique requirements.",
+        "tagline": "We differentiate ourselves through our ability to conceptualize, design, and realize tailored solutions, leveraging effectively partner eco-system, to realize customers' unique requirements.",
         "image": "/images/offerings/partner-platform.png",
         "accentGradient": "from-violet-500/20 via-indigo-600/10 to-transparent",
         "accentBorder": "border-violet-500/30",
-        "subFeaturesLabel": "Platform Capabilities",
+        "subFeaturesLabel": "Platform Differentiators",
         "features": [
           {
             "icon": "Handshake",
@@ -106,6 +106,32 @@
             "icon": "Layers",
             "title": "The Platform Advantage: Flexibility by Design",
             "description": "Our solutions are powered by an underlying, agile platform framework that ensures rapid deployment and long-term adaptability."
+          }
+        ],
+        "partnerLogo": {
+          "text": "Authorized Zoho Partner",
+          "image": "/zoho-logo-darkbg.svg"
+        },
+        "pillars": [
+          {
+            "title": "Human Capital",
+            "description": "End-to-end HRMS, payroll, and workforce management.",
+            "icon": "Users"
+          },
+          {
+            "title": "Finance & Legal",
+            "description": "Core accounting, tax compliance, invoicing, and contract lifecycles.",
+            "icon": "Landmark"
+          },
+          {
+            "title": "Growth Engine",
+            "description": "Unified CRM, marketing automation, websites, and e-commerce ecosystems.",
+            "icon": "TrendingUp"
+          },
+          {
+            "title": "Productivity Hub",
+            "description": "Cloud-native project management, enterprise email, storage, and collaboration tools.",
+            "icon": "Monitor"
           }
         ],
         "subFeatures": [
@@ -122,92 +148,160 @@
           {
             "icon": "Automation",
             "title": "Automation",
-            "description": "Suite of Workflow, Marketing, and Operational tools that allow businesses to eliminate repetitive tasks Eco-system"
+            "description": "Suite of workflow, marketing, and operational tools that allow businesses to eliminate repetitive tasks."
           },
           {
             "icon": "Bot",
-            "title": "Integrations",
-            "description": "Ease of connecting Zoho with external legacy platforms, internal databases, and third-party tools via secure REST APIs and real-time Webhooks"
+            "title": "Eco-system Integrations",
+            "description": "Ease of connecting external legacy platforms, internal databases, and third-party tools via secure REST APIs and real-time webhooks."
           }
         ]
       }
     ]
   },
   "solutionsPortfolio": {
-    "sectionBadge": "What We Build",
-    "sectionTitle": "Our Solutions Portfolio",
+    "sectionBadge": "What We Deliver",
+    "sectionTitle": "Business Solutions",
     "sectionDescription": "An indicative list of our ready-to-deploy and customizable enterprise solutions.",
     "disclaimer": "*Disclaimers/Terms apply to transaction rates based on volume and integration type.",
-    "items": [
+    "groups": [
       {
-        "domain": "FinTech & Payments",
-        "solution": "Standalone Payment Gateway",
-        "description": "Secure processing across UPI (at an industry-low 0.5%*), Net Banking, and Cards.",
-        "icon": "CreditCard",
-        "color": "blue"
+        "title": "Industry Agnostic Solutions",
+        "items": [
+          {
+            "domain": "FinTech & Payments",
+            "solution": "Standalone Payment Gateway",
+            "description": "Secure processing across UPI (at an industry-low 0.5%*), Net Banking, and Cards.",
+            "features": [
+              "Omnichannel Checkout",
+              "Payment Acceptance & Distribution",
+              "Financial Intelligence",
+              "Cost Optimization"
+            ],
+            "icon": "CreditCard",
+            "color": "blue"
+          },
+          {
+            "domain": "Retail & Digital Commerce",
+            "solution": "Unified eCommerce",
+            "description": "Complete digital storefronts integrated natively with secure payment gateways and logistics/delivery partners.",
+            "features": [
+              "B2B & B2C Multi-Tenancy",
+              "Robust B2B Capabilities",
+              "Hyperlocal Optimization",
+              "Operational Backbone"
+            ],
+            "icon": "ShoppingCart",
+            "color": "orange"
+          },
+          {
+            "domain": "Growth & Marketing",
+            "solution": "Omnichannel Digital Marketing",
+            "description": "Centralized hub for Agencies or Brands to run Social Media, Campaigns (Email, WhatsApp), and Customer Surveys.",
+            "features": [
+              "Agency & Multi-Brand",
+              "Financial Accountability",
+              "Omnichannel Social Desk",
+              "Campaign Orchestration"
+            ],
+            "icon": "Megaphone",
+            "color": "pink"
+          },
+          {
+            "domain": "Event Tech",
+            "solution": "Holistic Event Management Platform",
+            "description": "Tool for comprehensive planning (Agenda, Speaker management, Sponsor/Exhibitor booths), Ticketing with auto generated event website and mobile app.",
+            "features": [
+              "Production Planning",
+              "Sponsor & Exhibitor Hubs",
+              "Granular Ticket Engine",
+              "Instant Web & App Footprint"
+            ],
+            "icon": "Calendar",
+            "color": "teal"
+          },
+          {
+            "domain": "Modern Workplace",
+            "solution": "Enterprise Collaboration Suite",
+            "description": "Secure, all-in-one digital workplace featuring Email, Chat, Drive storage, and Video Conferencing.",
+            "features": [
+              "Migrate from Google Workspace, Microsoft 365",
+              "Frictionless Data Migration",
+              "Digital Corporate Ecosystem",
+              "Secure File Vault (Drive)"
+            ],
+            "icon": "Users",
+            "color": "purple"
+          }
+        ]
       },
       {
-        "domain": "Retail & Digital Commerce",
-        "solution": "Unified eCommerce Solution",
-        "description": "Complete digital storefronts integrated natively with secure payment gateways and logistics/delivery partners.",
-        "icon": "ShoppingCart",
-        "color": "orange"
-      },
-      {
-        "domain": "Growth & Marketing",
-        "solution": "Omnichannel Digital Marketing",
-        "description": "Centralized hub for Agencies or Brands to run Social Media, Campaigns (Email, WhatsApp), and Customer Surveys.",
-        "icon": "Megaphone",
-        "color": "pink"
-      },
-      {
-        "domain": "Manufacturing",
-        "solution": "Production Planning ERP",
-        "description": "Streamlined material requirements planning (MRP), scheduling, and shop floor optimization.",
-        "icon": "Factory",
-        "color": "amber"
-      },
-      {
-        "domain": "Modern Workplace",
-        "solution": "Enterprise Collaboration Suite",
-        "description": "Secure, all-in-one digital workplace featuring Email, Chat, Drive storage, and Video Conferencing.",
-        "icon": "Users",
-        "color": "purple"
-      },
-      {
-        "domain": "Event Tech",
-        "solution": "End-to-End Event Management",
-        "description": "Comprehensive planning tool for Agendas, Speaker management, Sponsor/Exhibitor booths, Ticketing, and Event Websites.",
-        "icon": "Calendar",
-        "color": "teal"
-      },
-      {
-        "domain": "Healthcare",
-        "solution": "Hospital Business Operations",
-        "description": "Comprehensive management covering patient workflows, billing, and administrative operations.",
-        "icon": "HeartPulse",
-        "color": "rose"
-      },
-      {
-        "domain": "Niche ERP & Operations",
-        "solution": "Non-Profit, NGO, & Temple Operations",
-        "description": "Tailored management platforms designed specifically for Non-Profits, NGOs, and Religious Institutions/Temples.",
-        "icon": "Landmark",
-        "color": "indigo"
-      },
-      {
-        "domain": "Investment Management",
-        "solution": "Investment Product Master",
-        "description": "Centralized data architecture for multi-asset management, including Equities, Mutual Funds, Fixed Income, and Insurance.",
-        "icon": "TrendingUp",
-        "color": "emerald"
-      },
-      {
-        "domain": "Sales & Communications",
-        "solution": "Cloud CRM & Integrated Telephony",
-        "description": "Advanced Customer Relationship Management seamlessly integrated with cloud telephony for unified communication.",
-        "icon": "PhoneCall",
-        "color": "cyan"
+        "title": "Industry Specific Solutions",
+        "items": [
+          {
+            "domain": "Niche ERP & Operations",
+            "solution": "Non-Profit, Non-Govt NGO, & Temple Operations",
+            "description": "Tailored management platforms designed specifically for Non-Profits, NGOs, and Religious Institutions/Temples.",
+            "features": [
+              "Donation Management",
+              "Smart Inventory",
+              "Temple-Specific Workflows",
+              "Workforce & Payroll"
+            ],
+            "icon": "Landmark",
+            "color": "indigo"
+          },
+          {
+            "domain": "Manufacturing",
+            "solution": "Production Planning ERP",
+            "description": "Streamlined material requirements planning (MRP), scheduling, and shop floor optimization.",
+            "features": [
+              "Demand-Driven Assembly Cycles",
+              "Advanced Inventory Match Engine",
+              "Automated Vendor Procurement"
+            ],
+            "icon": "Factory",
+            "color": "amber"
+          },
+          {
+            "domain": "Healthcare",
+            "solution": "Healthcare Centre Business Operations",
+            "description": "Comprehensive management covering patient workflows, billing, and administrative operations.",
+            "features": [
+              "Patient Lifecycle",
+              "Staff and Contractors",
+              "Contract Lifecycle Management",
+              "Healthcare Centre Supply Chain"
+            ],
+            "icon": "HeartPulse",
+            "color": "rose"
+          },
+          {
+            "domain": "Investment Management",
+            "solution": "Investment Product Master",
+            "description": "Centralized data architecture for multi-asset management, including Equities, Mutual Funds, Fixed Income, and Insurance.",
+            "features": [
+              "Multi Asset Tracking",
+              "Regulatory Alignment",
+              "Frictionless Ingestion"
+            ],
+            "icon": "TrendingUp",
+            "color": "emerald"
+          },
+          {
+            "domain": "Sales & Communications",
+            "solution": "Cloud CRM & Integrated Telephony",
+            "description": "Advanced Customer Relationship Management seamlessly integrated with cloud telephony for unified communication.",
+            "features": [
+              "Dedicated Connectivity",
+              "Native Dialing",
+              "Infrastructure Flexibility",
+              "Automated Call Registry"
+            ],
+            "icon": "PhoneCall",
+            "color": "cyan"
+          }
+        ]
       }
     ]
   },
@@ -316,7 +410,7 @@
       "description": "We don't just deliver services; we partner with you on your road to transformation and operational excellence. By combining deep technical expertise with sharp business acumen, we provide the unwavering support you need to succeed.",
       "bullets": [
         "Tailored Solutions mapped to your vision",
-        "Deep Technical Expertise & industry insights",
+        "Deep Technical Expertise & Industry Insights",
         "End-to-End Support at every stage of growth"
       ],
       "image": "/images/hero/slide2.png"
@@ -371,19 +465,19 @@
         "links": [
           {
             "label": "Enterprise Suites",
-            "href": "/partner-platforms"
+            "href": "/partner-platform"
           },
           {
             "label": "Finance & Operations",
-            "href": "/partner-platforms"
+            "href": "/partner-platform"
           },
           {
             "label": "Commerce & Digital",
-            "href": "/partner-platforms"
+            "href": "/partner-platform"
           },
           {
             "label": "Analytics & Collaboration",
-            "href": "/partner-platforms"
+            "href": "/partner-platform"
           }
         ]
       },
@@ -391,20 +485,20 @@
         "title": "Business Solution",
         "links": [
           {
-            "label": "Non-Profit, NGO, & Temple Operations",
-            "href": "/partner-platforms#solution-7"
+            "label": "Non-Profit, Non-Govt NGO , & Temple Operations",
+            "href": "/partner-platform#solution-7"
           },
           {
             "label": "Investment Product Master",
-            "href": "/partner-platforms#solution-8"
+            "href": "/partner-platform#solution-8"
           },
           {
             "label": "Production Planning ERP",
-            "href": "/partner-platforms#solution-3"
+            "href": "/partner-platform#solution-3"
           },
           {
-            "label": "Hospital Business Operations",
-            "href": "/partner-platforms#solution-6"
+            "label": "Healthcare Centre Business Operations",
+            "href": "/partner-platform#solution-6"
           }
         ]
       },
@@ -429,34 +523,10 @@
     "socials": [
       {
         "platform": "LinkedIn",
-        "href": "#",
+        "href": "https://in.linkedin.com/company/neudhi23",
         "icon": "Linkedin"
-      },
-      {
-        "platform": "Twitter",
-        "href": "#",
-        "icon": "Twitter"
-      },
-      {
-        "platform": "Facebook",
-        "href": "#",
-        "icon": "Facebook"
       }
     ],
-    "copyright": "© 2025 Neudhi23 Technologies Pvt. Ltd. All rights reserved.",
-    "legal": [
-      {
-        "label": "Privacy Policy",
-        "href": "#"
-      },
-      {
-        "label": "Terms of Service",
-        "href": "#"
-      },
-      {
-        "label": "Cookie Policy",
-        "href": "#"
-      }
-    ]
+    "copyright": "© 2026 Neudhi23 Technologies Pvt. Ltd. All rights reserved."
   }
 }

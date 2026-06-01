@@ -10,7 +10,8 @@ import {
   Database, 
   PieChart, 
   Users, 
-  ShieldCheck, 
+  ShieldCheck,
+  Factory,
   type LucideIcon 
 } from 'lucide-react';
 import gsap from 'gsap';
@@ -27,7 +28,8 @@ const iconMap: Record<string, LucideIcon> = {
   Database,
   PieChart,
   Users,
-  ShieldCheck
+  ShieldCheck,
+  Factory
 };
 
 type AboutExperienceProps = {
@@ -35,7 +37,7 @@ type AboutExperienceProps = {
     title: string;
     items: Array<{
       title: string;
-      description: string;
+      points: string[];
       icon: string;
     }>;
   };
@@ -95,7 +97,7 @@ export default function AboutExperience({ data }: AboutExperienceProps) {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-20 experience-header">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-bold tracking-[0.2em] text-blue-400 uppercase mb-6">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
             <Building className="w-3.5 h-3.5" />
             Track Record
           </span>
@@ -123,12 +125,17 @@ export default function AboutExperience({ data }: AboutExperienceProps) {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-3 leading-snug group-hover:text-blue-200 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-6 leading-snug group-hover:text-blue-200 transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-                    {item.description}
-                  </p>
+                  <ul className="space-y-3">
+                    {item.points.map((point, pIdx) => (
+                      <li key={pIdx} className="flex gap-3 text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">
+                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 mt-2 shrink-0"></span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             );

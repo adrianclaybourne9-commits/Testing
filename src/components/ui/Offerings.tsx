@@ -20,6 +20,9 @@ import {
   Zap,
   Settings2,
   ArrowRight,
+  Users,
+  Landmark,
+  Monitor,
   type LucideIcon,
 } from 'lucide-react';
 import gsap from 'gsap';
@@ -41,6 +44,9 @@ const iconMap: Record<string, LucideIcon> = {
   Zap,
   Settings2,
   ArrowRight,
+  Users,
+  Landmark,
+  Monitor,
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {
@@ -72,6 +78,15 @@ export type OfferingItem = {
   subFeaturesLabel?: string;
   features: OfferingFeature[];
   subFeatures?: OfferingSubFeature[];
+  pillars?: {
+    icon: string;
+    title: string;
+    description: string;
+  }[];
+  partnerLogo?: {
+    text: string;
+    image: string;
+  };
   imageLabel?: string;
 };
 
@@ -141,10 +156,17 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
             />
 
           </div>
-          
+
+          {card.partnerLogo && (
+            <div className="mt-8 flex items-center gap-4">
+              <span className="text-sm md:text-base font-bold tracking-widest text-white uppercase">{card.partnerLogo.text}</span>
+              <img src={card.partnerLogo.image} alt={card.partnerLogo.text} className="h-10 md:h-12 w-auto" />
+            </div>
+          )}
+
           <div className="mt-6 flex justify-start">
             <MagneticButton strength={0.4}>
-              <Link href="/service" className="relative overflow-hidden inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white border border-white/20 bg-white/5 rounded-full transition-all group/btn hover:border-transparent hover:shadow-[0_0_20px_rgba(117,186,188,0.3)]">
+              <Link href="/partner-platform" className="relative overflow-hidden inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white border border-white/20 bg-white/5 rounded-full transition-all group/btn hover:border-transparent hover:shadow-[0_0_20px_rgba(117,186,188,0.3)]">
                 <span className="absolute inset-0 bg-[#75BABC] translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-full" />
                 <span className="relative z-10 flex items-center text-white transition-colors duration-300">
                   Explore more <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
@@ -190,9 +212,30 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
             ))}
           </div>
 
+          {card.pillars && card.pillars.length > 0 && (
+            <div className="mb-8 p-6 rounded-2xl border border-white/10 bg-white/[0.01]">
+              <h5 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
+                Platforms
+              </h5>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {card.pillars.map((pillar, pIdx) => (
+                  <div key={pIdx} className="group/pillar relative rounded-xl bg-white/[0.02] border border-white/5 p-4 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center text-indigo-400">
+                        <Icon name={pillar.icon} className="w-4 h-4" />
+                      </div>
+                      <h5 className="text-base font-bold text-white tracking-wide capitalize">{pillar.title}</h5>
+                    </div>
+                    <p className="text-sm text-gray-200 leading-relaxed group-hover/pillar:text-white transition-colors">{pillar.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {card.subFeatures && card.subFeatures.length > 0 && (
             <div className="mt-6">
-              <h5 className="text-xs font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
+              <h5 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
                 {card.subFeaturesLabel || 'Capabilities'}
               </h5>
               <div className={`grid grid-cols-1 sm:grid-cols-2 ${card.subFeatures.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-3`}>
@@ -281,7 +324,7 @@ export default function Offerings({ data }: OfferingsProps) {
               {data.sectionTitle.split(' ').slice(-1)[0]}
             </span>
           </h2>
-          <p className="max-w-2xl mx-auto text-base md:text-lg text-gray-400 leading-relaxed">
+          <p className="max-w-2xl mx-auto text-lg md:text-xl text-white leading-relaxed">
             {data.sectionDescription}
           </p>
         </div>

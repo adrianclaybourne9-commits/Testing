@@ -72,23 +72,16 @@ export default function ContactHero() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
         <div
           ref={pillRef}
-          className="flex items-center gap-2 mb-6 text-cyan-400 text-sm md:text-base font-medium tracking-wide"
+          className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-10 backdrop-blur-md"
         >
           <Mail className="w-4 h-4" />
           <span>reachus@neudhi23.com</span>
         </div>
         <h1
           ref={titleRef}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-8 tracking-tighter leading-none whitespace-nowrap"
+          className="text-5xl md:text-7xl font-black mb-8 leading-tight tracking-tight drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400"
         >
-          <span className="inline-block text-transparent bg-clip-text bg-gradient-to-b from-white via-gray-200 to-gray-600 drop-shadow-2xl">
-            Contact
-          </span>
-          <span className="inline-block relative ml-3 md:ml-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-500">
-              Us
-            </span>
-          </span>
+          Contact Us
         </h1>
 
         <p

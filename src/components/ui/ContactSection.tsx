@@ -62,7 +62,7 @@ export default function ContactSection({ data }: ContactSectionProps) {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Pune, India</h3>
-                  <p className="text-gray-400 leading-relaxed text-lg">
+                  <p className="text-white leading-relaxed text-lg">
                     {data.address}
                   </p>
                 </div>
@@ -79,9 +79,9 @@ export default function ContactSection({ data }: ContactSectionProps) {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Email</h3>
-                  <a href={`mailto:${data.email}`} className="text-gray-400 leading-relaxed text-lg hover:text-cyan-400 transition-colors">
+                  <p className="text-white leading-relaxed text-lg">
                     {data.email}
-                  </a>
+                  </p>
                 </div>
               </div>
             </div>
