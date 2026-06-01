@@ -39,9 +39,9 @@ const iconMap: Record<string, LucideIcon> = {
 
 const colorMap: Record<string, { gradient: string; text: string; bgGlow: string }> = {
   cyan: {
-    gradient: 'from-cyan-400 to-blue-500',
-    text: 'text-cyan-400',
-    bgGlow: 'bg-cyan-900/20'
+    gradient: 'from-[#73B8BF] to-[#73B8BF]',
+    text: 'text-[#73B8BF]',
+    bgGlow: 'bg-[#73B8BF]/20'
   },
   indigo: {
     gradient: 'from-indigo-400 to-purple-500',

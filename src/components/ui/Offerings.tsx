@@ -147,6 +147,20 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
           } gap-10 lg:gap-16 items-center`}
       >
         <div ref={imageRef} className="w-full lg:w-[45%] opacity-0">
+          <div className="mb-8">
+            {card.imageLabel && (
+              <div className="text-3xl md:text-4xl font-black text-white mb-1 leading-tight">
+                {card.imageLabel}
+              </div>
+            )}
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
+              {card.title}
+            </h2>
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
+              {card.tagline}
+            </p>
+          </div>
+
           <div className="relative overflow-hidden rounded-2xl shadow-2xl group/img">
             <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 via-transparent to-transparent z-10" />
             <img
@@ -177,18 +191,6 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
         </div>
 
         <div ref={contentRef} className="w-full lg:w-[55%] opacity-0">
-          {card.imageLabel && (
-            <div className="text-3xl md:text-4xl font-black text-white mb-1 leading-tight">
-              {card.imageLabel}
-            </div>
-          )}
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
-            {card.title}
-          </h2>
-          <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
-            {card.tagline}
-          </p>
-
           <div className="space-y-4 mb-6">
             {card.features.map((feature, fIdx) => (
               <div

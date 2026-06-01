@@ -67,6 +67,7 @@ export type SolutionItem = {
   color: string;
   href?: string;
   features?: string[];
+  footnote?: string;
 };
 
 export type SolutionsData = {
@@ -183,9 +184,16 @@ function AgnosticGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                 </p>
               </div>
 
-              <div className="flex items-center gap-2 mt-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                <span className="text-sm font-bold text-white tracking-wide uppercase">Explore More</span>
-                <ArrowRight className="w-4 h-4 text-white" />
+              <div>
+                {item.footnote && (
+                  <div className="mb-4 text-sm font-semibold text-[#73B8BF]/90 group-hover:text-[#73B8BF] transition-colors">
+                    {item.footnote}
+                  </div>
+                )}
+                <div className="flex items-center gap-2 mt-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                  <span className="text-sm font-bold text-white tracking-wide uppercase">Explore More</span>
+                  <ArrowRight className="w-4 h-4 text-white" />
+                </div>
               </div>
             </Link>
           );
@@ -244,7 +252,7 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                     
                     {/* TOP TAB (Always visible when stacked) */}
                     <div className="w-full px-8 md:px-12 h-[60px] flex items-center border-b border-white/5 bg-[#0a0c10] z-20 relative shrink-0">
-                      <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-gray-400 group-hover:text-gray-300 transition-colors uppercase">
+                      <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#73B8BF] group-hover:text-[#73B8BF]/90 transition-colors uppercase">
                         {item.domain}
                       </span>
                     </div>
