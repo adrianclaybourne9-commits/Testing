@@ -93,7 +93,29 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
       if (ref) observer.observe(ref);
     });
 
-    return () => observer.disconnect();
+    // Handle hash scrolling
+    const scrollToHash = () => {
+      if (typeof window !== 'undefined' && window.location.hash) {
+        setTimeout(() => {
+          const id = window.location.hash.substring(1);
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 300); // 300ms delay to allow layout to settle
+      }
+    };
+
+    // Run on initial load
+    scrollToHash();
+
+    // Listen for hash changes when clicking links on the same page
+    window.addEventListener('hashchange', scrollToHash);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('hashchange', scrollToHash);
+    };
   }, [flatItems]);
 
   const activeItem = flatItems[activeIndex] || flatItems[0];

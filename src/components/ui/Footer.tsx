@@ -172,13 +172,13 @@ export default function Footer({ data }: { data: FooterData }) {
               <ul className="space-y-1">
                 {col.links.map((link, lIdx) => (
                   <li key={lIdx}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-[16px] md:text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-start py-1.5"
                     >
                       <span className="leading-tight">{link.label}</span>
                       <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-0.5" />
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
