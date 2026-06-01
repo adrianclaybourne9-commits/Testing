@@ -59,10 +59,17 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
         }
       );
     }
+
+    // Handle hash scrolling specifically for this section
+    if (typeof window !== 'undefined' && window.location.hash === '#advanced-data-services') {
+      setTimeout(() => {
+        sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+      }, 300);
+    }
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 relative overflow-hidden">
+    <section id="advanced-data-services" ref={sectionRef} className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight">{data.title}</h2>
