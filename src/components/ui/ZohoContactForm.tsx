@@ -227,7 +227,7 @@ export default function ZohoContactForm() {
                     <div className="scale-[0.75] min-[360px]:scale-[0.85] min-[400px]:scale-100 origin-left sm:origin-center w-[300px] shrink-0">
                       <Turnstile
                         ref={turnstileRef}
-                        siteKey="1x00000000000000000000AA"
+                        siteKey="0x4AAAAAADdb0Z0I6BvCvFk4"
                         onSuccess={(token) => setTurnstileToken(token)}
                         options={{
                           theme: 'dark',
