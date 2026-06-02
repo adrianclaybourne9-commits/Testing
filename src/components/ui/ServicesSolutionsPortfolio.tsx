@@ -125,7 +125,7 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
     <section id="flagship-business-solutions-portfolio" className="pt-24 pb-12 relative ">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight text-white">{data.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 leading-tight text-[#75BABC]">{data.title}</h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">{data.description}</p>
         </div>
 

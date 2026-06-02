@@ -185,7 +185,7 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
             {/* <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-bold tracking-[0.2em] text-gray-300 uppercase mb-6">
               <Settings className="w-4 h-4" /> Comprehensive Services
             </div> */}
-            <h3 className="text-3xl md:text-5xl font-black text-white mb-6">{data.services.title}</h3>
+            <h3 className="text-3xl md:text-5xl font-black text-[#75BABC] mb-6">{data.services.title}</h3>
             <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">{data.services.description}</p>
           </div>
 

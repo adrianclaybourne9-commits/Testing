@@ -87,7 +87,7 @@ function AgnosticGroupSection({ group, groupIdx, data }: { group: SolutionsData[
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-    
+
     const ctx = gsap.context(() => {
       const track = trackRef.current;
       const container = containerRef.current;
@@ -131,14 +131,14 @@ function AgnosticGroupSection({ group, groupIdx, data }: { group: SolutionsData[
               <Layers className="w-3.5 h-3.5" />
               {data.sectionBadge}
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#75BABC] leading-tight mb-5">
               {data.sectionTitle}
             </h2>
             <p className="max-w-2xl text-lg md:text-xl text-white leading-relaxed">
               {data.sectionDescription}
             </p>
           </div>
-          
+
           <div className="sticky top-0 z-40 bg-gray-950/95 backdrop-blur-md pt-6 pb-6 mb-10 flex items-center gap-4 md:gap-6 pointer-events-auto">
             <div className="w-8 md:w-12 h-1 bg-[#73B8BF] rounded-full shrink-0"></div>
             <h3 className="text-2xl md:text-3xl font-bold text-white tracking-wide">
@@ -152,7 +152,7 @@ function AgnosticGroupSection({ group, groupIdx, data }: { group: SolutionsData[
         ref={trackRef}
         className="relative flex items-center gap-6 md:gap-8 px-6 md:px-12 xl:px-24 mt-8 md:mt-10 z-30 w-max"
       >
-        
+
         {group.items.map((item, idx) => {
           const IconComponent = iconMap[item.icon] || Layers;
           const hoverClass = colorMap[item.color] || colorMap.blue;
@@ -170,30 +170,28 @@ function AgnosticGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                   <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors duration-500 ${iconClass}`}>
                     <IconComponent className="w-7 h-7" strokeWidth={1.5} />
                   </div>
-                  <span className="text-[11px] font-bold tracking-widest text-gray-400 uppercase">
+                  <span className="text-[11px] font-bold tracking-widest text-[#73B8BF] uppercase">
                     {item.domain}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-4 leading-snug group-hover:text-white transition-colors">
+                <h3 className="text-2xl font-bold text-white mb-4 leading-snug group-hover:text-[#75BABC] transition-colors">
                   {item.solution}
                 </h3>
 
                 <p className="text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
                   {item.description}
                 </p>
+                {item.footnote && (
+                  <p className="mt-4 text-sm italic text-[#73B8BF] transition-colors">
+                    {item.footnote}
+                  </p>
+                )}
               </div>
 
-              <div>
-                {item.footnote && (
-                  <div className="mb-4 text-sm font-semibold text-[#73B8BF]/90 group-hover:text-[#73B8BF] transition-colors">
-                    {item.footnote}
-                  </div>
-                )}
-                <div className="flex items-center gap-2 mt-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
-                  <span className="text-sm font-bold text-white tracking-wide uppercase">Explore More</span>
-                  <ArrowRight className="w-4 h-4 text-white" />
-                </div>
+              <div className="flex items-center gap-2 mt-6 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
+                <span className="text-sm font-bold text-white tracking-wide uppercase">Explore More</span>
+                <ArrowRight className="w-4 h-4 text-white" />
               </div>
             </Link>
           );
@@ -211,7 +209,7 @@ const getImageForSolution = (solutionName: string) => {
     'Omnichannel Digital Marketing': 'digital_marketing_real_1780315081144.png',
     'Holistic Event Management Platform': 'event_management_real_1780315097066.png',
     'Enterprise Collaboration Suite': 'collaboration_suite_real_1780315119392.png',
-    'Non-Profit, Non-Govt., & Temple Operations': 'non_profit_ops_real_1780315136959.png',
+    'Non-Profit, Non-Govt NGO, & Temple Operations': 'non_profit_ops_real_1780315136959.png',
     'Production Planning ERP': 'manufacturing_erp_real_1780315154903.png',
     'Healthcare Centre Business Operations': 'healthcare_ops_new_1780314755657.png',
     'Investment Product Master': 'investment_master_new_1780314777419.png',
@@ -239,8 +237,8 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
               const iconClass = iconColorMap[item.color] || iconColorMap.blue;
 
               return (
-                <div 
-                  key={`${groupIdx}-${idx}`} 
+                <div
+                  key={`${groupIdx}-${idx}`}
                   className="w-full mb-12 last:mb-0 sticky"
                   style={{ top: `${100 + idx * 60}px` }}
                 >
@@ -249,22 +247,22 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                     href={item.href || `/partner-platform#solution-${groupIdx}-${idx}`}
                     className={`group relative flex flex-col rounded-[2rem] bg-[#0a0c10] border border-white/5 shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer w-full ${hoverClass}`}
                   >
-                    
+
                     {/* TOP TAB (Always visible when stacked) */}
                     <div className="w-full px-8 md:px-12 h-[60px] flex items-center border-b border-white/5 bg-[#0a0c10] z-20 relative shrink-0">
-                      <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#73B8BF] group-hover:text-[#73B8BF]/90 transition-colors uppercase">
+                      <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#73B8BF] uppercase">
                         {item.domain}
                       </span>
                     </div>
 
                     {/* BOTTOM CONTENT AREA */}
                     <div className="flex flex-col lg:flex-row w-full p-8 md:p-12 gap-10 lg:gap-16 relative z-10 bg-[#0a0c10] items-center">
-                      
+
                       {/* LEFT SIDE: Image (1/4 width) */}
                       <div className="lg:w-1/4 shrink-0 relative min-h-[200px] lg:min-h-[240px] w-full rounded-2xl overflow-hidden border border-white/5 shadow-xl">
                         <div className="absolute inset-0 bg-gray-800"></div>
-                        <img 
-                          src={`/images/portfolio/${getImageForSolution(item.solution)}`} 
+                        <img
+                          src={`/images/portfolio/${getImageForSolution(item.solution)}`}
                           alt={item.solution}
                           className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                         />
@@ -272,13 +270,19 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
 
                       {/* RIGHT SIDE: Title, Text and Button (3/4 width) */}
                       <div className="lg:w-3/4 flex flex-col justify-center">
-                        <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-6 group-hover:text-white transition-colors">
+                        <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-6 group-hover:text-[#75BABC] transition-colors">
                           {item.solution}
                         </h3>
 
-                        <p className={`text-lg lg:text-xl text-white leading-relaxed group-hover:text-gray-200 transition-colors ${item.features ? 'mb-6' : 'mb-10'}`}>
+                        <p className={`text-lg lg:text-xl text-white leading-relaxed group-hover:text-gray-200 transition-colors ${item.features || item.footnote ? 'mb-4' : 'mb-10'}`}>
                           {item.description}
                         </p>
+
+                        {item.footnote && (
+                          <p className={`text-base italic text-[#73B8BF] transition-colors ${item.features ? 'mb-6' : 'mb-10'}`}>
+                            {item.footnote}
+                          </p>
+                        )}
 
                         {item.features && item.features.length > 0 && (
                           <ul className="flex flex-col gap-3 mb-10">
@@ -307,7 +311,7 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
           </div>
         </div>
       </div>
-      
+
       {groupIdx === data.groups.length - 1 && (
         <div className="max-w-5xl mx-auto px-6 md:px-12 xl:px-24 mt-8">
           <p className="text-xs md:text-sm text-gray-500 italic border-t border-white/10 pt-6">
@@ -323,7 +327,7 @@ export default function SolutionsPortfolio({ data }: { data: SolutionsData }) {
   return (
     <section id="solutions-portfolio" className="bg-gray-950">
       {data.groups.map((group, idx) => (
-        idx === 0 
+        idx === 0
           ? <AgnosticGroupSection key={idx} group={group} groupIdx={idx} data={data} />
           : <SpecificGroupSection key={idx} group={group} groupIdx={idx} data={data} />
       ))}

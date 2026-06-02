@@ -148,14 +148,15 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
       >
         <div ref={imageRef} className="w-full lg:w-[45%] opacity-0">
           <div className="mb-8">
-            {card.imageLabel && (
-              <div className="text-3xl md:text-4xl font-black text-white mb-1 leading-tight">
+            {card.imageLabel ? (
+              <div className="text-3xl md:text-4xl lg:text-5xl font-black text-[#75BABC] mb-3 leading-tight">
                 {card.imageLabel}
               </div>
+            ) : (
+              <h2 className={`text-3xl md:text-4xl lg:text-5xl font-black mb-3 leading-tight lg:whitespace-nowrap ${card.id === 'partner-products' ? 'text-[#75BABC]' : 'text-white'}`}>
+                {card.title}
+              </h2>
             )}
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-3 leading-tight">
-              {card.title}
-            </h2>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-xl">
               {card.tagline}
             </p>
@@ -191,6 +192,11 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
         </div>
 
         <div ref={contentRef} className="w-full lg:w-[55%] opacity-0">
+          {card.imageLabel && (
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
+              {card.title}
+            </h2>
+          )}
           <div className="space-y-4 mb-6">
             {card.features.map((feature, fIdx) => (
               <div
@@ -321,10 +327,7 @@ export default function Offerings({ data }: OfferingsProps) {
             {data.sectionBadge}
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-5">
-            {data.sectionTitle.split(' ').slice(0, -1).join(' ')}{' '}
-            <span className="bg-gradient-to-r from-[#73B8BF] via-[#8FA8D9] to-[#73B8BF] bg-clip-text text-transparent">
-              {data.sectionTitle.split(' ').slice(-1)[0]}
-            </span>
+            {data.sectionTitle}
           </h2>
           <p className="max-w-2xl mx-auto text-lg md:text-xl text-white leading-relaxed">
             {data.sectionDescription}

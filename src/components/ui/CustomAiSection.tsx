@@ -67,7 +67,7 @@ export default function CustomAiSection({ data }: CustomAiSectionProps) {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-20 text-center max-w-4xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight">{data.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-[#75BABC] leading-tight">{data.title}</h2>
           <p className="text-gray-400 text-lg leading-relaxed">{data.description}</p>
         </div>
 
@@ -117,7 +117,7 @@ export default function CustomAiSection({ data }: CustomAiSectionProps) {
                     className="relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-[#73B8BF]/30 transition-colors group"
                   >
                     <div className="absolute top-0 left-6 w-12 h-[1px] bg-gradient-to-r from-[#73B8BF] to-transparent opacity-50 group-hover:w-24 transition-all duration-500" />
-                    <h4 className="text-xl font-bold text-white mb-3 flex items-center gap-3">
+                    <h4 className="text-xl font-bold text-[#75BABC] mb-3 flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-[#73B8BF] shadow-[0_0_10px_#73B8BF]" />
                       {item.title}
                     </h4>

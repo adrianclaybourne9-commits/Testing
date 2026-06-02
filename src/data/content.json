@@ -2,7 +2,7 @@
   "navbar": {
     "links": [
       {
-        "title": "Proprietary Products",
+        "title": "Proprietary Platforms",
         "href": "/proprietary-products"
       },
       {
@@ -115,22 +115,22 @@
         "pillars": [
           {
             "title": "Human Capital",
-            "description": "End-to-end HRMS, payroll, and workforce management.",
+            "description": "End-to-end HRMS, Payroll, and Workforce Management.",
             "icon": "Users"
           },
           {
             "title": "Finance & Legal",
-            "description": "Core accounting, tax compliance, invoicing, and contract lifecycles.",
+            "description": "Core Accounting, Tax Compliance, Invoicing, Payments and Contract Lifecycles.",
             "icon": "Landmark"
           },
           {
             "title": "Growth Engine",
-            "description": "Unified CRM, marketing automation, websites, and e-commerce ecosystems.",
+            "description": "Unified CRM, Marketing Automation, Websites, and E-commerce Ecosystems.",
             "icon": "TrendingUp"
           },
           {
             "title": "Productivity Hub",
-            "description": "Cloud-native project management, enterprise email, storage, and collaboration tools.",
+            "description": "Cloud-Native Project Management, Enterprise Email, Storage, and Collaboration Tools.",
             "icon": "Monitor"
           }
         ],

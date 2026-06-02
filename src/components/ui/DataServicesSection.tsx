@@ -72,7 +72,7 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
     <section id="advanced-data-services" ref={sectionRef} className="py-24 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white leading-tight">{data.title}</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-[#75BABC] leading-tight">{data.title}</h2>
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">{data.description}</p>
         </div>
 
@@ -86,7 +86,7 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
               <div className="w-14 h-14 rounded-2xl bg-[#73B8BF]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shrink-0">
                 <Icon name={item.icon} className="w-7 h-7 text-[#73B8BF]" />
               </div>
-              <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+              <h3 className="text-xl font-bold mb-4 group-hover:text-[#75BABC] transition-colors">{item.title}</h3>
               <p className="text-base text-gray-200 leading-relaxed flex-1 group-hover:text-white transition-colors">{item.description}</p>
             </div>
           ))}

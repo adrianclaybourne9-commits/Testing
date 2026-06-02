@@ -137,16 +137,13 @@ export default function Footer({ data }: { data: FooterData }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-6">
 
           <div className="footer-col lg:col-span-3 lg:pr-8">
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-8 h-10">
               <img
                 src={data.brand.logo}
                 alt={data.brand.name}
                 className="h-10 w-auto"
               />
             </div>
-            <p className="text-gray-400 text-base leading-relaxed mb-8 max-w-xs">
-              {/* {data.brand.tagline} */}
-            </p>
 
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-400">
@@ -166,15 +163,15 @@ export default function Footer({ data }: { data: FooterData }) {
 
           {data.columns.map((col, idx) => (
             <div key={idx} className={`footer-col ${col.title === 'Business Solution' ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
-              <h4 className="text-[15px] font-bold text-white uppercase tracking-[0.15em] mb-7">
+              <h4 className="h-10 flex items-center text-[15px] font-bold text-white uppercase tracking-[0.15em] mb-8">
                 {col.title}
               </h4>
-              <ul className="space-y-1">
+              <ul className="space-y-2">
                 {col.links.map((link, lIdx) => (
                   <li key={lIdx}>
                     <Link
                       href={link.href}
-                      className="text-[16px] md:text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-start py-1.5"
+                      className="text-[16px] md:text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-center min-h-[40px]"
                     >
                       <span className={`leading-tight ${link.label === 'Analytics & Collaboration' ? 'whitespace-nowrap' : ''}`}>{link.label}</span>
                       <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-0.5" />

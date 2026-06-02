@@ -117,7 +117,7 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
   }, [isReversed]);
 
   return (
-    <section ref={containerRef} className={`relative pt-24 pb-32 bg-gradient-to-b ${colors.gradient} border-b border-white/5`}>
+    <section id={product.id} ref={containerRef} className={` relative pt-24 pb-32 bg-gradient-to-b ${colors.gradient} border-b border-white/5`}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-12 lg:gap-20 relative items-stretch">
 
         <div className={`w-full lg:w-5/12 pt-8 ${isReversed ? 'lg:order-2' : ''}`}>
@@ -126,7 +126,7 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
               <Settings className="w-4 h-4" /> {product.subtitle}
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-black text-[#75BABC] mb-4 leading-tight">
               {product.name.split('|')[0]}
             </h2>
 
@@ -146,7 +146,7 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
             </div>
           </div>
         </div>
-        
+
         <div ref={rightScrollRef} className={`w-full lg:w-7/12 flex flex-col gap-6 pt-8 ${isReversed ? 'lg:order-1' : ''}`}>
           {product.features.map((feature, idx) => {
             const IconComponent = iconMap[feature.icon] || CheckCircle2;
@@ -162,7 +162,7 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
                     <IconComponent className={`w-7 h-7 ${colors.text}`} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight group-hover:text-white/90 transition-colors">
+                    <h3 className="text-2xl font-bold text-[#75BABC] mb-3 tracking-tight transition-colors">
                       {feature.title}
                     </h3>
                     <p className="text-gray-200 text-lg leading-relaxed group-hover:text-white transition-colors">

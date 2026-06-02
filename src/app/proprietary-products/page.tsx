@@ -1,10 +1,10 @@
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Proprietary Products',
+  title: 'Proprietary Platforms',
   description: 'Enterprise Grade Scale Products including AI integrations, FinTech solutions, and ERP.',
   openGraph: {
-    title: 'Proprietary Products | Neudhi23',
+    title: 'Proprietary Platforms | Neudhi23',
     description: 'Enterprise Grade Scale Products including AI integrations, FinTech solutions, and ERP.',
   }
 };
@@ -24,19 +24,19 @@ export default function ProprietaryProductsPage() {
       <div className="absolute top-0 left-0 w-full z-50">
         <Navbar data={siteData.navbar} />
       </div>
-      
+
       <ProductsHero data={productsData.hero} />
-      
+
       <div className="relative z-10">
         {productsData.products.map((product, index) => (
-          <ProductShowcase 
+          <ProductShowcase
             key={product.id}
             product={product}
             index={index}
           />
         ))}
       </div>
-      
+
       <Footer data={siteData.footer} />
     </main>
   );

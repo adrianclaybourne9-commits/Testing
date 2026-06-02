@@ -27,7 +27,7 @@ export default function ProductsHero({ data }: ProductsHeroProps) {
       <div className="absolute inset-0 z-0">
         <Image
           src="/products-hero-bg.png"
-          alt="Abstract Proprietary Products Background"
+          alt="Abstract Proprietary Platforms Background"
           fill
           priority
           className="object-cover opacity-60"

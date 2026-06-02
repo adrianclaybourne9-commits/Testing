@@ -108,7 +108,7 @@ function FeatureCard({ feature, index, colorTheme }: { feature: ProductFeature; 
         <IconComponent className={`w-6 h-6 ${colorTheme.text}`} strokeWidth={1.5} />
       </div>
       <div>
-        <h4 className="text-lg font-bold text-white mb-2 tracking-wide leading-tight">{feature.title}</h4>
+        <h4 className="text-lg font-bold text-[#75BABC] mb-2 tracking-wide leading-tight">{feature.title}</h4>
         <p className="text-base text-gray-200 leading-relaxed group-hover:text-white transition-colors">
           {feature.description}
         </p>
@@ -156,12 +156,18 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-950 to-transparent" />
       </div>
 
+      <div className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 mb-12 text-left">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#75BABC] leading-tight tracking-tight">
+          Proprietary Platforms
+        </h2>
+      </div>
+
       <div ref={headerRef} className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 mb-20 md:mb-28 text-center">
         <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
           <Box className="w-3.5 h-3.5" />
           {data.sectionBadge}
         </span>
-        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
           {data.sectionTitle}
         </h2>
         <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
@@ -179,7 +185,7 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
               <div className={`w-full lg:w-5/12 ${isReversed ? 'lg:order-2' : ''}`}>
                 <div className="flex flex-col lg:sticky lg:top-32">
                   <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 leading-tight">
-                    <span className={`bg-gradient-to-r ${colorTheme.gradient} bg-clip-text text-transparent`}>
+                    <span className="text-[#75BABC]">
                       {product.name.split('|')[0]}
                     </span>
                     <br />
@@ -193,8 +199,8 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
 
                   <div className="relative w-full aspect-video md:aspect-[4/3] lg:aspect-[4/3] rounded-3xl overflow-hidden bg-gray-900 border border-white/10 shadow-2xl group cursor-pointer">
                     {product.image ? (
-                      <img 
-                        src={product.image} 
+                      <img
+                        src={product.image}
                         alt={product.name.split('|')[0]}
                         className="w-full h-full object-cover transition-transform duration-[1.5s] scale-100 group-hover:scale-105"
                       />
@@ -225,13 +231,13 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
                   </div>
 
                   <div className="mt-8 flex items-center gap-3">
-                    <Link href="/contact-us" className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl">
+                    <Link href={`/proprietary-products#${product.id}`} className="group inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-gray-950 font-bold hover:bg-gray-100 transition-all duration-300 shadow-xl hover:shadow-2xl">
                       <span className="relative block overflow-hidden">
                         <span className="block transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[120%]">
-                          Request Demo
+                          Explore More
                         </span>
                         <span className="absolute inset-0 block translate-y-[120%] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 text-gray-950">
-                          Request Demo
+                          Explore More
                         </span>
                       </span>
                       <ChevronRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1" />
