@@ -130,7 +130,7 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
 
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
 
-          <div className="bento-item parallax-card col-span-1 md:col-span-2 lg:col-span-2 row-span-2 relative p-[1px] rounded-[2rem] overflow-hidden group">
+          <div className="bento-item parallax-card col-span-1 md:col-span-3 lg:col-span-4 relative p-[1px] rounded-[2rem] overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-transparent to-green-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
             <div className="parallax-inner w-full h-full bg-gray-900/80 backdrop-blur-xl rounded-[2rem] p-8 lg:p-10 border border-white/10 flex flex-col justify-between relative z-10">
               <div>
@@ -138,7 +138,7 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
                 <p className="text-gray-400 text-lg mb-8">{data.portfolio.description}</p>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {data.portfolio.categories.map((cat, idx) => (
                   <div key={idx} className="space-y-3">
                     <h4 className="font-bold text-blue-300 text-sm tracking-wide uppercase">{cat.title}</h4>
@@ -156,6 +156,7 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
             </div>
           </div>
 
+          {/* 
           {data.pillars.map((pillar, idx) => {
             const colors = [
               "from-blue-500/20 to-blue-500/5 text-blue-400",
@@ -179,6 +180,7 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
               </div>
             );
           })}
+          */}
 
           {/* Services Section Header (Pulled Out) */}
           <div className="bento-item col-span-1 md:col-span-3 lg:col-span-4 text-center mt-20 mb-4">
@@ -195,11 +197,11 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
               <div key={idx} className="bento-item parallax-card relative p-[1px] rounded-[2rem] overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                 <div className="parallax-inner w-full h-full bg-gray-900/80 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 relative z-10 flex flex-col gap-6">
-                  <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-blue-500/10 group-hover:border-blue-500/20 group-hover:scale-110 transition-all duration-500">
-                    <Icon name={item.icon} className="w-6 h-6 text-gray-400 group-hover:text-blue-400 transition-colors" />
+                  <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-[#75BABC]/10 group-hover:border-[#75BABC]/20 group-hover:scale-110 transition-all duration-500">
+                    <Icon name={item.icon} className="w-6 h-6 text-gray-400 group-hover:text-[#75BABC] transition-colors" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-xl mb-3 flex items-center gap-2 group-hover:text-blue-300 transition-colors">
+                    <h4 className="font-bold text-white text-xl mb-3 flex items-center gap-2 group-hover:text-[#75BABC] transition-colors">
                       {item.title}
                     </h4>
                     <p className="text-gray-400 leading-relaxed text-base">{item.description}</p>

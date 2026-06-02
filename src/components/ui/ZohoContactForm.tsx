@@ -84,7 +84,7 @@ export default function ZohoContactForm() {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400 mb-6">
+          <h2 className="text-4xl md:text-5xl font-black text-[#75BABC] mb-6">
             Let's Start a Conversation
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -108,7 +108,7 @@ export default function ZohoContactForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="First_Name" className="text-sm font-medium text-gray-300 ml-1">
-                      First Name <span className="text-cyan-400">*</span>
+                      First Name <span className="text-[#75BABC]">*</span>
                     </label>
                     <input
                       type="text"
@@ -116,14 +116,14 @@ export default function ZohoContactForm() {
                       name="First Name"
                       maxLength={40}
                       required
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
+                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#75BABC]/50 focus:border-[#75BABC] transition-all"
                       placeholder="John"
                     />
                   </div>
 
                   <div className="space-y-2">
                     <label htmlFor="Last_Name" className="text-sm font-medium text-gray-300 ml-1">
-                      Last Name <span className="text-cyan-400">*</span>
+                      Last Name <span className="text-[#75BABC]">*</span>
                     </label>
                     <input
                       type="text"
@@ -131,7 +131,7 @@ export default function ZohoContactForm() {
                       name="Last Name"
                       maxLength={80}
                       required
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
+                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#75BABC]/50 focus:border-[#75BABC] transition-all"
                       placeholder="Doe"
                     />
                   </div>
@@ -140,7 +140,7 @@ export default function ZohoContactForm() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="Email" className="text-sm font-medium text-gray-300 ml-1">
-                      Email <span className="text-cyan-400">*</span>
+                      Email <span className="text-[#75BABC]">*</span>
                     </label>
                     <input
                       type="email"
@@ -148,7 +148,7 @@ export default function ZohoContactForm() {
                       name="Email"
                       maxLength={100}
                       required
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
+                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#75BABC]/50 focus:border-[#75BABC] transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -162,7 +162,7 @@ export default function ZohoContactForm() {
                       id="Phone"
                       name="Phone"
                       maxLength={15}
-                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all"
+                      className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#75BABC]/50 focus:border-[#75BABC] transition-all"
                       placeholder="+91-1234567890"
                     />
                   </div>
@@ -173,7 +173,7 @@ export default function ZohoContactForm() {
                   <select
                     id="LEADCF5"
                     name="LEADCF5"
-                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all appearance-none"
+                    className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#75BABC]/50 focus:border-[#75BABC] transition-all appearance-none"
                   >
                     <option value="-None-" className="bg-gray-900 text-gray-400">- Select a Product -</option>
                     <option value="Billing System Integrator" className="bg-gray-900 text-white">Billing System Integrator</option>
@@ -200,7 +200,7 @@ export default function ZohoContactForm() {
                     maxLength={200}
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    className="w-full h-full min-h-[200px] lg:min-h-[280px] bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 focus:border-cyan-500 transition-all resize-none"
+                    className="w-full h-full min-h-[200px] lg:min-h-[280px] bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#75BABC]/50 focus:border-[#75BABC] transition-all resize-none"
                     placeholder="Tell us about your project or requirements..."
                   ></textarea>
                 </div>
@@ -221,7 +221,7 @@ export default function ZohoContactForm() {
 
                 <div className="space-y-2 pt-2">
                   <label className="text-sm font-medium text-gray-300 ml-1">
-                    Security Verification <span className="text-cyan-400">*</span>
+                    Security Verification <span className="text-[#75BABC]">*</span>
                   </label>
                   <div className="bg-black/20 border border-white/10 rounded-xl py-2 px-1 sm:px-4 flex justify-start sm:justify-center overflow-hidden w-full lg:w-fit">
                     <div className="scale-[0.75] min-[360px]:scale-[0.85] min-[400px]:scale-100 origin-left sm:origin-center w-[300px] shrink-0">
@@ -242,7 +242,7 @@ export default function ZohoContactForm() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold px-10 py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.5)] disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
+                      className="inline-flex items-center justify-center gap-2 bg-[#75BABC] hover:bg-[#75BABC]/80 text-white font-bold px-10 py-4 rounded-xl transition-all shadow-[0_0_20px_rgba(117,186,188,0.3)] hover:shadow-[0_0_30px_rgba(117,186,188,0.5)] disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
                     >
                       {isSubmitting ? (
                         <>

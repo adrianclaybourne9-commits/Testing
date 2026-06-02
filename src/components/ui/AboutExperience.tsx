@@ -101,7 +101,7 @@ export default function AboutExperience({ data }: AboutExperienceProps) {
             <Building className="w-3.5 h-3.5" />
             Track Record
           </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-[#75BABC] leading-tight">
             {data.title}
           </h2>
         </div>
@@ -125,13 +125,13 @@ export default function AboutExperience({ data }: AboutExperienceProps) {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-6 leading-snug group-hover:text-blue-200 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-white mb-6 leading-snug group-hover:text-[#75BABC] transition-colors duration-300">
                     {item.title}
                   </h3>
                   <ul className="space-y-3">
                     {item.points.map((point, pIdx) => (
                       <li key={pIdx} className="flex gap-3 text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">
-                        <span className="w-1.5 h-1.5 rounded-full bg-blue-500/50 mt-2 shrink-0"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#75BABC] mt-2 shrink-0"></span>
                         <span>{point}</span>
                       </li>
                     ))}

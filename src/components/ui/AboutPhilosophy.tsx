@@ -85,7 +85,7 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
               <Target className="w-4 h-4" />
               Philosophy
             </span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-white leading-tight">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 text-[#75BABC] leading-tight">
               {data.title}
             </h2>
             <p className="text-xl text-gray-400 font-light max-w-3xl mx-auto">

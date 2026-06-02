@@ -55,10 +55,10 @@ export default function ContactSection({ data }: ContactSectionProps) {
           {/* Info Side */}
           <div className="lg:w-[30%] w-full contact-info space-y-8">
             <div>
-              <h2 className="text-3xl font-black text-white mb-6">Our Office</h2>
+              <h2 className="text-3xl font-black text-[#75BABC] mb-6">Our Office</h2>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <MapPin className="w-5 h-5 text-cyan-400" />
+                  <MapPin className="w-5 h-5 text-[#75BABC]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Pune, India</h3>
@@ -72,10 +72,10 @@ export default function ContactSection({ data }: ContactSectionProps) {
             <div className="w-16 h-[1px] bg-white/10" />
 
             <div>
-              <h2 className="text-3xl font-black text-white mb-6">Direct Contact</h2>
+              <h2 className="text-3xl font-black text-[#75BABC] mb-6">Direct Contact</h2>
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0 mt-1">
-                  <Mail className="w-5 h-5 text-cyan-400" />
+                  <Mail className="w-5 h-5 text-[#75BABC]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Email</h3>
