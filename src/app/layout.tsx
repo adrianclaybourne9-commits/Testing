@@ -58,6 +58,8 @@ export const metadata: Metadata = {
   },
 };
 
+import Preloader from "@/components/ui/Preloader";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,6 +71,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${darkerGrotesque.variable} dark`}
     >
       <body className="bg-background text-foreground min-h-screen md:cursor-none overflow-x-hidden">
+        <Preloader />
         <CustomCursor />
         <Providers>{children}</Providers>
       </body>
