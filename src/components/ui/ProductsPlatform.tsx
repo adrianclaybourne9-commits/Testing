@@ -38,6 +38,11 @@ const iconMap: Record<string, LucideIcon> = {
 };
 
 const colorMap: Record<string, { gradient: string; text: string; bgGlow: string }> = {
+  luxury: {
+    gradient: 'from-[#C5A059] to-[#D4AF37]',
+    text: 'text-[#C5A059]',
+    bgGlow: 'bg-[#C5A059]/10'
+  },
   cyan: {
     gradient: 'from-[#73B8BF] to-[#73B8BF]',
     text: 'text-[#73B8BF]',

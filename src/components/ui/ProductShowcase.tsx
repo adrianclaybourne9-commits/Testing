@@ -64,6 +64,12 @@ type ProductShowcaseProps = {
 };
 
 const colorConfig: Record<string, { bg: string, text: string, gradient: string, border: string }> = {
+  luxury: {
+    bg: 'bg-white/10',
+    text: 'text-gray-200',
+    gradient: 'from-slate-900 via-[#0f172a] to-slate-950',
+    border: 'border-white/20'
+  },
   emerald: {
     bg: 'bg-emerald-500/10',
     text: 'text-emerald-400',
@@ -134,7 +140,7 @@ export default function ProductShowcase({ product, index }: ProductShowcaseProps
               {product.description}
             </p>
 
-            <div className="relative w-full aspect-video md:aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group">
+            <div className="relative w-full aspect-[3.6/3.35] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl group">
               <div className={`absolute inset-0 opacity-40 transition-colors duration-1000 blur-3xl ${colors.bg}`} />
               <Image
                 src={product.image}
