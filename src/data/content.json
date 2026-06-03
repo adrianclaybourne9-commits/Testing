@@ -109,7 +109,7 @@
           }
         ],
         "partnerLogo": {
-          "text": "Authorized Zoho Partner",
+          "text": "ZOHO Partner",
           "image": "/zoho-logo-darkbg.svg"
         },
         "pillars": [
@@ -153,7 +153,7 @@
           {
             "icon": "Bot",
             "title": "Eco-system Integrations",
-            "description": "Ease of connecting external legacy platforms, internal databases, and tools via secure REST APIs and webhooks."
+            "description": "Ease of connecting external legacy platforms, internal databases, and tools via secure REST APIs and Webhooks."
           }
         ]
       }
@@ -213,7 +213,7 @@
             "domain": "Event Tech",
             "solution": "Holistic Event Management Platform",
             "description": "Tool for comprehensive planning (Agenda, Speaker management, Sponsor/Exhibitor booths), Ticketing with auto generated event website and mobile app.",
-            "footnote": "* Supports Google Tag Manager, Website Analytics",
+            "footnote": "* Supports Google Tag Manager | Website Analytics",
             "features": [
               "Production Planning",
               "Sponsor & Exhibitor Hubs",
@@ -227,7 +227,7 @@
             "domain": "Modern Workplace",
             "solution": "Enterprise Collaboration Suite",
             "description": "Secure, all-in-one digital workplace featuring Email, Chat, Drive storage, and Video Conferencing.",
-            "footnote": "* Migrate from Google Workspace, Microsoft 365",
+            "footnote": "* Migrate from Google Workspace | Microsoft 365",
             "features": [
               "Frictionless Data Migration",
               "Digital Corporate Ecosystem",
@@ -243,7 +243,7 @@
         "items": [
           {
             "domain": "Niche ERP & Operations",
-            "solution": "Non-Profit, Non-Govt NGO, & Temple Operations",
+            "solution": "NPO,NGO, & Temple Operations",
             "description": "Tailored management platforms designed specifically for Non-Profits, NGOs, and Religious Institutions/Temples.",
             "features": [
               "Donation Management",
@@ -309,8 +309,7 @@
     ]
   },
   "productsPlatform": {
-    "sectionBadge": "Proprietary Intellectual Property & Assets",
-    "sectionTitle": "Neudhi23 Products and Platform",
+    "sectionBadge": "Neudhi23 Intellectual Property & Assets",
     "sectionDescription": "We invest in building high-value assets and scalable solutions engineered to drive long-term value, operational resilience, and sustainable growth for our customers.",
     "products": [
       {
@@ -451,7 +450,7 @@
     },
     "columns": [
       {
-        "title": "Our Product",
+        "title": "Neudhi23 Product",
         "links": [
           {
             "label": "NE23 Wealth",
@@ -488,7 +487,7 @@
         "title": "Business Solution",
         "links": [
           {
-            "label": "NP, NGO, & Temple Operations",
+            "label": "NPO, NGO, & Temple Operations",
             "href": "/partner-platform#solution-1-0"
           },
           {
@@ -506,7 +505,7 @@
         ]
       },
       {
-        "title": "Service",
+        "title": "Custom Services",
         "links": [
           {
             "label": "AI & Custom Agents",

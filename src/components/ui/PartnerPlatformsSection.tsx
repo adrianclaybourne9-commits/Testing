@@ -91,30 +91,7 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
         }
       );
 
-      const cards = document.querySelectorAll('.parallax-card');
-      cards.forEach(card => {
-        card.addEventListener('mousemove', (e: any) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left - rect.width / 2;
-          const y = e.clientY - rect.top - rect.height / 2;
 
-          gsap.to(card.querySelector('.parallax-inner'), {
-            x: x * 0.05,
-            y: y * 0.05,
-            duration: 0.5,
-            ease: 'power2.out'
-          });
-        });
-
-        card.addEventListener('mouseleave', () => {
-          gsap.to(card.querySelector('.parallax-inner'), {
-            x: 0,
-            y: 0,
-            duration: 0.5,
-            ease: 'power2.out'
-          });
-        });
-      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -130,9 +107,9 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
 
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[minmax(180px,auto)]">
 
-          <div className="bento-item parallax-card col-span-1 md:col-span-3 lg:col-span-4 relative p-[1px] rounded-[2rem] overflow-hidden group">
+          <div className="bento-item col-span-1 md:col-span-3 lg:col-span-4 relative p-[1px] rounded-[2rem] overflow-hidden group">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/40 via-transparent to-green-500/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-            <div className="parallax-inner w-full h-full bg-gray-900/80 backdrop-blur-xl rounded-[2rem] p-8 lg:p-10 border border-white/10 flex flex-col justify-between relative z-10">
+            <div className="w-full h-full bg-gray-900/80 backdrop-blur-xl rounded-[2rem] p-8 lg:p-10 border border-white/10 flex flex-col justify-between relative z-10">
               <div>
                 <h3 className="text-3xl font-black text-white mb-3">{data.portfolio.title}</h3>
                 <p className="text-gray-400 text-lg mb-8">{data.portfolio.description}</p>
@@ -194,9 +171,9 @@ export default function PartnerPlatformsSection({ data }: PartnerPlatformsSectio
           {/* Services Grid */}
           <div className="col-span-1 md:col-span-3 lg:col-span-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {data.services.items.map((item, idx) => (
-              <div key={idx} className="bento-item parallax-card relative p-[1px] rounded-[2rem] overflow-hidden group">
+              <div key={idx} className="bento-item relative p-[1px] rounded-[2rem] overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                <div className="parallax-inner w-full h-full bg-gray-900/80 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 relative z-10 flex flex-col gap-6">
+                <div className="w-full h-full bg-gray-900/80 backdrop-blur-xl rounded-[2rem] p-8 border border-white/10 relative z-10 flex flex-col gap-6 transition-all duration-500">
                   <div className="w-14 h-14 rounded-2xl bg-white/[0.03] border border-white/5 flex items-center justify-center group-hover:bg-[#75BABC]/10 group-hover:border-[#75BABC]/20 group-hover:scale-110 transition-all duration-500">
                     <Icon name={item.icon} className="w-6 h-6 text-gray-400 group-hover:text-[#75BABC] transition-colors" />
                   </div>

@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import MagneticButton from './MagneticButton';
 import {
   Mail,
@@ -52,6 +53,14 @@ export type FooterData = {
 export default function Footer({ data }: { data: FooterData }) {
   const footerRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -119,6 +128,7 @@ export default function Footer({ data }: { data: FooterData }) {
               <MagneticButton strength={0.4}>
                 <Link
                   href="/contact-us"
+                  onClick={(e) => handleLinkClick(e, '/contact-us')}
                   className="group relative overflow-hidden inline-flex items-center justify-center px-8 py-4 rounded-full bg-white text-gray-950 font-bold text-base transition-all shadow-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] z-20"
                 >
                   <span className="absolute inset-0 bg-gray-200 translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-full" />
@@ -134,9 +144,9 @@ export default function Footer({ data }: { data: FooterData }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-6">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
 
-          <div className="footer-col lg:col-span-3 lg:pr-8">
+          <div className="footer-col lg:max-w-xs shrink-0">
             <div className="flex items-center gap-4 mb-8 h-10">
               <img
                 src={data.brand.logo}
@@ -145,25 +155,25 @@ export default function Footer({ data }: { data: FooterData }) {
               />
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-2">
               <div className="flex items-center gap-3 text-gray-400">
                 <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-[18px]">{data.contact.email}</span>
+                <span className="text-[16px] md:text-[18px]">{data.contact.email}</span>
               </div>
               <div className="flex items-start gap-3 text-gray-400">
-                <div className="w-10 h-10 shrink-0 rounded-lg bg-white/5 flex items-center justify-center mt-0.5">
+                <div className="w-10 h-10 shrink-0 rounded-lg bg-white/5 flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span className="text-[18px] leading-relaxed">{data.contact.address}</span>
+                <span className="text-[16px] md:text-[18px] leading-relaxed py-1.5">{data.contact.address}</span>
               </div>
             </div>
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className={`footer-col ${col.title === 'Business Solution' ? 'lg:col-span-3' : 'lg:col-span-2'}`}>
-              <h4 className="h-10 flex items-center text-[15px] font-bold text-white uppercase tracking-[0.15em] mb-8">
+            <div key={idx} className="footer-col">
+              <h4 className="h-10 flex items-center text-[15px] font-bold text-[#75BABC] uppercase tracking-[0.15em] mb-8 whitespace-nowrap">
                 {col.title}
               </h4>
               <ul className="space-y-2">
@@ -173,7 +183,7 @@ export default function Footer({ data }: { data: FooterData }) {
                       href={link.href}
                       className="text-[16px] md:text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-center min-h-[40px]"
                     >
-                      <span className={`leading-tight ${link.label === 'Analytics & Collaboration' ? 'whitespace-nowrap' : ''}`}>{link.label}</span>
+                      <span className="leading-tight whitespace-nowrap">{link.label}</span>
                       <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-0.5" />
                     </Link>
                   </li>

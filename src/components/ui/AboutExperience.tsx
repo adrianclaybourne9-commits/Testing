@@ -118,7 +118,7 @@ export default function AboutExperience({ data }: AboutExperienceProps) {
                 }}
                 className="group relative p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-all duration-500 flex flex-col items-start gap-6 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500/0 via-cyan-500/0 to-purple-500/0 group-hover:from-blue-500 group-hover:via-cyan-500 group-hover:to-purple-500 opacity-0 group-hover:opacity-100 transition-all duration-700 rounded-t-3xl" />
+
                 
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:border-blue-500/30 transition-all duration-500 shadow-xl">
                   <IconComponent className="w-7 h-7 text-blue-400 group-hover:text-cyan-400 transition-colors duration-500" strokeWidth={1.5} />

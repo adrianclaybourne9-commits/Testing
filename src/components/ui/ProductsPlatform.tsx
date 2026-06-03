@@ -67,7 +67,7 @@ export type Product = {
 
 export type ProductsData = {
   sectionBadge: string;
-  sectionTitle: string;
+  sectionTitle?: string;
   sectionDescription: string;
   products: Product[];
 };
@@ -163,14 +163,16 @@ export default function ProductsPlatform({ data }: { data: ProductsData }) {
       </div>
 
       <div ref={headerRef} className="relative z-20 max-w-7xl mx-auto px-6 md:px-12 mb-20 md:mb-28 text-center">
-        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-6">
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#73B8BF]/10 border border-[#73B8BF]/20 text-[15px] font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
           <Box className="w-3.5 h-3.5" />
           {data.sectionBadge}
         </span>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-6">
-          {data.sectionTitle}
-        </h2>
-        <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-400 leading-relaxed">
+        {data.sectionTitle && (
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+            {data.sectionTitle}
+          </h2>
+        )}
+        <p className="max-w-3xl mx-auto text-lg md:text-xl text-white leading-relaxed mt-2">
           {data.sectionDescription}
         </p>
       </div>

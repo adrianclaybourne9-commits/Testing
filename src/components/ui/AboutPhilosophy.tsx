@@ -97,15 +97,15 @@ export default function AboutPhilosophy({ data }: AboutPhilosophyProps) {
             {data.items.map((item, idx) => {
               const IconComponent = iconMap[item.icon] || TrendingUp;
               return (
-                <div key={idx} className="philosophy-item flex flex-col lg:flex-row gap-6 items-start">
+                <div key={idx} className="philosophy-item group flex flex-col lg:flex-row gap-6 items-start p-6 md:p-8 rounded-[2rem] border border-transparent transition-all duration-500 hover:bg-white/[0.03] hover:border-white/10 hover:shadow-2xl">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white">
-                      <IconComponent className="w-6 h-6" />
+                    <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white transition-all duration-500 group-hover:scale-110 group-hover:bg-[#75BABC]/20 group-hover:border-[#75BABC]/50 group-hover:shadow-[0_0_20px_rgba(117,186,188,0.2)]">
+                      <IconComponent className="w-6 h-6 transition-colors duration-300 group-hover:text-[#75BABC]" />
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-gray-400 leading-relaxed">{item.description}</p>
+                    <h3 className="text-2xl font-bold text-white mb-3 transition-colors duration-300 group-hover:text-[#75BABC]">{item.title}</h3>
+                    <p className="text-gray-400 leading-relaxed transition-colors duration-300 group-hover:text-gray-300">{item.description}</p>
                   </div>
                 </div>
               );

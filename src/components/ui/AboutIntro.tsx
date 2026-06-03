@@ -16,7 +16,7 @@ type AboutIntroProps = {
 
 export default function AboutIntro({ data }: AboutIntroProps) {
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+
   useEffect(() => {
     const ctx = gsap.context(() => {
       gsap.fromTo(
@@ -51,11 +51,11 @@ export default function AboutIntro({ data }: AboutIntroProps) {
     <section ref={sectionRef} className="py-24 relative bg-gray-950 overflow-hidden border-t border-white/5">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
-          
+
           <div className="lg:w-1/2 w-full intro-image relative">
             <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 rounded-[2.5rem] blur-2xl opacity-50" />
             <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
-              <Image 
+              <Image
                 src="/images/about/team.png"
                 alt="Neudhi23 Expert Team"
                 fill
@@ -66,15 +66,15 @@ export default function AboutIntro({ data }: AboutIntroProps) {
           </div>
 
           <div className="lg:w-1/2 w-full intro-text">
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-normal text-gray-200 tracking-tight leading-snug mb-8">
+            <h2 className="text-lg md:text-xl lg:text-2xl font-normal text-gray-200 tracking-tight leading-snug mb-8">
               {data.subtitle}
             </h2>
-            
+
             <div className="w-16 h-1 bg-gradient-to-r from-blue-500/50 to-transparent rounded-full mb-8" />
-            
+
             <div className="space-y-6">
               {data.description.split('\n\n').map((paragraph, idx) => (
-                <p key={idx} className="text-white text-lg leading-relaxed">
+                <p key={idx} className="text-white text-lg md:text-xl leading-relaxed">
                   {paragraph}
                 </p>
               ))}

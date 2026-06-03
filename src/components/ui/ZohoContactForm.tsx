@@ -107,7 +107,7 @@ export default function ZohoContactForm() {
               <div className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="First_Name" className="text-sm font-medium text-gray-300 ml-1">
+                    <label htmlFor="First_Name" className="text-md font-medium text-gray-300 ml-1">
                       First Name <span className="text-[#75BABC]">*</span>
                     </label>
                     <input
@@ -122,7 +122,7 @@ export default function ZohoContactForm() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="Last_Name" className="text-sm font-medium text-gray-300 ml-1">
+                    <label htmlFor="Last_Name" className="text-md font-medium text-gray-300 ml-1">
                       Last Name <span className="text-[#75BABC]">*</span>
                     </label>
                     <input
@@ -139,7 +139,7 @@ export default function ZohoContactForm() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="Email" className="text-sm font-medium text-gray-300 ml-1">
+                    <label htmlFor="Email" className="text-md font-medium text-gray-300 ml-1">
                       Email <span className="text-[#75BABC]">*</span>
                     </label>
                     <input
@@ -154,7 +154,7 @@ export default function ZohoContactForm() {
                   </div>
 
                   <div className="space-y-2">
-                    <label htmlFor="Phone" className="text-sm font-medium text-gray-300 ml-1">
+                    <label htmlFor="Phone" className="text-md font-medium text-gray-300 ml-1">
                       Phone
                     </label>
                     <input
@@ -169,27 +169,27 @@ export default function ZohoContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="LEADCF5" className="text-sm font-medium text-gray-300 ml-1">Product</label>
+                  <label htmlFor="LEADCF5" className="text-md font-medium text-gray-300 ml-1">Product</label>
                   <select
                     id="LEADCF5"
                     name="LEADCF5"
                     className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-[#75BABC]/50 focus:border-[#75BABC] transition-all appearance-none"
                   >
                     <option value="-None-" className="bg-gray-900 text-gray-400">- Select a Product -</option>
-                    <option value="Billing System Integrator" className="bg-gray-900 text-white">Billing System Integrator</option>
-                    <option value="Wealth Platform" className="bg-gray-900 text-white">Wealth Platform</option>
-                    <option value="Zoho Platform" className="bg-gray-900 text-white">Zoho Platform</option>
-                    <option value="Custom Services" className="bg-gray-900 text-white">Custom Services</option>
+                    <option value="Billing System Integrator" className="bg-gray-900 text-[#75BABC]">Billing System Integrator</option>
+                    <option value="Wealth Platform" className="bg-gray-900 text-[#75BABC]">Wealth Platform</option>
+                    <option value="Zoho Platform" className="bg-gray-900 text-[#75BABC]">Zoho Platform</option>
+                    <option value="Custom Services" className="bg-gray-900 text-[#75BABC]">Custom Services</option>
                   </select>
                 </div>
-                
+
 
               </div>
 
               <div className="flex flex-col h-full space-y-6">
                 <div className="space-y-2 flex-grow flex flex-col">
                   <div className="flex justify-between items-end">
-                    <label htmlFor="Description" className="text-sm font-medium text-gray-300 ml-1">Message</label>
+                    <label htmlFor="Description" className="text-md font-medium text-gray-300 ml-1">Message</label>
                     <span className={`text-xs ${message.length > 200 ? 'text-red-400 font-bold' : 'text-gray-500'}`}>
                       {message.length} / 200
                     </span>

@@ -183,7 +183,7 @@ function AgnosticGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                   {item.description}
                 </p>
                 {item.footnote && (
-                  <p className="mt-4 text-sm italic text-[#73B8BF] transition-colors">
+                  <p className="mt-4 text-base text-[#73B8BF] transition-colors">
                     {item.footnote}
                   </p>
                 )}
@@ -275,7 +275,7 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                         </p>
 
                         {item.footnote && (
-                          <p className={`text-base italic text-[#73B8BF] transition-colors ${item.features ? 'mb-6' : 'mb-10'}`}>
+                          <p className={`text-lg lg:text-xl italic text-[#73B8BF] transition-colors ${item.features ? 'mb-6' : 'mb-10'}`}>
                             {item.footnote}
                           </p>
                         )}

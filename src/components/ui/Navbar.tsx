@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import MagneticButton from './MagneticButton';
 
@@ -20,8 +21,18 @@ type NavbarProps = {
 
 export default function Navbar({ data }: NavbarProps) {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const pathname = usePathname();
     const navLinks = data.links;
     const ctaText = data.cta;
+    const ctaHref = data.ctaHref || '/contact-us';
+
+    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (pathname === href) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        setIsMobileMenuOpen(false);
+    };
 
 
     return (
@@ -33,15 +44,24 @@ export default function Navbar({ data }: NavbarProps) {
 
                 <div className="hidden lg:flex h-16 rounded-full bg-white/5 backdrop-blur-2xl border border-white/10 items-center px-4 shadow-[0_8px_32px_rgba(0,0,0,0.2)] space-x-2 absolute left-1/2 -translate-x-1/2">
                     {navLinks.map((link, index) => (
-                        <a href={link.href} key={index} className="whitespace-nowrap text-gray-300 hover:text-white px-6 py-2.5 rounded-full transition-all duration-300 text-[18px] font-medium tracking-wide">
+                        <Link 
+                            href={link.href} 
+                            key={index} 
+                            onClick={(e) => handleLinkClick(e, link.href)}
+                            className="whitespace-nowrap text-gray-300 hover:text-white px-6 py-2.5 rounded-full transition-all duration-300 text-[18px] font-medium tracking-wide"
+                        >
                             {link.title}
-                        </a>
+                        </Link>
                     ))}
                 </div>
 
                 <div className="flex-shrink-0 hidden md:block">
                     <MagneticButton strength={0.4}>
-                        <Link href={data.ctaHref || '/contact-us'} className="inline-block bg-[#75BABC] hover:bg-[#62A6A8] text-white px-7 py-3 rounded-full text-[18px] font-bold transition-all duration-300 shadow-[0_0_20px_rgba(117,186,188,0.3)] hover:shadow-[0_0_30px_rgba(117,186,188,0.5)] relative z-20">
+                        <Link 
+                            href={ctaHref} 
+                            onClick={(e) => handleLinkClick(e, ctaHref)}
+                            className="inline-block bg-[#75BABC] hover:bg-[#62A6A8] text-white px-7 py-3 rounded-full text-[18px] font-bold transition-all duration-300 shadow-[0_0_20px_rgba(117,186,188,0.3)] hover:shadow-[0_0_30px_rgba(117,186,188,0.5)] relative z-20"
+                        >
                             {ctaText}
                         </Link>
                     </MagneticButton>
@@ -66,13 +86,13 @@ export default function Navbar({ data }: NavbarProps) {
                             className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${isMobileMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'}`}
                             style={{ transitionDelay: `${index * 50}ms` }}
                         >
-                            <a
+                            <Link
                                 href={link.href}
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                onClick={(e) => handleLinkClick(e, link.href)}
                                 className="text-gray-300 hover:text-white text-lg min-[400px]:text-xl font-bold tracking-wider capitalize block py-3 border-b border-white/5"
                             >
                                 {link.title}
-                            </a>
+                            </Link>
                         </div>
                     ))}
 
@@ -81,8 +101,8 @@ export default function Navbar({ data }: NavbarProps) {
                         style={{ transitionDelay: `${navLinks.length * 50}ms` }}
                     >
                         <Link
-                            href={data.ctaHref || '/contact-us'}
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            href={ctaHref}
+                            onClick={(e) => handleLinkClick(e, ctaHref)}
                             className="w-full text-center inline-block bg-[#75BABC] hover:bg-[#62A6A8] text-white px-6 py-4 rounded-full text-lg font-bold tracking-widest uppercase transition-all duration-300 shadow-[0_0_20px_rgba(117,186,188,0.3)] hover:shadow-[0_0_30px_rgba(117,186,188,0.5)]"
                         >
                             {ctaText}

@@ -99,8 +99,7 @@ export default function ContactSection({ data }: ContactSectionProps) {
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 style={{ 
-                  border: 0,
-                  filter: 'invert(90%) hue-rotate(180deg) brightness(105%) contrast(105%)'
+                  border: 0
                 }}
                 className="w-full h-full transition-all duration-700 hover:scale-[1.02]"
               />

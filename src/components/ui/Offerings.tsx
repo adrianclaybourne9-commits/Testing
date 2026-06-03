@@ -144,7 +144,7 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
 
       <div
         className={`relative flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
-          } gap-10 lg:gap-16 items-center`}
+          } gap-10 lg:gap-16 ${card.id === 'partner-products' ? 'items-start' : 'items-center'}`}
       >
         <div ref={imageRef} className="w-full lg:w-[45%] opacity-0">
           <div className="mb-8">
@@ -174,7 +174,7 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
 
           {card.partnerLogo && (
             <div className="mt-8 flex items-center gap-4">
-              <span className="text-sm md:text-base font-bold tracking-widest text-white uppercase">{card.partnerLogo.text}</span>
+              <span className="text-sm md:text-base font-bold tracking-widest text-white">{card.partnerLogo.text}</span>
               <img src={card.partnerLogo.image} alt={card.partnerLogo.text} className="h-10 md:h-12 w-auto" />
             </div>
           )}
