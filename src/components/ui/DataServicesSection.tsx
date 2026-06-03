@@ -60,7 +60,6 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
       );
     }
 
-    // Handle hash scrolling specifically for this section
     if (typeof window !== 'undefined' && window.location.hash === '#advanced-data-services') {
       setTimeout(() => {
         sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -76,7 +75,6 @@ export default function DataServicesSection({ data }: DataServicesSectionProps) 
           <p className="text-gray-400 text-lg max-w-3xl mx-auto">{data.description}</p>
         </div>
 
-        {/* Uniform Grid Layout */}
         <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {data.items.map((item, idx) => (
             <div

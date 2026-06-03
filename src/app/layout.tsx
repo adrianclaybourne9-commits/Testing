@@ -69,6 +69,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${darkerGrotesque.variable} dark`}
+      suppressHydrationWarning
     >
       <body className="bg-background text-foreground min-h-screen md:cursor-none overflow-x-hidden">
         <Preloader />

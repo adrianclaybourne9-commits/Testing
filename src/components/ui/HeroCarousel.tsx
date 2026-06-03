@@ -82,8 +82,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
         </div>
       ))}
 
-      {/* Right Edge Vertical Indicators */}
-      <div 
+      <div
         className="hidden md:flex absolute right-4 md:right-8 lg:right-12 top-1/2 -translate-y-1/2 -mt-16 z-30 flex-col items-center space-y-4"
         onMouseDown={() => setIsPaused(true)}
         onMouseUp={() => setIsPaused(false)}
@@ -137,8 +136,7 @@ export default function HeroCarousel({ slides }: HeroCarouselProps) {
 
       </div>
 
-      {/* Scroll Down Indicator */}
-      <button 
+      <button
         onClick={() => {
           window.scrollTo({
             top: window.innerHeight,

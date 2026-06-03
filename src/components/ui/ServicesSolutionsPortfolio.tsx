@@ -93,7 +93,6 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
       if (ref) observer.observe(ref);
     });
 
-    // Handle hash scrolling
     const scrollToHash = () => {
       if (typeof window !== 'undefined' && window.location.hash) {
         setTimeout(() => {
@@ -102,14 +101,12 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
           if (element) {
             element.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
-        }, 300); // 300ms delay to allow layout to settle
+        }, 300);
       }
     };
 
-    // Run on initial load
     scrollToHash();
 
-    // Listen for hash changes when clicking links on the same page
     window.addEventListener('hashchange', scrollToHash);
 
     return () => {
@@ -161,13 +158,13 @@ export default function ServicesSolutionsPortfolio({ data }: ServicesSolutionsPo
           <div className="lg:w-3/5 pb-0">
             {data.groups.map((group, gIdx) => {
               const startIndex = data.groups.slice(0, gIdx).reduce((acc, g) => acc + g.items.length, 0);
-              
+
               return (
                 <div key={gIdx} className="mb-24 last:mb-0">
                   <div className="py-4 mb-10 border-b border-white/10">
                     <h2 className="text-3xl md:text-4xl font-black text-white">{group.title}</h2>
                   </div>
-                  
+
                   <div className="space-y-24">
                     {group.items.map((item, idx) => {
                       const absoluteIdx = startIndex + idx;

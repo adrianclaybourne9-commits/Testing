@@ -248,17 +248,14 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                     className={`group relative flex flex-col rounded-[2rem] bg-[#0a0c10] border border-white/5 shadow-2xl transition-all duration-500 overflow-hidden cursor-pointer w-full ${hoverClass}`}
                   >
 
-                    {/* TOP TAB (Always visible when stacked) */}
                     <div className="w-full px-8 md:px-12 h-[60px] flex items-center border-b border-white/5 bg-[#0a0c10] z-20 relative shrink-0">
                       <span className="text-xs md:text-sm font-bold tracking-[0.2em] text-[#73B8BF] uppercase">
                         {item.domain}
                       </span>
                     </div>
 
-                    {/* BOTTOM CONTENT AREA */}
                     <div className="flex flex-col lg:flex-row w-full p-8 md:p-12 gap-10 lg:gap-16 relative z-10 bg-[#0a0c10] items-center">
 
-                      {/* LEFT SIDE: Image (1/4 width) */}
                       <div className="lg:w-1/4 shrink-0 relative min-h-[200px] lg:min-h-[240px] w-full rounded-2xl overflow-hidden border border-white/5 shadow-xl">
                         <div className="absolute inset-0 bg-gray-800"></div>
                         <img
@@ -268,7 +265,6 @@ function SpecificGroupSection({ group, groupIdx, data }: { group: SolutionsData[
                         />
                       </div>
 
-                      {/* RIGHT SIDE: Title, Text and Button (3/4 width) */}
                       <div className="lg:w-3/4 flex flex-col justify-center">
                         <h3 className="text-3xl lg:text-4xl font-black text-white leading-tight mb-6 group-hover:text-[#75BABC] transition-colors">
                           {item.solution}
