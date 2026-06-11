@@ -144,9 +144,9 @@ export default function Footer({ data }: { data: FooterData }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-12 lg:gap-8 xl:gap-12">
 
-          <div className="footer-col lg:max-w-xs shrink-0">
+          <div className="footer-col md:col-span-2 lg:col-span-2 lg:pr-8">
             <div className="flex items-center gap-4 mb-8 h-10">
               <img
                 src={data.brand.logo}
@@ -172,7 +172,7 @@ export default function Footer({ data }: { data: FooterData }) {
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className="footer-col lg:flex-1">
+            <div key={idx} className="footer-col lg:col-span-1">
               <h4 className="h-10 flex items-center text-[15px] font-bold text-[#75BABC] uppercase tracking-[0.15em] mb-8">
                 {col.title}
               </h4>
