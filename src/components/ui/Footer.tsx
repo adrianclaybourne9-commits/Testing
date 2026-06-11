@@ -144,9 +144,9 @@ export default function Footer({ data }: { data: FooterData }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="flex flex-wrap lg:flex-nowrap justify-between gap-12 lg:gap-6 xl:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-6 xl:gap-8">
 
-          <div className="footer-col w-full lg:w-[25%] shrink-0">
+          <div className="footer-col sm:col-span-2 lg:col-span-4 xl:col-span-3 pr-0 lg:pr-4">
             <div className="flex items-center gap-4 mb-8 h-10">
               <img
                 src={data.brand.logo}
@@ -166,13 +166,13 @@ export default function Footer({ data }: { data: FooterData }) {
                 <div className="w-10 h-10 shrink-0 rounded-lg bg-white/5 flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span className="text-[15px] xl:text-[16px] leading-relaxed py-1.5 pr-4">{data.contact.address}</span>
+                <span className="text-[15px] xl:text-[16px] leading-relaxed py-1.5">{data.contact.address}</span>
               </div>
             </div>
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className="footer-col flex-1 min-w-[200px] lg:min-w-0">
+            <div key={idx} className="footer-col lg:col-span-2 xl:col-span-2">
               <h4 className="min-h-[40px] flex items-center text-[13px] xl:text-[14px] font-bold text-[#75BABC] uppercase tracking-[0.1em] mb-6 lg:mb-8 leading-tight">
                 {col.title}
               </h4>
@@ -181,7 +181,7 @@ export default function Footer({ data }: { data: FooterData }) {
                   <li key={lIdx}>
                     <Link
                       href={link.href}
-                      className="text-[15px] xl:text-[16px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-start min-h-[32px] lg:min-h-[40px]"
+                      className="text-[14px] xl:text-[15px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-start min-h-[32px] lg:min-h-[40px]"
                     >
                       <span className="leading-snug pt-1">{link.label}</span>
                       <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-1.5" />
@@ -195,7 +195,7 @@ export default function Footer({ data }: { data: FooterData }) {
                   <img
                     src="/zoho-logo-darkbg.svg"
                     alt="Powered by Zoho"
-                    className="h-10 xl:h-14 w-auto"
+                    className="h-10 xl:h-12 w-auto"
                   />
                 </div>
               )}
