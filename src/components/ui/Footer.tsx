@@ -144,9 +144,9 @@ export default function Footer({ data }: { data: FooterData }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-8">
+        <div className="flex flex-wrap lg:flex-nowrap justify-between gap-12 lg:gap-6 xl:gap-8">
 
-          <div className="footer-col lg:max-w-xs shrink-0">
+          <div className="footer-col w-full lg:w-[25%] shrink-0">
             <div className="flex items-center gap-4 mb-8 h-10">
               <img
                 src={data.brand.logo}
@@ -155,53 +155,52 @@ export default function Footer({ data }: { data: FooterData }) {
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-400">
                 <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-[16px] md:text-[18px]">{data.contact.email}</span>
+                <span className="text-[15px] xl:text-[16px] break-all">{data.contact.email}</span>
               </div>
               <div className="flex items-start gap-3 text-gray-400">
                 <div className="w-10 h-10 shrink-0 rounded-lg bg-white/5 flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span className="text-[16px] md:text-[18px] leading-relaxed py-1.5">{data.contact.address}</span>
+                <span className="text-[15px] xl:text-[16px] leading-relaxed py-1.5 pr-4">{data.contact.address}</span>
               </div>
             </div>
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className="footer-col">
-              <h4 className="h-10 flex items-center text-[15px] font-bold text-[#75BABC] uppercase tracking-[0.15em] mb-8 whitespace-nowrap">
+            <div key={idx} className="footer-col flex-1 min-w-[200px] lg:min-w-0">
+              <h4 className="min-h-[40px] flex items-center text-[13px] xl:text-[14px] font-bold text-[#75BABC] uppercase tracking-[0.1em] mb-6 lg:mb-8 leading-tight">
                 {col.title}
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-3 lg:space-y-2">
                 {col.links.map((link, lIdx) => (
                   <li key={lIdx}>
                     <Link
                       href={link.href}
-                      className="text-[16px] md:text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-center min-h-[40px]"
+                      className="text-[15px] xl:text-[16px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-start min-h-[32px] lg:min-h-[40px]"
                     >
-                      <span className="leading-tight whitespace-nowrap">{link.label}</span>
-                      <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-0.5" />
+                      <span className="leading-snug pt-1">{link.label}</span>
+                      <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-1.5" />
                     </Link>
                   </li>
                 ))}
               </ul>
               {col.title === 'Partner Platforms' && (
                 <div className="mt-8 flex items-center gap-4">
-                  <p className="text-gray-400 text-sm tracking-widest uppercase font-semibold m-0 whitespace-nowrap">Powered by</p>
+                  <p className="text-gray-400 text-xs xl:text-sm tracking-widest uppercase font-semibold m-0">Powered by</p>
                   <img
                     src="/zoho-logo-darkbg.svg"
                     alt="Powered by Zoho"
-                    className="h-14 w-auto"
+                    className="h-10 xl:h-14 w-auto"
                   />
                 </div>
               )}
             </div>
           ))}
-
 
         </div>
       </div>
