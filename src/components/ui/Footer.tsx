@@ -172,8 +172,8 @@ export default function Footer({ data }: { data: FooterData }) {
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className="footer-col">
-              <h4 className="h-10 flex items-center text-[15px] font-bold text-[#75BABC] uppercase tracking-[0.15em] mb-8 whitespace-nowrap">
+            <div key={idx} className="footer-col lg:flex-1">
+              <h4 className="h-10 flex items-center text-[15px] font-bold text-[#75BABC] uppercase tracking-[0.15em] mb-8">
                 {col.title}
               </h4>
               <ul className="space-y-2">
@@ -181,10 +181,10 @@ export default function Footer({ data }: { data: FooterData }) {
                   <li key={lIdx}>
                     <Link
                       href={link.href}
-                      className="text-[16px] md:text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-center min-h-[40px]"
+                      className="text-[16px] md:text-[18px] text-gray-400 hover:text-white transition-colors duration-300 relative group flex items-start min-h-[40px]"
                     >
-                      <span className="leading-tight whitespace-nowrap">{link.label}</span>
-                      <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-0.5" />
+                      <span className="leading-tight py-1">{link.label}</span>
+                      <ArrowUpRight className="w-4 h-4 ml-1 shrink-0 opacity-0 -translate-y-1 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 mt-1.5" />
                     </Link>
                   </li>
                 ))}
