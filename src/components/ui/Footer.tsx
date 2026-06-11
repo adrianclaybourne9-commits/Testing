@@ -144,9 +144,9 @@ export default function Footer({ data }: { data: FooterData }) {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-6 xl:gap-8">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-6 xl:gap-8">
 
-          <div className="footer-col sm:col-span-2 lg:col-span-4 xl:col-span-3 pr-0 lg:pr-4">
+          <div className="footer-col lg:w-[280px] xl:w-[320px] shrink-0">
             <div className="flex items-center gap-4 mb-8 h-10">
               <img
                 src={data.brand.logo}
@@ -160,20 +160,20 @@ export default function Footer({ data }: { data: FooterData }) {
                 <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
-                <span className="text-[15px] xl:text-[16px] break-all">{data.contact.email}</span>
+                <span className="text-[14px] xl:text-[15px] break-all">{data.contact.email}</span>
               </div>
               <div className="flex items-start gap-3 text-gray-400">
                 <div className="w-10 h-10 shrink-0 rounded-lg bg-white/5 flex items-center justify-center">
                   <MapPin className="w-4 h-4" />
                 </div>
-                <span className="text-[15px] xl:text-[16px] leading-relaxed py-1.5">{data.contact.address}</span>
+                <span className="text-[14px] xl:text-[15px] leading-relaxed py-1.5">{data.contact.address}</span>
               </div>
             </div>
           </div>
 
           {data.columns.map((col, idx) => (
-            <div key={idx} className="footer-col lg:col-span-2 xl:col-span-2">
-              <h4 className="min-h-[40px] flex items-center text-[13px] xl:text-[14px] font-bold text-[#75BABC] uppercase tracking-[0.1em] mb-6 lg:mb-8 leading-tight">
+            <div key={idx} className="footer-col flex-1 min-w-0">
+              <h4 className="min-h-[40px] flex items-center text-[12px] lg:text-[13px] xl:text-[14px] font-bold text-[#75BABC] uppercase tracking-[0.1em] mb-6 lg:mb-8 leading-tight pr-2">
                 {col.title}
               </h4>
               <ul className="space-y-3 lg:space-y-2">
