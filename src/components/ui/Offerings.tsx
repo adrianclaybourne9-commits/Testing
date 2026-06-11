@@ -105,6 +105,8 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const subFeaturesRef = useRef<HTMLDivElement>(null);
+  const bottomCtaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -124,6 +126,20 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
               { opacity: 0, y: 40 },
               { opacity: 1, y: 0, duration: 0.9, delay: 0.2, ease: 'power3.out' }
             );
+            if (subFeaturesRef.current) {
+              gsap.fromTo(
+                subFeaturesRef.current,
+                { opacity: 0, y: 40 },
+                { opacity: 1, y: 0, duration: 0.9, delay: 0.4, ease: 'power3.out' }
+              );
+            }
+            if (bottomCtaRef.current) {
+              gsap.fromTo(
+                bottomCtaRef.current,
+                { opacity: 0, y: 30 },
+                { opacity: 1, y: 0, duration: 0.8, delay: 0.6, ease: 'power3.out' }
+              );
+            }
             observer.unobserve(el);
           }
         });
@@ -144,7 +160,7 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
 
       <div
         className={`relative flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'
-          } gap-10 lg:gap-16 ${card.id === 'partner-products' ? 'items-start' : 'items-center'}`}
+          } gap-10 lg:gap-16 ${card.id === 'partner-products' ? 'items-stretch' : 'items-center'}`}
       >
         <div ref={imageRef} className="w-full lg:w-[45%] opacity-0">
           <div className="mb-8">
@@ -169,107 +185,157 @@ function OfferingSection({ card, index }: { card: OfferingItem; index: number })
               alt={card.title}
               className="w-full h-[320px] lg:h-[420px] object-cover transition-transform duration-700 group-hover/img:scale-105"
             />
-
           </div>
 
-          {card.partnerLogo && (
+          {card.partnerLogo && card.id !== 'partner-products' && (
             <div className="mt-8 flex items-center gap-4">
               <span className="text-sm md:text-base font-bold tracking-widest text-white">{card.partnerLogo.text}</span>
               <img src={card.partnerLogo.image} alt={card.partnerLogo.text} className="h-10 md:h-12 w-auto" />
             </div>
           )}
 
-          <div className="mt-6 flex justify-start">
-            <MagneticButton strength={0.4}>
-              <Link href="/partner-platform" className="relative overflow-hidden inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white border border-white/20 bg-white/5 rounded-full transition-all group/btn hover:border-transparent hover:shadow-[0_0_20px_rgba(117,186,188,0.3)]">
-                <span className="absolute inset-0 bg-[#75BABC] translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-full" />
-                <span className="relative z-10 flex items-center text-white transition-colors duration-300">
-                  Explore more <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
-                </span>
-              </Link>
-            </MagneticButton>
-          </div>
+          {card.id !== 'partner-products' && (
+            <div className="mt-6 flex justify-start">
+              <MagneticButton strength={0.4}>
+                <Link href={card.id === 'ai-agents' || card.id === 'data-analytics' ? '/service' : '/partner-platform'} className="relative overflow-hidden inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white border border-white/20 bg-white/5 rounded-full transition-all group/btn hover:border-transparent hover:shadow-[0_0_20px_rgba(117,186,188,0.3)]">
+                  <span className="absolute inset-0 bg-[#75BABC] translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-full" />
+                  <span className="relative z-10 flex items-center text-white transition-colors duration-300">
+                    Explore more <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+                  </span>
+                </Link>
+              </MagneticButton>
+            </div>
+          )}
         </div>
 
-        <div ref={contentRef} className="w-full lg:w-[55%] opacity-0">
-          {card.imageLabel && (
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
-              {card.title}
-            </h2>
-          )}
-          <div className="space-y-4 mb-6">
-            {card.features.map((feature, fIdx) => (
-              <div
-                key={fIdx}
-                className={`relative overflow-hidden rounded-xl bg-white/[0.04] backdrop-blur-sm border ${card.accentBorder} p-5 transition-all duration-300 hover:bg-white/[0.08] hover:border-white/30 hover:shadow-lg`}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#73B8BF]/30 to-[#8FA8D9]/30 flex items-center justify-center text-[#73B8BF]">
-                    <Icon name={feature.icon} className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="text-base font-bold text-white mb-1.5 tracking-wide capitalize">
-                      {feature.title}
-                    </h4>
-                    <p className="text-base text-gray-200 leading-relaxed">
-                      {feature.description}
-                    </p>
+        <div ref={contentRef} className="w-full lg:w-[55%] opacity-0 flex flex-col justify-between">
+          <div>
+            {card.imageLabel && (
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-8 leading-tight">
+                {card.title}
+              </h2>
+            )}
+            <div className="space-y-4 mb-6">
+              {card.features.map((feature, fIdx) => (
+                <div
+                  key={fIdx}
+                  className={`relative overflow-hidden rounded-xl bg-white/[0.04] backdrop-blur-sm border ${card.accentBorder} p-5 transition-all duration-300 hover:bg-white/[0.08] hover:border-white/30 hover:shadow-lg`}
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#73B8BF]/30 to-[#8FA8D9]/30 flex items-center justify-center text-[#73B8BF]">
+                      <Icon name={feature.icon} className="w-5 h-5" />
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-white mb-1.5 tracking-wide capitalize">
+                        {feature.title}
+                      </h4>
+                      <p className="text-base text-gray-200 leading-relaxed">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
+              ))}
+            </div>
+
+            {card.pillars && card.pillars.length > 0 && (
+              <div className="mb-8 p-6 rounded-2xl border border-white/10 bg-white/[0.01]">
+                <h5 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
+                  Platforms
+                </h5>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {card.pillars.map((pillar, pIdx) => (
+                    <div key={pIdx} className="group/pillar relative rounded-xl bg-white/[0.02] border border-white/5 p-4 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center text-indigo-400">
+                          <Icon name={pillar.icon} className="w-4 h-4" />
+                        </div>
+                        <h5 className="text-base font-bold text-white tracking-wide capitalize">{pillar.title}</h5>
+                      </div>
+                      <p className="text-sm text-gray-200 leading-relaxed group-hover/pillar:text-white transition-colors">{pillar.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {card.subFeatures && card.subFeatures.length > 0 && card.id !== 'partner-products' && (
+              <div className="mt-6">
+                <h5 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
+                  {card.subFeaturesLabel || 'Capabilities'}
+                </h5>
+                <div className={`grid grid-cols-1 sm:grid-cols-2 ${card.subFeatures.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-3`}>
+                  {card.subFeatures.map((sub, sIdx) => (
+                    <div
+                      key={sIdx}
+                      className="group/sub relative rounded-lg bg-white/[0.03] border border-white/10 p-4 transition-all duration-300 hover:bg-white/[0.07] hover:border-[#73B8BF]/40 hover:-translate-y-0.5"
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-[#73B8BF] group-hover/sub:text-white transition-colors">
+                          <Icon name={sub.icon} className="w-5 h-5" />
+                        </span>
+                        <h6 className="text-base font-bold text-white tracking-wide capitalize">
+                          {sub.title}
+                        </h6>
+                      </div>
+                      <p className="text-base text-gray-200 leading-relaxed">
+                        {sub.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {card.subFeatures && card.subFeatures.length > 0 && card.id === 'partner-products' && (
+        <div className="w-full mt-16 opacity-0" ref={subFeaturesRef}>
+          <h5 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-8 text-center">
+            {card.subFeaturesLabel || 'Capabilities'}
+          </h5>
+          <div className={`grid grid-cols-1 sm:grid-cols-2 ${card.subFeatures.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-4`}>
+            {card.subFeatures.map((sub, sIdx) => (
+              <div
+                key={sIdx}
+                className="group/sub relative rounded-xl bg-white/[0.03] border border-white/10 p-6 transition-all duration-300 hover:bg-white/[0.07] hover:border-[#73B8BF]/40 hover:-translate-y-1"
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-[#73B8BF] group-hover/sub:text-white transition-colors">
+                    <Icon name={sub.icon} className="w-6 h-6" />
+                  </span>
+                  <h6 className="text-lg font-bold text-white tracking-wide capitalize">
+                    {sub.title}
+                  </h6>
+                </div>
+                <p className="text-base text-gray-200 leading-relaxed">
+                  {sub.description}
+                </p>
               </div>
             ))}
           </div>
-
-          {card.pillars && card.pillars.length > 0 && (
-            <div className="mb-8 p-6 rounded-2xl border border-white/10 bg-white/[0.01]">
-              <h5 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
-                Platforms
-              </h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {card.pillars.map((pillar, pIdx) => (
-                  <div key={pIdx} className="group/pillar relative rounded-xl bg-white/[0.02] border border-white/5 p-4 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20">
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center text-indigo-400">
-                        <Icon name={pillar.icon} className="w-4 h-4" />
-                      </div>
-                      <h5 className="text-base font-bold text-white tracking-wide capitalize">{pillar.title}</h5>
-                    </div>
-                    <p className="text-sm text-gray-200 leading-relaxed group-hover/pillar:text-white transition-colors">{pillar.description}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {card.subFeatures && card.subFeatures.length > 0 && (
-            <div className="mt-6">
-              <h5 className="text-sm md:text-base font-bold tracking-[0.2em] text-[#73B8BF] uppercase mb-4">
-                {card.subFeaturesLabel || 'Capabilities'}
-              </h5>
-              <div className={`grid grid-cols-1 sm:grid-cols-2 ${card.subFeatures.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'} gap-3`}>
-                {card.subFeatures.map((sub, sIdx) => (
-                  <div
-                    key={sIdx}
-                    className="group/sub relative rounded-lg bg-white/[0.03] border border-white/10 p-4 transition-all duration-300 hover:bg-white/[0.07] hover:border-[#73B8BF]/40 hover:-translate-y-0.5"
-                  >
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[#73B8BF] group-hover/sub:text-white transition-colors">
-                        <Icon name={sub.icon} className="w-5 h-5" />
-                      </span>
-                      <h6 className="text-base font-bold text-white tracking-wide capitalize">
-                        {sub.title}
-                      </h6>
-                    </div>
-                    <p className="text-base text-gray-200 leading-relaxed">
-                      {sub.description}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
-      </div>
+      )}
+
+      {card.id === 'partner-products' && (
+        <div className="w-full mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-end gap-6 opacity-0" ref={bottomCtaRef}>
+          {card.partnerLogo && (
+            <div className="flex items-center gap-4">
+              <span className="text-lg md:text-xl font-bold tracking-widest text-white">{card.partnerLogo.text}</span>
+              <img src={card.partnerLogo.image} alt={card.partnerLogo.text} className="h-10 md:h-12 w-auto" />
+            </div>
+          )}
+          <MagneticButton strength={0.4}>
+            <Link href="/partner-platform" className="relative overflow-hidden inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white border border-white/20 bg-white/5 rounded-full transition-all group/btn hover:border-transparent hover:shadow-[0_0_20px_rgba(117,186,188,0.3)]">
+              <span className="absolute inset-0 bg-[#75BABC] translate-x-[-101%] group-hover/btn:translate-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] z-0 rounded-full" />
+              <span className="relative z-10 flex items-center text-white transition-colors duration-300">
+                Explore more <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-rotate-45 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]" />
+              </span>
+            </Link>
+          </MagneticButton>
+        </div>
+      )}
     </div>
   );
 }

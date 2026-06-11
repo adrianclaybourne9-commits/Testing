@@ -450,15 +450,15 @@
     },
     "columns": [
       {
-        "title": "Neudhi23 Product",
+        "title": "Neudhi23 Products",
         "links": [
           {
             "label": "NE23 Wealth",
-            "href": "/#ne23-wealth"
+            "href": "/proprietary-products#ne23-wealth"
           },
           {
             "label": "NE23 Invoicing",
-            "href": "/#ne23-invoicing"
+            "href": "/proprietary-products#ne23-invoicing"
           }
         ]
       },
@@ -484,7 +484,7 @@
         ]
       },
       {
-        "title": "Business Solution",
+        "title": "Business Solutions",
         "links": [
           {
             "label": "NPO, NGO, & Temple Operations",
